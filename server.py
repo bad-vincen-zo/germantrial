@@ -1,40 +1,17 @@
 import os
-import sqlite3
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel
 import uvicorn
 
+import database
+from database import DuplicateWordError, WordNotFoundError
+
 app = FastAPI(title="German Vocabulary Builder API")
 
-DB_PATH = "german_vocab.db"
-
-# ── Database helpers ────────────────────────────────────────────────────────
-
-def get_db():
-    """Return a new SQLite connection with row_factory set."""
-    conn = sqlite3.connect(DB_PATH)
-    conn.row_factory = sqlite3.Row
-    return conn
-
-
-def init_db():
-    """Create the vocabulary table if it doesn't exist yet."""
-    with get_db() as conn:
-        conn.execute("""
-            CREATE TABLE IF NOT EXISTS vocabulary (
-                id         INTEGER  PRIMARY KEY AUTOINCREMENT,
-                german     TEXT     NOT NULL UNIQUE COLLATE NOCASE,
-                english    TEXT     NOT NULL,
-                created_at DATETIME DEFAULT (datetime('now'))
-            )
-        """)
-        conn.commit()
-
-
-# Initialise DB on startup
-init_db()
+# Initialise DB table on startup
+database.init_db()
 
 # ── Static / template mounts ────────────────────────────────────────────────
 
@@ -66,11 +43,7 @@ def get_index():
 @app.get("/api/words")
 def get_words():
     try:
-        with get_db() as conn:
-            rows = conn.execute(
-                "SELECT german, english FROM vocabulary ORDER BY id DESC"
-            ).fetchall()
-        return [{"german": r["german"], "english": r["english"]} for r in rows]
+        return database.get_all_words()
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -84,17 +57,9 @@ def add_word(entry: WordEntry):
         raise HTTPException(status_code=400, detail="German and English fields cannot be empty")
 
     try:
-        with get_db() as conn:
-            conn.execute(
-                "INSERT INTO vocabulary (german, english) VALUES (?, ?)",
-                (german, english)
-            )
-            conn.commit()
-    except sqlite3.IntegrityError:
-        raise HTTPException(
-            status_code=400,
-            detail=f"The word '{german}' already exists in your vocabulary."
-        )
+        database.add_word(german, english)
+    except DuplicateWordError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -111,32 +76,11 @@ def edit_word(entry: EditWordEntry):
         raise HTTPException(status_code=400, detail="All fields are required")
 
     try:
-        with get_db() as conn:
-            existing = conn.execute(
-                "SELECT id FROM vocabulary WHERE german = ? COLLATE NOCASE",
-                (old_german,)
-            ).fetchone()
-            if not existing:
-                raise HTTPException(status_code=404, detail="Original word not found")
-
-            if old_german.lower() != new_german.lower():
-                collision = conn.execute(
-                    "SELECT id FROM vocabulary WHERE german = ? COLLATE NOCASE",
-                    (new_german,)
-                ).fetchone()
-                if collision:
-                    raise HTTPException(
-                        status_code=400,
-                        detail=f"The word '{new_german}' already exists."
-                    )
-
-            conn.execute(
-                "UPDATE vocabulary SET german = ?, english = ? WHERE id = ?",
-                (new_german, new_english, existing["id"])
-            )
-            conn.commit()
-    except HTTPException:
-        raise
+        database.update_word(old_german, new_german, new_english)
+    except WordNotFoundError:
+        raise HTTPException(status_code=404, detail="Original word not found")
+    except DuplicateWordError as e:
+        raise HTTPException(status_code=400, detail=str(e))
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
@@ -145,18 +89,10 @@ def edit_word(entry: EditWordEntry):
 
 @app.delete("/api/words")
 def delete_word(german: str):
-    german_to_delete = german.strip()
     try:
-        with get_db() as conn:
-            result = conn.execute(
-                "DELETE FROM vocabulary WHERE german = ? COLLATE NOCASE",
-                (german_to_delete,)
-            )
-            conn.commit()
-            if result.rowcount == 0:
-                raise HTTPException(status_code=404, detail="Word not found")
-    except HTTPException:
-        raise
+        database.delete_word(german.strip())
+    except WordNotFoundError:
+        raise HTTPException(status_code=404, detail="Word not found")
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
