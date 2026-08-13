@@ -1,0 +1,13 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.db
+*.sqlite3
+*.txt.bak
+.env
+.venv
+venv/
+env/
+german_vocab.txt

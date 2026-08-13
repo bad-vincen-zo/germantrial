@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Vocabulary Builder</title>
+    <meta name="description" content="A premium, interactive web application to build and practice your German vocabulary.">
+    <!-- Google Fonts: Inter & Space Grotesk for modern headings -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <!-- Custom styling -->
+    <link rel="stylesheet" href="/static/style.css?v=2">
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+    <div class="glass-bg"></div>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo-area">
+                <div class="flag-icon">🇩🇪</div>
+                <h1>Wortschatz</h1>
+            </div>
+            <p class="subtitle">German Vocabulary Builder</p>
+        </header>
+
+        <!-- Stats Grid -->
+        <section class="stats-container">
+            <div class="stat-card">
+                <div class="stat-icon-wrapper blue">
+                    <i data-lucide="book-open"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Total Words</span>
+                    <span class="stat-value" id="total-words-count">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper green">
+                    <i data-lucide="zap"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Study Session</span>
+                    <span class="stat-value" id="session-count">0</span>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon-wrapper purple">
+                    <i data-lucide="award"></i>
+                </div>
+                <div class="stat-info">
+                    <span class="stat-label">Mastery Rate</span>
+                    <span class="stat-value" id="mastery-rate">0%</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" id="tab-manage" onclick="switchTab('manage')">
+                <i data-lucide="sliders"></i> Manage Words
+            </button>
+            <button class="tab-btn" id="tab-practice" onclick="switchTab('practice')">
+                <i data-lucide="play-circle"></i> Flashcards
+            </button>
+        </nav>
+
+        <!-- Tab Content: Manage Words -->
+        <main class="tab-content" id="content-manage">
+            <div class="vocab-grid">
+                <!-- Add Word Panel -->
+                <div class="glass-card add-panel">
+                    <h2>Add New Vocabulary</h2>
+                    <form id="add-word-form" onsubmit="handleAddWord(event)">
+                        <div class="input-group">
+                            <label for="german-input">German Word / Phrase</label>
+                            <input type="text" id="german-input" required placeholder="e.g., die Flasche, passen">
+                        </div>
+                        <div class="input-group">
+                            <label for="english-input">English Meaning</label>
+                            <input type="text" id="english-input" required placeholder="e.g., bottle, to match">
+                        </div>
+                        <button type="submit" class="primary-btn">
+                            <i data-lucide="plus-circle"></i> Add Word
+                        </button>
+                    </form>
+                </div>
+
+                <!-- Vocabulary List Panel -->
+                <div class="glass-card list-panel">
+                    <div class="list-header">
+                        <h2>My Vocabulary</h2>
+                        <div class="search-box">
+                            <i data-lucide="search"></i>
+                            <input type="text" id="search-input" placeholder="Search German or English..." oninput="handleSearch()">
+                        </div>
+                    </div>
+
+                    <div class="table-container">
+                        <table class="vocab-table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Pronounce</th>
+                                    <th class="actions-col">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="vocab-table-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                        <div class="empty-state" id="empty-state" style="display: none;">
+                            <i data-lucide="folder-open"></i>
+                            <p>No vocabulary words found. Add some above!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Tab Content: Flashcard Practice -->
+        <main class="tab-content hidden" id="content-practice">
+            <div class="practice-container">
+                <div class="practice-controls-top">
+                    <!-- Practice Options -->
+                    <div class="practice-options">
+                        <div class="control-group">
+                            <span class="control-label">Study Direction:</span>
+                            <select id="study-direction" onchange="resetQuiz()">
+                                <option value="de-en">German ➔ English</option>
+                                <option value="en-de">English ➔ German</option>
+                            </select>
+                        </div>
+                        <div class="control-group">
+                            <label class="switch-container">
+                                <input type="checkbox" id="direct-assess-toggle" onchange="handleDirectAssessToggle()">
+                                <span class="switch-slider"></span>
+                                <span class="control-label">Assess without flipping</span>
+                            </label>
+                        </div>
+                    </div>
+                    <button class="secondary-btn btn-sm" onclick="resetQuiz()">
+                        <i data-lucide="rotate-ccw"></i> Restart
+                    </button>
+                </div>
+
+                <div class="flashcard-wrapper">
+                    <!-- Flippable Card -->
+                    <div class="flashcard" id="flashcard" onclick="flipCard()">
+                        <!-- Front Side -->
+                        <div class="card-face card-front">
+                            <div class="card-badge">GERMAN</div>
+                            <div class="card-word" id="card-front-word">-</div>
+                            <div class="card-hint">Click to flip & see answer</div>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="card-face card-body-back">
+                            <div class="card-badge-back">ENGLISH</div>
+                            <div class="card-word-back" id="card-back-word">-</div>
+                            <div class="card-actions-row">
+                                <button class="tts-btn" onclick="speakGermanWord(event)" title="Listen Pronunciation">
+                                    <i data-lucide="volume-2"></i> Listen
+                                </button>
+                            </div>
+                            <div class="card-hint-back">How did you do?</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quiz Progress -->
+                <div class="quiz-progress-section">
+                    <div class="progress-info">
+                        <span>Card <strong id="current-card-num">0</strong> of <strong id="total-card-num">0</strong></span>
+                    </div>
+                    <div class="progress-bar-container">
+                        <div class="progress-bar-fill" id="quiz-progress-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+
+                <!-- Card Assessment Buttons -->
+                <div class="assessment-buttons disabled" id="assessment-buttons">
+                    <button class="assessment-btn incorrect" onclick="handleCardReview(false)">
+                        <i data-lucide="x"></i> Forgot it
+                    </button>
+                    <button class="assessment-btn correct" onclick="handleCardReview(true)">
+                        <i data-lucide="check"></i> Got it right!
+                    </button>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Edit Modal Dialog -->
+    <div class="modal" id="edit-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2>Edit Word</h2>
+                <button class="close-btn" onclick="closeEditModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <form id="edit-word-form" onsubmit="handleEditWordSubmit(event)">
+                <input type="hidden" id="edit-old-german">
+                <div class="input-group">
+                    <label for="edit-german-input">German Word / Phrase</label>
+                    <input type="text" id="edit-german-input" required>
+                </div>
+                <div class="input-group">
+                    <label for="edit-english-input">English Meaning</label>
+                    <input type="text" id="edit-english-input" required>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="secondary-btn" onclick="closeEditModal()">Cancel</button>
+                    <button type="submit" class="primary-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Script Injection -->
+    <script src="/static/app.js?v=2"></script>
+</body>
+</html>
