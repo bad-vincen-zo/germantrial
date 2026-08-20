@@ -2199,14 +2199,14 @@ html.light-theme {
 [data-theme="light"] .app-layout,
 [data-theme="light"] .main-side,
 [data-theme="light"] .main-content-area {
-    background: #f3f5fa !important;
+    background: #ebedf9 !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-/* EXCEPT Selected Active Item: Merges into Light Main Side (#f3f5fa) */
+/* EXCEPT Selected Active Item: Merges into Light Main Side (#ebedf9) */
 [data-theme="light"] .sidebar-tab-btn.active {
-    background: #f3f5fa !important;
+    background: #ebedf9 !important;
     color: #4f46e5 !important;
     box-shadow: none !important;
 }
