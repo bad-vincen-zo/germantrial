@@ -17,68 +17,76 @@
 </head>
 <body>
     <div class="glass-bg"></div>
-    <div class="app-container">
-        <!-- Header -->
-        <header class="app-header">
-            <div class="header-top-bar">
+    <div class="app-layout">
+        <!-- Sidebar Navigation (Matching Wireframe Alignment) -->
+        <aside class="sidebar-nav">
+            <div class="sidebar-brand">
+                <div class="flag-icon">🇩🇪</div>
+                <div class="brand-text">
+                    <h1>Wortschatz</h1>
+                    <p class="subtitle">Vocab Builder</p>
+                </div>
+            </div>
+
+            <!-- Vertical Menu Buttons -->
+            <nav class="sidebar-menu">
+                <button class="sidebar-tab-btn active" id="tab-manage" onclick="switchTab('manage')">
+                    <i data-lucide="sliders"></i> <span>Manage Words</span>
+                </button>
+                <button class="sidebar-tab-btn" id="tab-practice" onclick="switchTab('practice')">
+                    <i data-lucide="play-circle"></i> <span>Flash Cards</span>
+                </button>
+                <button class="sidebar-tab-btn" id="tab-stats" onclick="switchTab('stats')">
+                    <i data-lucide="bar-chart-2"></i> <span>Practice Stats</span>
+                </button>
+                <button class="sidebar-tab-btn" id="tab-chapters" onclick="switchTab('chapters')">
+                    <i data-lucide="folder-kanban"></i> <span>Chapters</span>
+                </button>
+            </nav>
+
+            <div class="sidebar-footer">
                 <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" title="Switch Light/Dark Theme" onclick="toggleTheme()">
                     <span id="theme-icon-container"><i data-lucide="sun"></i></span>
                     <span id="theme-text">Light Mode</span>
                 </button>
             </div>
-            <div class="logo-area">
-                <div class="flag-icon">🇩🇪</div>
-                <h1>Wortschatz</h1>
-            </div>
-            <p class="subtitle">German Vocabulary Builder</p>
-        </header>
+        </aside>
 
-        <!-- Stats Grid -->
-        <section class="stats-container">
-            <div class="stat-card">
-                <div class="stat-icon-wrapper blue">
-                    <i data-lucide="book-open"></i>
+        <!-- Main Content Area -->
+        <div class="main-content-area">
+            <!-- Stats Dashboard Grid (3 Stat Cards across the top) -->
+            <section class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper blue">
+                        <i data-lucide="book-open"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Total Words</span>
+                        <span class="stat-value" id="total-words-count">0</span>
+                    </div>
                 </div>
-                <div class="stat-info">
-                    <span class="stat-label">Total Words</span>
-                    <span class="stat-value" id="total-words-count">0</span>
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper green">
+                        <i data-lucide="zap"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Study Session</span>
+                        <span class="stat-value" id="session-count">0</span>
+                    </div>
                 </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon-wrapper green">
-                    <i data-lucide="zap"></i>
+                <div class="stat-card">
+                    <div class="stat-icon-wrapper purple">
+                        <i data-lucide="award"></i>
+                    </div>
+                    <div class="stat-info">
+                        <span class="stat-label">Mastery Rate</span>
+                        <span class="stat-value" id="mastery-rate">0%</span>
+                    </div>
                 </div>
-                <div class="stat-info">
-                    <span class="stat-label">Study Session</span>
-                    <span class="stat-value" id="session-count">0</span>
-                </div>
-            </div>
-            <div class="stat-card">
-                <div class="stat-icon-wrapper purple">
-                    <i data-lucide="award"></i>
-                </div>
-                <div class="stat-info">
-                    <span class="stat-label">Mastery Rate</span>
-                    <span class="stat-value" id="mastery-rate">0%</span>
-                </div>
-            </div>
-        </section>
+            </section>
 
-        <!-- Main Navigation Tabs -->
-        <nav class="nav-tabs">
-            <button class="tab-btn active" id="tab-manage" onclick="switchTab('manage')">
-                <i data-lucide="sliders"></i> Manage Words
-            </button>
-            <button class="tab-btn" id="tab-practice" onclick="switchTab('practice')">
-                <i data-lucide="play-circle"></i> Flashcards
-            </button>
-            <button class="tab-btn" id="tab-stats" onclick="switchTab('stats')">
-                <i data-lucide="bar-chart-2"></i> Practice Stats
-            </button>
-        </nav>
-
-        <!-- Tab Content: Manage Words -->
-        <main class="tab-content" id="content-manage">
+            <!-- Tab Content: Manage Words -->
+            <main class="tab-content" id="content-manage">
             <div class="vocab-grid">
                 <!-- Left Stack: Add Single Word & Batch Import -->
                 <div class="left-panel-stack">
@@ -481,6 +489,50 @@
                 </div>
             </div>
         </main>
+
+        <!-- Tab Content: Chapters Overview -->
+        <main class="tab-content hidden" id="content-chapters">
+            <div class="chapters-dashboard-container">
+                <div class="glass-card chapters-panel">
+                    <div class="chapters-panel-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                        <h2><i data-lucide="folder-kanban"></i> Vocabulary Chapters</h2>
+                        <button type="button" class="primary-btn btn-sm" style="width: auto; padding: 10px 20px;" onclick="openAddChapterModal()">
+                            <i data-lucide="plus-circle"></i> Add Chapter
+                        </button>
+                    </div>
+                    <div class="chapters-grid-container" id="chapters-grid-container">
+                        <!-- Populated dynamically -->
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+    <!-- Add Chapter Modal Dialog -->
+    <div class="modal" id="add-chapter-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2>Add Chapter</h2>
+                <button class="close-btn" onclick="closeAddChapterModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <form id="add-chapter-form" onsubmit="handleAddChapterSubmit(event)">
+                <div class="input-group">
+                    <label for="chapter-name-input">Chapter Name</label>
+                    <input type="text" id="chapter-name-input" required placeholder="e.g., Chapter 1: Basics">
+                </div>
+                <div class="input-group">
+                    <label for="chapter-desc-input">Description (Optional)</label>
+                    <input type="text" id="chapter-desc-input" placeholder="e.g., Greetings and introductions">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="secondary-btn" onclick="closeAddChapterModal()">Cancel</button>
+                    <button type="submit" class="primary-btn">Create Chapter</button>
+                </div>
+            </form>
+        </div>
     </div>
 
     <!-- Edit Modal Dialog -->

@@ -360,19 +360,19 @@ function handleSearch() {
 
 // Tab Navigation logic
 function switchTab(tabId) {
-    // Buttons
-    document.getElementById("tab-manage").classList.remove("active");
-    document.getElementById("tab-practice").classList.remove("active");
-    const statsTabBtn = document.getElementById("tab-stats");
-    if (statsTabBtn) statsTabBtn.classList.remove("active");
-    document.getElementById(`tab-${tabId}`).classList.add("active");
+    const tabs = ["manage", "practice", "stats", "chapters"];
+    
+    tabs.forEach(id => {
+        const btn = document.getElementById(`tab-${id}`);
+        const content = document.getElementById(`content-${id}`);
+        if (btn) btn.classList.remove("active");
+        if (content) content.classList.add("hidden");
+    });
 
-    // Contents
-    document.getElementById("content-manage").classList.add("hidden");
-    document.getElementById("content-practice").classList.add("hidden");
-    const statsContent = document.getElementById("content-stats");
-    if (statsContent) statsContent.classList.add("hidden");
-    document.getElementById(`content-${tabId}`).classList.remove("hidden");
+    const activeBtn = document.getElementById(`tab-${tabId}`);
+    const activeContent = document.getElementById(`content-${tabId}`);
+    if (activeBtn) activeBtn.classList.add("active");
+    if (activeContent) activeContent.classList.remove("hidden");
 
     if (tabId === "practice") {
         if (currentCardMode === "trial") {
@@ -382,6 +382,92 @@ function switchTab(tabId) {
         }
     } else if (tabId === "stats") {
         renderStatsDashboard();
+    } else if (tabId === "chapters") {
+        renderChaptersTab();
+    }
+}
+
+// Chapters Tab Renderer
+function renderChaptersTab() {
+    const container = document.getElementById("chapters-grid-container");
+    if (!container) return;
+
+    if (appChapters.length === 0) {
+        container.innerHTML = `<p class="upload-desc">No chapters created yet. Click "Add Chapter" to create one!</p>`;
+        return;
+    }
+
+    container.innerHTML = "";
+    appChapters.forEach(ch => {
+        const card = document.createElement("div");
+        card.className = "chapter-card animate-fade-in";
+        card.innerHTML = `
+            <div class="chapter-card-header">
+                <div class="chapter-card-title"><i data-lucide="folder" style="margin-right:6px;"></i> ${escapeHTML(ch.name)}</div>
+                <span class="chapter-card-count">${ch.word_count || 0} words</span>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-top:8px;">${escapeHTML(ch.description || "No description provided.")}</p>
+            <div style="margin-top:16px; display:flex; gap:8px;">
+                <button type="button" class="secondary-btn btn-sm" style="flex:1;" onclick="filterByChapter('${escapeJS(ch.name)}')">
+                    <i data-lucide="filter"></i> View Words
+                </button>
+            </div>
+        `;
+        container.appendChild(card);
+    });
+
+    if (window.lucide) lucide.createIcons();
+}
+
+function filterByChapter(chapterName) {
+    selectedFilterChapter = chapterName;
+    const filterSelect = document.getElementById("filter-chapter-select");
+    if (filterSelect) filterSelect.value = chapterName;
+    switchTab("manage");
+    handleSearch();
+}
+
+// Add Chapter Modal Functions
+function openAddChapterModal() {
+    const modal = document.getElementById("add-chapter-modal");
+    if (modal) modal.classList.add("open");
+}
+
+function closeAddChapterModal() {
+    const modal = document.getElementById("add-chapter-modal");
+    if (modal) modal.classList.remove("open");
+}
+
+async function handleAddChapterSubmit(event) {
+    event.preventDefault();
+    const nameInput = document.getElementById("chapter-name-input");
+    const descInput = document.getElementById("chapter-desc-input");
+    if (!nameInput) return;
+
+    const name = nameInput.value.trim();
+    const description = descInput ? descInput.value.trim() : "";
+
+    if (!name) return;
+
+    try {
+        const response = await fetch("/api/chapters", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ name, description })
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || "Failed to create chapter");
+
+        nameInput.value = "";
+        if (descInput) descInput.value = "";
+        closeAddChapterModal();
+
+        showToast(`Successfully created chapter '${name}'!`, "success");
+        await fetchChapters();
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
     }
 }
 
