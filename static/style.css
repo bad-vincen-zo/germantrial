@@ -419,7 +419,6 @@ i[data-lucide] {
     width: 270px;
     min-width: 270px;
     background: var(--bg-card);
-    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
     display: flex;
     flex-direction: column;
     padding: 30px 20px;
@@ -435,7 +434,7 @@ i[data-lucide] {
 .sidebar-menu {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: 12px;
     flex: 1;
     position: relative;
 }
@@ -449,7 +448,7 @@ i[data-lucide] {
     font-size: 0.95rem;
     font-weight: 700;
     padding: 14px 20px;
-    border-radius: 25px 0 0 25px;
+    border-radius: 20px 0 0 20px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -475,17 +474,17 @@ i[data-lucide] {
     transform: translateX(3px);
 }
 
-/* Active Merged Tab styling with Inverse Rounded Concave Curves */
+/* Continuous Merged Active Tab with Smooth Inverse Curves */
 .sidebar-tab-btn.active {
-    background: var(--bg-main);
-    color: var(--accent-primary);
+    background: var(--bg-main) !important;
+    color: var(--accent-primary) !important;
     font-weight: 800;
-    border-radius: 25px 0 0 25px;
+    border-radius: 20px 0 0 20px;
     margin-right: -20px;
     width: calc(100% + 20px);
     padding-left: 24px;
     z-index: 5;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.08);
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.04);
 }
 
 .sidebar-tab-btn.active i,
@@ -502,9 +501,9 @@ i[data-lucide] {
     right: 0;
     width: 20px;
     height: 20px;
-    background: transparent;
+    background: var(--bg-card);
     border-bottom-right-radius: 20px;
-    box-shadow: 8px 8px 0 8px var(--bg-main);
+    box-shadow: none;
     pointer-events: none;
 }
 
@@ -516,9 +515,9 @@ i[data-lucide] {
     right: 0;
     width: 20px;
     height: 20px;
-    background: transparent;
+    background: var(--bg-card);
     border-top-right-radius: 20px;
-    box-shadow: 8px -8px 0 8px var(--bg-main);
+    box-shadow: none;
     pointer-events: none;
 }
 
@@ -2150,4 +2149,24 @@ html.light-theme {
     justify-content: flex-end;
     gap: 12px;
     margin-top: 24px;
+}
+
+/* Light Mode Merged Dashboard Active Tab Overrides */
+[data-theme="light"] .dashboard-sidebar {
+    background: #e2e8f0;
+}
+
+[data-theme="light"] .main-side {
+    background: #f1f5f9;
+}
+
+[data-theme="light"] .sidebar-tab-btn.active {
+    background: #f1f5f9 !important;
+    color: #4f46e5 !important;
+    box-shadow: -3px 0 8px rgba(0, 0, 0, 0.04);
+}
+
+[data-theme="light"] .sidebar-tab-btn.active::before,
+[data-theme="light"] .sidebar-tab-btn.active::after {
+    background: #e2e8f0 !important;
 }
