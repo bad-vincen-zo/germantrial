@@ -2030,42 +2030,44 @@ html.light-theme {
     color: #ffffff !important;
 }
 
-/* Comprehensive Light Theme Neumorphic Overrides */
+/* Comprehensive Light Theme Neumorphic Overrides (Pure Crisp Slate & White) */
 [data-theme="light"] select,
 [data-theme="light"] input[type="text"],
 [data-theme="light"] input[type="password"],
 [data-theme="light"] input[type="email"] {
-    background: #DAF1DE;
-    color: #163832;
+    background: #e2e8f0;
+    color: #1e293b;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: inset 4px 4px 9px #b5d8bc, inset -4px -4px 9px #ffffff;
+    box-shadow: inset 4px 4px 9px #cbd5e1, inset -4px -4px 9px #ffffff;
 }
 
 [data-theme="light"] .dropzone {
-    background: #DAF1DE;
-    border: 2px dashed #8EB69B;
-    box-shadow: inset 4px 4px 9px #b5d8bc, inset -4px -4px 9px #ffffff;
+    background: #e2e8f0;
+    border: 2px dashed #818cf8;
+    box-shadow: inset 4px 4px 9px #cbd5e1, inset -4px -4px 9px #ffffff;
 }
 
 [data-theme="light"] .dropzone:hover {
-    border-color: #235347;
-    background: #ccebd1;
+    border-color: #4f46e5;
+    background: #edf2fa;
 }
 
 [data-theme="light"] .glass-card,
 [data-theme="light"] .modal-content,
 [data-theme="light"] .stat-card,
 [data-theme="light"] .chapter-card {
-    background: #DAF1DE;
+    background: #f8fafc;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 10px 10px 24px #b5d8bc, -10px -10px 24px #ffffff;
+    box-shadow: 10px 10px 24px #cbd5e1, -10px -10px 24px #ffffff;
 }
 
 [data-theme="light"] .select-counter-badge,
-[data-theme="light"] .deck-badge {
-    background: #DAF1DE;
-    color: #163832;
-    box-shadow: inset 3px 3px 7px #b5d8bc, inset -3px -3px 7px #ffffff;
+[data-theme="light"] .deck-badge,
+[data-theme="light"] .chapter-tag,
+[data-theme="light"] .chapter-card-count {
+    background: #e2e8f0;
+    color: #4f46e5;
+    box-shadow: inset 3px 3px 7px #cbd5e1, inset -3px -3px 7px #ffffff;
 }
 
 [data-theme="light"] .control-label {
