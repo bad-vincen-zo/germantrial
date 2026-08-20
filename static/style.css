@@ -2196,16 +2196,18 @@ html.light-theme {
     opacity: 1;
 }
 
+[data-theme="light"] body,
+[data-theme="light"] .app-layout,
 [data-theme="light"] .main-side,
 [data-theme="light"] .main-content-area {
-    background: #f8fafc !important;
+    background: #f0f3f8 !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-/* EXCEPT Selected Active Item: Merges into Light Main Side (#f8fafc) */
+/* EXCEPT Selected Active Item: Merges into Light Main Side (#f0f3f8) */
 [data-theme="light"] .sidebar-tab-btn.active {
-    background: #f8fafc !important;
+    background: #f0f3f8 !important;
     color: #4f46e5 !important;
     box-shadow: none !important;
 }
