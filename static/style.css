@@ -3,55 +3,51 @@
    ========================================================================== */
 
 :root {
-    /* Color Palette - Dark Neumorphism */
-    --bg-main: #1c202b;
-    --bg-card: #1c202b;
-    --bg-input: #1c202b;
-
+    /* Color Palette - Modern Fashionable Dark System */
+    --bg-main: #0b0f19;
+    --bg-card: #161f33;
+    --bg-input: #111827;
+    
+    /* Dashboard Purple Gradient */
+    --dashboard-bg: linear-gradient(180deg, #4f46e5 0%, #4338ca 100%);
+    
     /* Neumorphic Shadow Physics (Dark Mode) */
-    --neu-shadow-extruded: 8px 8px 18px #13161e, -8px -8px 18px #252a38;
-    --neu-shadow-extruded-hover: 12px 12px 24px #11131b, -12px -12px 24px #272d3b;
-    --neu-shadow-extruded-sm: 4px 4px 10px #13161e, -4px -4px 10px #252a38;
-    --neu-shadow-inset: inset 4px 4px 9px #13161e, inset -4px -4px 9px #252a38;
-    --neu-shadow-inset-deep: inset 6px 6px 12px #11131b, inset -6px -6px 12px #272d3b;
-
-    /* Accent Colors - Soft Modern Palette */
-    --accent-primary: #6366f1;
-    /* Soft Indigo */
+    --neu-shadow-extruded: 10px 10px 24px #070910, -10px -10px 24px #1b263e;
+    --neu-shadow-extruded-hover: 14px 14px 30px #06080e, -14px -14px 30px #1e2c48;
+    --neu-shadow-extruded-sm: 5px 5px 12px #070910, -5px -5px 12px #1b263e;
+    --neu-shadow-inset: inset 4px 4px 9px #070910, inset -4px -4px 9px #1b263e;
+    --neu-shadow-inset-deep: inset 6px 6px 14px #05070c, inset -6px -6px 14px #1e2c48;
+    
+    /* Accent Colors - Ultra Modern High-Fashion Palette */
+    --accent-primary: #6366f1;   /* Vibrant Indigo */
     --accent-primary-hover: #4f46e5;
-    --accent-secondary: #06b6d4;
-    /* Soft Cyan */
-    --accent-success: #10b981;
-    /* Soft Emerald */
-    --accent-warning: #f59e0b;
-    /* Soft Amber */
-    --accent-danger: #f43f5e;
-    /* Soft Rose */
-
-    /* Gender Color Coding (Soft Neumorphic Tints) */
-    --color-der: #3b82f6;
-    /* Masculine Blue */
-    --color-die: #ec4899;
-    /* Feminine Pink */
-    --color-das: #10b981;
-    /* Neuter Green */
-
+    --accent-primary-gradient: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
+    --accent-secondary: #06b6d4; /* Soft Electric Cyan */
+    --accent-success: #10b981;   /* Emerald Green */
+    --accent-warning: #f59e0b;   /* Bright Amber */
+    --accent-danger: #f43f5e;    /* Coral Rose */
+    
+    /* Gender Color Coding */
+    --color-der: #3b82f6;        /* Masculine Sky Blue */
+    --color-die: #ec4899;        /* Feminine Vibrant Pink */
+    --color-das: #10b981;        /* Neuter Emerald */
+    
     /* Text Hierarchy */
-    --text-primary: #f1f5f9;
+    --text-primary: #f8fafc;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
-
+    
     /* Typography */
     --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-
+    
     /* Radius & Spacing */
     --border-radius-xl: 24px;
     --border-radius-lg: 18px;
     --border-radius-md: 12px;
     --border-radius-sm: 8px;
     --border-radius-pill: 50px;
-
+    
     /* Smooth Physics Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     --transition-fast: all 0.18s ease;
