@@ -3,39 +3,39 @@
    ========================================================================== */
 
 :root {
-    /* Color Palette - Forest Mint & Sage Palette from Swatch Image */
-    --bg-main: #051F20;        /* Deepest Forest Midnight */
-    --bg-card: #0B2B26;        /* Dark Emerald Card Base */
-    --bg-input: #163832;       /* Deep Sage Input Base */
+    /* Color Palette - Premium Slate & Indigo Neumorphic System */
+    --bg-main: #0f172a;        /* Dark Slate 900 */
+    --bg-card: #1e293b;        /* Dark Slate 800 Card Base */
+    --bg-input: #0f172a;       /* Deep Input Base */
     
     /* Dashboard Sidebar Color */
-    --dashboard-bg: #235347;    /* Forest Green Dashboard */
+    --dashboard-bg: #4f46e5;    /* Vibrant Indigo-Purple Dashboard */
     
     /* Neumorphic Soft UI Physics (Dark Mode) */
-    --neu-shadow-extruded: 10px 10px 22px #020d0e, -10px -10px 22px #0d3b34;
-    --neu-shadow-extruded-hover: 14px 14px 28px #01090a, -14px -14px 28px #0f453d;
-    --neu-shadow-extruded-sm: 5px 5px 12px #020d0e, -5px -5px 12px #0d3b34;
-    --neu-shadow-inset: inset 4px 4px 10px #020d0e, inset -4px -4px 10px #0d3b34;
-    --neu-shadow-inset-deep: inset 6px 6px 14px #01090a, inset -6px -6px 14px #0f453d;
+    --neu-shadow-extruded: 10px 10px 24px #090e1a, -10px -10px 24px #15203c;
+    --neu-shadow-extruded-hover: 14px 14px 30px #070b14, -14px -14px 30px #172444;
+    --neu-shadow-extruded-sm: 5px 5px 12px #090e1a, -5px -5px 12px #15203c;
+    --neu-shadow-inset: inset 4px 4px 10px #090e1a, inset -4px -4px 10px #15203c;
+    --neu-shadow-inset-deep: inset 6px 6px 14px #070b14, inset -6px -6px 14px #172444;
     
-    /* Accent Colors - Forest Mint Swatch System */
-    --accent-primary: #8EB69B;   /* Soft Mint Green Accent */
-    --accent-primary-hover: #DAF1DE;
-    --accent-primary-gradient: linear-gradient(135deg, #235347 0%, #163832 100%);
-    --accent-secondary: #8EB69B; /* Soft Mint */
-    --accent-success: #8EB69B;   /* Mint Emerald */
-    --accent-warning: #8EB69B;   /* Mint Accent */
-    --accent-danger: #8EB69B;    /* Mint Accent */
+    /* Accent Colors - High-Fashion Indigo & Purple Palette */
+    --accent-primary: #818cf8;   /* Soft Indigo Accent */
+    --accent-primary-hover: #6366f1;
+    --accent-primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    --accent-secondary: #38bdf8; /* Sky Blue Accent */
+    --accent-success: #34d399;   /* Mint Teal */
+    --accent-warning: #fbbf24;   /* Amber */
+    --accent-danger: #f87171;    /* Rose Red */
     
     /* Gender Color Coding */
-    --color-der: #8EB69B;        /* Mint Green */
-    --color-die: #DAF1DE;        /* Pale Mint */
-    --color-das: #235347;        /* Forest Green */
+    --color-der: #38bdf8;        /* Masculine Sky Blue */
+    --color-die: #f472b6;        /* Feminine Pink */
+    --color-das: #34d399;        /* Neuter Teal */
     
     /* Text Hierarchy */
-    --text-primary: #DAF1DE;     /* Pale Mint Light Text */
-    --text-secondary: #8EB69B;   /* Mint Accent Secondary Text */
-    --text-muted: #628873;       /* Muted Sage Text */
+    --text-primary: #f8fafc;     /* Clean Light Slate Text */
+    --text-secondary: #94a3b8;   /* Soft Slate Text */
+    --text-muted: #64748b;       /* Muted Text */
     
     /* Typography */
     --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
@@ -414,7 +414,7 @@ i[data-lucide] {
 .sidebar-nav {
     width: 270px;
     min-width: 270px;
-    background: #235347;
+    background: #4f46e5;
     display: flex;
     flex-direction: column;
     padding: 30px 0 30px 20px;
@@ -2149,52 +2149,52 @@ html.light-theme {
     margin-top: 24px;
 }
 
-/* Light Mode Merged Dashboard Active Tab Overrides (Forest Mint Swatch System) */
+/* Light Mode Merged Dashboard Active Tab Overrides (Slate & Indigo Neumorphic System) */
 [data-theme="light"] .dashboard-sidebar {
-    background: #235347 !important;
+    background: #4f46e5 !important;
     box-shadow: none !important;
     border: none !important;
 }
 
 [data-theme="light"] .dashboard-sidebar .sidebar-brand h1 {
-    color: #DAF1DE !important;
+    color: #ffffff !important;
     background: none !important;
-    -webkit-text-fill-color: #DAF1DE !important;
+    -webkit-text-fill-color: #ffffff !important;
 }
 
 [data-theme="light"] .dashboard-sidebar .sidebar-brand .subtitle {
-    color: #8EB69B !important;
+    color: rgba(255, 255, 255, 0.7) !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn {
-    color: #DAF1DE !important;
+    color: rgba(255, 255, 255, 0.8) !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn i,
 [data-theme="light"] .sidebar-tab-btn svg {
-    color: #8EB69B !important;
+    color: #ffffff !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn:hover:not(.active) {
-    color: #DAF1DE !important;
-    background: rgba(255, 255, 255, 0.1) !important;
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.15) !important;
 }
 
 [data-theme="light"] .main-side,
 [data-theme="light"] .main-content-area {
-    background: #DAF1DE !important;
+    background: #f8fafc !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-/* EXCEPT Selected Active Item: Merges into Light Main Side (#DAF1DE) */
+/* EXCEPT Selected Active Item: Merges into Light Main Side (#f8fafc) */
 [data-theme="light"] .sidebar-tab-btn.active {
-    background: #DAF1DE !important;
-    color: #163832 !important;
+    background: #f8fafc !important;
+    color: #4f46e5 !important;
     box-shadow: none !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn.active i,
 [data-theme="light"] .sidebar-tab-btn.active svg {
-    color: #163832 !important;
+    color: #4f46e5 !important;
 }
