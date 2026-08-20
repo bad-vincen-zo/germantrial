@@ -3,54 +3,54 @@
    ========================================================================== */
 
 :root {
-    /* Color Palette - Premium Slate & Indigo Neumorphic System */
-    --bg-main: #0f172a;        /* Dark Slate 900 */
-    --bg-card: #1e293b;        /* Dark Slate 800 Card Base */
-    --bg-input: #0f172a;       /* Deep Input Base */
+    /* Color Palette - Ultra-Clean Minimalist System */
+    --bg-main: #090d16;        /* Deep Minimalist Slate */
+    --bg-card: #0f172a;        /* Clean Minimal Card Base */
+    --bg-input: #1e293b;       /* Soft Flat Input Base */
     
     /* Dashboard Sidebar Color */
-    --dashboard-bg: #4f46e5;    /* Vibrant Indigo-Purple Dashboard */
+    --dashboard-bg: #4f46e5;    /* Minimal Indigo Dashboard */
     
-    /* Neumorphic Soft UI Physics (Dark Mode) */
-    --neu-shadow-extruded: 10px 10px 24px #090e1a, -10px -10px 24px #15203c;
-    --neu-shadow-extruded-hover: 14px 14px 30px #070b14, -14px -14px 30px #172444;
-    --neu-shadow-extruded-sm: 5px 5px 12px #090e1a, -5px -5px 12px #15203c;
-    --neu-shadow-inset: inset 4px 4px 10px #090e1a, inset -4px -4px 10px #15203c;
-    --neu-shadow-inset-deep: inset 6px 6px 14px #070b14, inset -6px -6px 14px #172444;
+    /* Minimalist Soft Elevation Physics (Dark Mode) */
+    --neu-shadow-extruded: 0 4px 12px rgba(0, 0, 0, 0.2);
+    --neu-shadow-extruded-hover: 0 8px 20px rgba(0, 0, 0, 0.28);
+    --neu-shadow-extruded-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
+    --neu-shadow-inset: none;
+    --neu-shadow-inset-deep: none;
     
-    /* Accent Colors - High-Fashion Indigo & Purple Palette */
-    --accent-primary: #818cf8;   /* Soft Indigo Accent */
+    /* Accent Colors - Crisp Minimal Palette */
+    --accent-primary: #818cf8;   /* Indigo Accent */
     --accent-primary-hover: #6366f1;
-    --accent-primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
-    --accent-secondary: #38bdf8; /* Sky Blue Accent */
-    --accent-success: #38bdf8;   /* Sky Blue Accent */
+    --accent-primary-gradient: #4f46e5;
+    --accent-secondary: #38bdf8; /* Sky Blue */
+    --accent-success: #38bdf8;   /* Sky Blue */
     --accent-warning: #fbbf24;   /* Amber */
     --accent-danger: #f87171;    /* Rose Red */
     
     /* Gender Color Coding */
-    --color-der: #38bdf8;        /* Masculine Sky Blue */
-    --color-die: #f472b6;        /* Feminine Pink */
-    --color-das: #a855f7;        /* Neuter Violet */
+    --color-der: #38bdf8;        /* Sky Blue */
+    --color-die: #f472b6;        /* Pink */
+    --color-das: #a855f7;        /* Violet */
     
     /* Text Hierarchy */
-    --text-primary: #f8fafc;     /* Clean Light Slate Text */
-    --text-secondary: #94a3b8;   /* Soft Slate Text */
-    --text-muted: #64748b;       /* Muted Text */
+    --text-primary: #f8fafc;     /* Clean Slate Text */
+    --text-secondary: #94a3b8;   /* Soft Muted Text */
+    --text-muted: #64748b;       /* Light Muted Text */
     
     /* Typography */
-    --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
+    --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     
-    /* Radius & Spacing */
-    --border-radius-xl: 24px;
-    --border-radius-lg: 18px;
-    --border-radius-md: 12px;
-    --border-radius-sm: 8px;
+    /* Minimal Radius & Spacing */
+    --border-radius-xl: 16px;
+    --border-radius-lg: 14px;
+    --border-radius-md: 10px;
+    --border-radius-sm: 6px;
     --border-radius-pill: 50px;
     
-    /* Smooth Physics Transitions */
-    --transition-smooth: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
-    --transition-fast: all 0.18s ease;
+    /* Smooth Transitions */
+    --transition-smooth: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+    --transition-fast: all 0.12s ease;
 }
 
 /* Reset & Base Styles */
@@ -2030,44 +2030,53 @@ html.light-theme {
     color: #ffffff !important;
 }
 
-/* Comprehensive Light Theme Neumorphic Overrides (Pure Crisp Slate & White) */
+/* Comprehensive Light Theme Minimalist Overrides (Crisp Minimal White & Slate) */
 [data-theme="light"] select,
 [data-theme="light"] input[type="text"],
 [data-theme="light"] input[type="password"],
 [data-theme="light"] input[type="email"] {
-    background: #e2e8f0;
-    color: #1e293b;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: inset 4px 4px 9px #cbd5e1, inset -4px -4px 9px #ffffff;
+    background: #ffffff;
+    color: #0f172a;
+    border: 1px solid #cbd5e1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="light"] select:focus,
+[data-theme="light"] input[type="text"]:focus,
+[data-theme="light"] input[type="password"]:focus,
+[data-theme="light"] input[type="email"]:focus {
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
 }
 
 [data-theme="light"] .dropzone {
-    background: #e2e8f0;
-    border: 2px dashed #818cf8;
-    box-shadow: inset 4px 4px 9px #cbd5e1, inset -4px -4px 9px #ffffff;
+    background: #f8fafc;
+    border: 2px dashed #cbd5e1;
+    box-shadow: none;
 }
 
 [data-theme="light"] .dropzone:hover {
     border-color: #4f46e5;
-    background: #edf2fa;
+    background: #f1f5f9;
 }
 
 [data-theme="light"] .glass-card,
 [data-theme="light"] .modal-content,
 [data-theme="light"] .stat-card,
 [data-theme="light"] .chapter-card {
-    background: #f8fafc;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 10px 10px 24px #cbd5e1, -10px -10px 24px #ffffff;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
 }
 
 [data-theme="light"] .select-counter-badge,
 [data-theme="light"] .deck-badge,
 [data-theme="light"] .chapter-tag,
 [data-theme="light"] .chapter-card-count {
-    background: #e2e8f0;
+    background: #f1f5f9;
     color: #4f46e5;
-    box-shadow: inset 3px 3px 7px #cbd5e1, inset -3px -3px 7px #ffffff;
+    border: 1px solid #e2e8f0;
+    box-shadow: none;
 }
 
 [data-theme="light"] .control-label {
