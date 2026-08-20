@@ -490,9 +490,9 @@ i[data-lucide] {
     transform: translateX(3px);
 }
 
-/* Active Merged Tab: Solid White Background matching White Main Workspace */
+/* Active Merged Tab: #f3f5fa Background matching Main Workspace */
 .sidebar-tab-btn.active {
-    background: #ffffff !important;
+    background: #f3f5fa !important;
     color: #4f46e5 !important;
     font-weight: 800;
     border-radius: 25px 0 0 25px;
@@ -2199,14 +2199,14 @@ html.light-theme {
 [data-theme="light"] .app-layout,
 [data-theme="light"] .main-side,
 [data-theme="light"] .main-content-area {
-    background: #f0f3f8 !important;
+    background: #f3f5fa !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-/* EXCEPT Selected Active Item: Merges into Light Main Side (#f0f3f8) */
+/* EXCEPT Selected Active Item: Merges into Light Main Side (#f3f5fa) */
 [data-theme="light"] .sidebar-tab-btn.active {
-    background: #f0f3f8 !important;
+    background: #f3f5fa !important;
     color: #4f46e5 !important;
     box-shadow: none !important;
 }
