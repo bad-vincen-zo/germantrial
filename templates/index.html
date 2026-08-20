@@ -5,12 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>German Vocabulary Builder</title>
     <meta name="description" content="A premium, interactive web application to build and practice your German vocabulary.">
-    <!-- Google Fonts: Inter & Space Grotesk for modern headings -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇩🇪</text></svg>">
+    <!-- Google Fonts: Plus Jakarta Sans, Outfit, and Inter for Neumorphic Aesthetic -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <!-- Custom styling -->
-    <link rel="stylesheet" href="/static/style.css?v=2">
+    <link rel="stylesheet" href="/static/style.css?v=18">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -19,6 +20,12 @@
     <div class="app-container">
         <!-- Header -->
         <header class="app-header">
+            <div class="header-top-bar">
+                <button class="theme-toggle-btn" id="theme-toggle-btn" type="button" title="Switch Light/Dark Theme" onclick="toggleTheme()">
+                    <span id="theme-icon-container"><i data-lucide="sun"></i></span>
+                    <span id="theme-text">Light Mode</span>
+                </button>
+            </div>
             <div class="logo-area">
                 <div class="flag-icon">🇩🇪</div>
                 <h1>Wortschatz</h1>
@@ -65,36 +72,101 @@
             <button class="tab-btn" id="tab-practice" onclick="switchTab('practice')">
                 <i data-lucide="play-circle"></i> Flashcards
             </button>
+            <button class="tab-btn" id="tab-stats" onclick="switchTab('stats')">
+                <i data-lucide="bar-chart-2"></i> Practice Stats
+            </button>
         </nav>
 
         <!-- Tab Content: Manage Words -->
         <main class="tab-content" id="content-manage">
             <div class="vocab-grid">
-                <!-- Add Word Panel -->
-                <div class="glass-card add-panel">
-                    <h2>Add New Vocabulary</h2>
-                    <form id="add-word-form" onsubmit="handleAddWord(event)">
-                        <div class="input-group">
-                            <label for="german-input">German Word / Phrase</label>
-                            <input type="text" id="german-input" required placeholder="e.g., die Flasche, passen">
+                <!-- Left Stack: Add Single Word & Batch Import -->
+                <div class="left-panel-stack">
+                    <!-- Add Word Panel -->
+                    <div class="glass-card add-panel">
+                        <h2>Add Single Word</h2>
+                        <form id="add-word-form" onsubmit="handleAddWord(event)">
+                            <div class="input-group">
+                                <label for="german-input">German Word / Phrase</label>
+                                <input type="text" id="german-input" required placeholder="e.g., die Flasche, passen">
+                            </div>
+                            <div class="input-group">
+                                <label for="english-input">English Meaning</label>
+                                <input type="text" id="english-input" required placeholder="e.g., bottle, to match">
+                            </div>
+                            <div class="input-group">
+                                <label for="add-chapter-select">Chapter</label>
+                                <select id="add-chapter-select" style="width: 100%; padding: 10px 14px; font-weight: 700;">
+                                    <option value="General">General</option>
+                                </select>
+                            </div>
+                            <button type="submit" class="primary-btn">
+                                <i data-lucide="plus-circle"></i> Add Word
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Batch Import Panel -->
+                    <div class="glass-card upload-panel">
+                        <div class="import-header">
+                            <h2>Batch Import</h2>
+                            <div class="import-tab-bar">
+                                <button type="button" class="import-subtab-btn active" id="import-subtab-file" onclick="switchImportSubTab('file')">
+                                    <i data-lucide="file-up"></i> .TXT File
+                                </button>
+                                <button type="button" class="import-subtab-btn" id="import-subtab-text" onclick="switchImportSubTab('text')">
+                                    <i data-lucide="clipboard-type"></i> Paste Text
+                                </button>
+                            </div>
                         </div>
-                        <div class="input-group">
-                            <label for="english-input">English Meaning</label>
-                            <input type="text" id="english-input" required placeholder="e.g., bottle, to match">
+
+                        <!-- Sub-section 1: .TXT File -->
+                        <div class="import-section" id="import-section-file">
+                            <p class="upload-desc">Select or drop a <code>.txt</code> file formatted as <code>German / English</code>.</p>
+                            <form id="upload-txt-form" onsubmit="handleFileUpload(event)">
+                                <div class="dropzone" id="dropzone" onclick="document.getElementById('txt-file-input').click()">
+                                    <input type="file" id="txt-file-input" accept=".txt" style="display:none" onchange="handleFileSelected(event)">
+                                    <div class="dropzone-content">
+                                        <div class="dropzone-icon-wrapper">
+                                            <i data-lucide="file-up" class="dropzone-icon"></i>
+                                        </div>
+                                        <span class="dropzone-title" id="dropzone-filename">Choose or drag .txt file</span>
+                                        <span class="dropzone-sub">Extracts first term before comma <code>,</code></span>
+                                    </div>
+                                </div>
+                                <button type="submit" class="secondary-btn upload-btn" id="upload-submit-btn" disabled style="width:100%;">
+                                    <i data-lucide="upload-cloud"></i> Upload &amp; Import
+                                </button>
+                            </form>
                         </div>
-                        <button type="submit" class="primary-btn">
-                            <i data-lucide="plus-circle"></i> Add Word
-                        </button>
-                    </form>
+
+                        <!-- Sub-section 2: Paste Text -->
+                        <div class="import-section" id="import-section-text" style="display: none;">
+                            <p class="upload-desc">Paste multi-line text formatted as <code>German / English</code>.</p>
+                            <form id="paste-text-form" onsubmit="handleTextImport(event)">
+                                <div class="input-group">
+                                    <textarea id="raw-text-input" rows="4" required placeholder="guten Morgen / good morning&#10;die Flasche / bottle" style="width:100%; font-family:inherit; resize:vertical; padding:10px; border-radius:var(--border-radius-sm); border:1px solid var(--border-color); font-size:0.85rem; outline:none; margin-bottom:8px;"></textarea>
+                                </div>
+                                <button type="submit" class="secondary-btn upload-btn" id="text-import-submit-btn" style="width:100%;">
+                                    <i data-lucide="check-circle-2"></i> Parse &amp; Import Text
+                                </button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
 
-                <!-- Vocabulary List Panel -->
+                <!-- Right Side: Vocabulary List Panel -->
                 <div class="glass-card list-panel">
-                    <div class="list-header">
+                    <div class="list-header" style="flex-wrap: wrap; gap: 12px;">
                         <h2>My Vocabulary</h2>
-                        <div class="search-box">
-                            <i data-lucide="search"></i>
-                            <input type="text" id="search-input" placeholder="Search German or English..." oninput="handleSearch()">
+                        <div style="display: flex; gap: 10px; flex: 1; min-width: 280px; align-items: center; justify-content: flex-end;">
+                            <select id="filter-chapter-select" style="padding: 8px 12px; font-weight: 700; color: var(--accent-primary);" onchange="handleChapterFilterChange(this)">
+                                <option value="All">All Chapters</option>
+                            </select>
+                            <div class="search-box" style="flex: 1; max-width: 240px;">
+                                <i data-lucide="search"></i>
+                                <input type="text" id="search-input" placeholder="Search German or English..." oninput="handleSearch()">
+                            </div>
                         </div>
                     </div>
 
@@ -104,6 +176,7 @@
                                 <tr>
                                     <th>German</th>
                                     <th>English</th>
+                                    <th>Chapter</th>
                                     <th>Pronounce</th>
                                     <th class="actions-col">Actions</th>
                                 </tr>
@@ -113,8 +186,10 @@
                             </tbody>
                         </table>
                         <div class="empty-state" id="empty-state" style="display: none;">
-                            <i data-lucide="folder-open"></i>
-                            <p>No vocabulary words found. Add some above!</p>
+                            <div class="empty-state-icon-plate">
+                                <i data-lucide="folder-open"></i>
+                            </div>
+                            <p>No vocabulary words found. Add some on the left!</p>
                         </div>
                     </div>
                 </div>
@@ -124,70 +199,285 @@
         <!-- Tab Content: Flashcard Practice -->
         <main class="tab-content hidden" id="content-practice">
             <div class="practice-container">
-                <div class="practice-controls-top">
-                    <!-- Practice Options -->
-                    <div class="practice-options">
-                        <div class="control-group">
-                            <span class="control-label">Study Direction:</span>
-                            <select id="study-direction" onchange="resetQuiz()">
-                                <option value="de-en">German ➔ English</option>
-                                <option value="en-de">English ➔ German</option>
-                            </select>
-                        </div>
-                        <div class="control-group">
-                            <label class="switch-container">
-                                <input type="checkbox" id="direct-assess-toggle" onchange="handleDirectAssessToggle()">
-                                <span class="switch-slider"></span>
-                                <span class="control-label">Assess without flipping</span>
-                            </label>
-                        </div>
+                <!-- Mode Selector Header -->
+                <div class="mode-selector-bar">
+                    <div class="mode-pills">
+                        <button class="mode-tab-btn active" id="mode-btn-trial" onclick="switchCardMode('trial')">
+                            <i data-lucide="layers"></i> Trial Cards
+                        </button>
+                        <button class="mode-tab-btn" id="mode-btn-practice" onclick="switchCardMode('practice')">
+                            <i data-lucide="target"></i> Practice Cards (Deck of 10)
+                        </button>
                     </div>
-                    <button class="secondary-btn btn-sm" onclick="resetQuiz()">
-                        <i data-lucide="rotate-ccw"></i> Restart
-                    </button>
                 </div>
 
-                <div class="flashcard-wrapper">
-                    <!-- Flippable Card -->
-                    <div class="flashcard" id="flashcard" onclick="flipCard()">
-                        <!-- Front Side -->
-                        <div class="card-face card-front">
-                            <div class="card-badge">GERMAN</div>
-                            <div class="card-word" id="card-front-word">-</div>
-                            <div class="card-hint">Click to flip & see answer</div>
+                <!-- ── TRIAL CARDS MODE ── -->
+                <div id="trial-mode-container">
+                    <div class="practice-controls-top">
+                        <!-- Practice Options -->
+                        <div class="practice-options">
+                            <div class="control-group">
+                                <span class="control-label">Study Direction:</span>
+                                <select id="study-direction" onchange="resetQuiz()">
+                                    <option value="de-en">German ➔ English</option>
+                                    <option value="en-de">English ➔ German</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <label class="switch-container">
+                                    <input type="checkbox" id="direct-assess-toggle" onchange="handleDirectAssessToggle()">
+                                    <span class="switch-slider"></span>
+                                    <span class="control-label">Assess without flipping</span>
+                                </label>
+                            </div>
                         </div>
-                        <!-- Back Side -->
-                        <div class="card-face card-body-back">
-                            <div class="card-badge-back">ENGLISH</div>
-                            <div class="card-word-back" id="card-back-word">-</div>
-                            <div class="card-actions-row">
-                                <button class="tts-btn" onclick="speakGermanWord(event)" title="Listen Pronunciation">
-                                    <i data-lucide="volume-2"></i> Listen
+                        <button class="secondary-btn btn-sm" onclick="resetQuiz()">
+                            <i data-lucide="rotate-ccw"></i> Restart
+                        </button>
+                    </div>
+
+                    <div class="flashcard-wrapper">
+                        <!-- Flippable Card -->
+                        <div class="flashcard" id="flashcard" onclick="flipCard()">
+                            <!-- Front Side -->
+                            <div class="card-face card-front">
+                                <div class="card-badge">GERMAN</div>
+                                <div class="card-word" id="card-front-word">-</div>
+                                <div class="card-hint">Click to flip & see answer</div>
+                            </div>
+                            <!-- Back Side -->
+                            <div class="card-face card-body-back">
+                                <div class="card-badge-back">ENGLISH</div>
+                                <div class="card-word-back" id="card-back-word">-</div>
+                                <div class="card-actions-row">
+                                    <button class="tts-btn" onclick="speakGermanWord(event)" title="Listen Pronunciation">
+                                        <i data-lucide="volume-2"></i> Listen
+                                    </button>
+                                </div>
+                                <div class="card-hint-back">How did you do?</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quiz Progress -->
+                    <div class="quiz-progress-section">
+                        <div class="progress-info">
+                            <span>Card <strong id="current-card-num">0</strong> of <strong id="total-card-num">0</strong></span>
+                        </div>
+                        <div class="progress-bar-container">
+                            <div class="progress-bar-fill" id="quiz-progress-fill" style="width: 0%;"></div>
+                        </div>
+                    </div>
+
+                    <!-- Card Assessment Buttons -->
+                    <div class="assessment-buttons disabled" id="assessment-buttons">
+                        <button class="assessment-btn incorrect" onclick="handleCardReview(false)">
+                            <i data-lucide="x"></i> Forgot it
+                        </button>
+                        <button class="assessment-btn correct" onclick="handleCardReview(true)">
+                            <i data-lucide="check"></i> Got it right!
+                        </button>
+                    </div>
+                </div>
+
+                <!-- ── PRACTICE CARDS MODE (Deck of 10, No Flip) ── -->
+                <div id="practice-mode-container" style="display: none;">
+                    <div class="practice-controls-top">
+                        <div class="practice-options">
+                            <div class="control-group">
+                                <span class="control-label">Study Direction:</span>
+                                <select id="practice-direction" onchange="startNewPracticeDeck()">
+                                    <option value="de-en">German ➔ English</option>
+                                    <option value="en-de">English ➔ German</option>
+                                </select>
+                            </div>
+                            <div class="deck-badge" id="deck-badge-info">Deck 1 • Card 1 of 10</div>
+                        </div>
+                        <button class="secondary-btn btn-sm" onclick="resetPracticeSession()">
+                            <i data-lucide="rotate-ccw"></i> Restart Practice
+                        </button>
+                    </div>
+
+                    <!-- Non-flippable Card View (Active Deck Card) -->
+                    <div id="practice-card-view">
+                        <div class="flashcard-wrapper">
+                            <div class="flashcard static-practice-card">
+                                <div class="card-face card-front">
+                                    <div class="card-badge" id="practice-card-badge">GERMAN</div>
+                                    <div class="card-word" id="practice-front-word">-</div>
+                                    <div class="card-actions-row" style="margin-top: 16px;">
+                                        <button class="tts-btn" onclick="speakPracticeWord(event)" title="Listen Pronunciation">
+                                            <i data-lucide="volume-2"></i> Listen
+                                        </button>
+                                    </div>
+                                    <div class="card-hint" style="margin-top:12px; color: var(--text-muted);">
+                                        Practice Mode • No flipping allowed
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Practice Mode Direct Assessment Buttons ("I don't know" vs "Answered") -->
+                        <div class="assessment-buttons" id="practice-assessment-buttons" style="margin-top: 24px;">
+                            <button type="button" class="assessment-btn incorrect" onclick="handlePracticeAssess(false)">
+                                <i data-lucide="help-circle"></i> I don't know
+                            </button>
+                            <button type="button" class="assessment-btn correct" onclick="handlePracticeAssess(true)">
+                                <i data-lucide="check-circle-2"></i> Answered
+                            </button>
+                        </div>
+
+                        <!-- Deck Progress Bar -->
+                        <div class="quiz-progress-section" style="margin-top: 24px;">
+                            <div class="progress-info">
+                                <span>Progress: Card <strong id="practice-card-num">1</strong> of <strong id="practice-total-num">10</strong></span>
+                            </div>
+                            <div class="progress-bar-container">
+                                <div class="progress-bar-fill" id="practice-progress-fill" style="width: 10%;"></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- End of Deck Summary View -->
+                    <div id="practice-summary-view" style="display: none;">
+                        <div class="glass-card summary-card">
+                            <div class="summary-header">
+                                <h2>Deck Completed! 🎉</h2>
+                                <div class="summary-score-badge" id="summary-score-badge">Score: 0 / 10</div>
+                            </div>
+
+                            <p class="summary-sub">Here are the answers for all 10 cards in this deck:</p>
+
+                            <div class="table-container summary-table-container">
+                                <table class="vocab-table summary-table">
+                                    <thead>
+                                        <tr>
+                                            <th>#</th>
+                                            <th>Prompt Word</th>
+                                            <th>Correct Answer</th>
+                                            <th>Result</th>
+                                            <th>Pronounce</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="summary-table-body">
+                                        <!-- Populated dynamically -->
+                                    </tbody>
+                                </table>
+                            </div>
+
+                            <div class="summary-actions-bar">
+                                <button type="button" class="primary-btn btn-lg" onclick="nextPracticeDeck()">
+                                    <i data-lucide="play"></i> Next Deck (10 Cards)
+                                </button>
+                                <button type="button" class="secondary-btn btn-lg" onclick="resetPracticeSession()">
+                                    <i data-lucide="power"></i> End Practice Session
                                 </button>
                             </div>
-                            <div class="card-hint-back">How did you do?</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Tab Content: Practice Stats Dashboard -->
+        <main class="tab-content hidden" id="content-stats">
+            <div class="stats-dashboard-container">
+                <!-- Overview Cards -->
+                <div class="stats-overview-grid">
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper blue">
+                            <i data-lucide="help-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Total Asked</span>
+                            <span class="stat-value" id="stats-total-asked">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper green">
+                            <i data-lucide="check-circle-2"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Total Right</span>
+                            <span class="stat-value" id="stats-total-correct">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper red">
+                            <i data-lucide="x-circle"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Total Wrong</span>
+                            <span class="stat-value" id="stats-total-wrong">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon-wrapper purple">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Success Rate</span>
+                            <span class="stat-value" id="stats-overall-rate">0%</span>
                         </div>
                     </div>
                 </div>
 
-                <!-- Quiz Progress -->
-                <div class="quiz-progress-section">
-                    <div class="progress-info">
-                        <span>Card <strong id="current-card-num">0</strong> of <strong id="total-card-num">0</strong></span>
+                <!-- Main Stats Panel -->
+                <div class="glass-card stats-panel">
+                    <div class="stats-panel-header">
+                        <h2>Practice Performance Dashboard</h2>
+                        <div class="stats-filter-bar">
+                            <div class="search-box">
+                                <i data-lucide="search"></i>
+                                <input type="text" id="stats-search-input" placeholder="Search word..." oninput="handleStatsSearch()">
+                            </div>
+                            <div class="control-group">
+                                <select id="stats-filter-select" onchange="handleStatsSearch()">
+                                    <option value="all">All Statuses</option>
+                                    <option value="mastered">Mastered (≥80%)</option>
+                                    <option value="practicing">Practicing (50-79%)</option>
+                                    <option value="review">Needs Review (<50%)</option>
+                                    <option value="unpracticed">Unpracticed</option>
+                                </select>
+                            </div>
+                            <div class="control-group">
+                                <span class="control-label">Sort:</span>
+                                <select id="stats-sort-select" onchange="handleStatsSearch()">
+                                    <option value="asked-desc">Times Asked (Highest First)</option>
+                                    <option value="asked-asc">Times Asked (Lowest First)</option>
+                                    <option value="rate-desc">Success Rate (Highest First)</option>
+                                    <option value="rate-asc">Success Rate (Lowest First)</option>
+                                    <option value="name-asc">German Word (A ➔ Z)</option>
+                                </select>
+                            </div>
+                        </div>
                     </div>
-                    <div class="progress-bar-container">
-                        <div class="progress-bar-fill" id="quiz-progress-fill" style="width: 0%;"></div>
-                    </div>
-                </div>
 
-                <!-- Card Assessment Buttons -->
-                <div class="assessment-buttons disabled" id="assessment-buttons">
-                    <button class="assessment-btn incorrect" onclick="handleCardReview(false)">
-                        <i data-lucide="x"></i> Forgot it
-                    </button>
-                    <button class="assessment-btn correct" onclick="handleCardReview(true)">
-                        <i data-lucide="check"></i> Got it right!
-                    </button>
+                    <div class="table-container">
+                        <table class="vocab-table stats-table">
+                            <thead>
+                                <tr>
+                                    <th>German</th>
+                                    <th>English</th>
+                                    <th>Times Asked</th>
+                                    <th>Right</th>
+                                    <th>Wrong</th>
+                                    <th>Success %</th>
+                                    <th>Status</th>
+                                    <th>Listen</th>
+                                </tr>
+                            </thead>
+                            <tbody id="stats-table-body">
+                                <!-- Populated dynamically -->
+                            </tbody>
+                        </table>
+                        <div class="empty-state" id="stats-empty-state" style="display: none;">
+                            <div class="empty-state-icon-plate">
+                                <i data-lucide="bar-chart-2"></i>
+                            </div>
+                            <p>No practice stats found matching your filter.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </main>
@@ -221,6 +511,6 @@
     </div>
 
     <!-- Script Injection -->
-    <script src="/static/app.js?v=2"></script>
+    <script src="/static/app.js?v=18"></script>
 </body>
 </html>
