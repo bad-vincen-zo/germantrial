@@ -3,39 +3,39 @@
    ========================================================================== */
 
 :root {
-    /* Color Palette - Modern Fashionable Dark System */
-    --bg-main: #0b0f19;
-    --bg-card: #161f33;
-    --bg-input: #111827;
+    /* Color Palette - Forest Mint & Sage Palette from Swatch Image */
+    --bg-main: #051F20;        /* Deepest Forest Midnight */
+    --bg-card: #0B2B26;        /* Dark Emerald Card Base */
+    --bg-input: #163832;       /* Deep Sage Input Base */
     
-    /* Dashboard Purple Gradient */
-    --dashboard-bg: linear-gradient(180deg, #4f46e5 0%, #4338ca 100%);
+    /* Dashboard Sidebar Color */
+    --dashboard-bg: #235347;    /* Forest Green Dashboard */
     
     /* Neumorphic Shadow Physics (Dark Mode) */
-    --neu-shadow-extruded: 10px 10px 24px #070910, -10px -10px 24px #1b263e;
-    --neu-shadow-extruded-hover: 14px 14px 30px #06080e, -14px -14px 30px #1e2c48;
-    --neu-shadow-extruded-sm: 5px 5px 12px #070910, -5px -5px 12px #1b263e;
-    --neu-shadow-inset: inset 4px 4px 9px #070910, inset -4px -4px 9px #1b263e;
-    --neu-shadow-inset-deep: inset 6px 6px 14px #05070c, inset -6px -6px 14px #1e2c48;
+    --neu-shadow-extruded: 8px 8px 20px #020d0e, -8px -8px 20px #092c27;
+    --neu-shadow-extruded-hover: 12px 12px 26px #01090a, -12px -12px 26px #0b342f;
+    --neu-shadow-extruded-sm: 4px 4px 10px #020d0e, -4px -4px 10px #092c27;
+    --neu-shadow-inset: inset 4px 4px 9px #020d0e, inset -4px -4px 9px #092c27;
+    --neu-shadow-inset-deep: inset 6px 6px 14px #01090a, inset -6px -6px 14px #0b342f;
     
-    /* Accent Colors - Ultra Modern High-Fashion Palette */
-    --accent-primary: #6366f1;   /* Vibrant Indigo */
-    --accent-primary-hover: #4f46e5;
-    --accent-primary-gradient: linear-gradient(135deg, #6366f1 0%, #4338ca 100%);
-    --accent-secondary: #06b6d4; /* Soft Electric Cyan */
-    --accent-success: #10b981;   /* Emerald Green */
+    /* Accent Colors - Forest Mint Swatch System */
+    --accent-primary: #8EB69B;   /* Soft Mint Green Accent */
+    --accent-primary-hover: #7aa788;
+    --accent-primary-gradient: linear-gradient(135deg, #235347 0%, #163832 100%);
+    --accent-secondary: #8EB69B; /* Soft Mint */
+    --accent-success: #8EB69B;   /* Mint Emerald */
     --accent-warning: #f59e0b;   /* Bright Amber */
     --accent-danger: #f43f5e;    /* Coral Rose */
     
     /* Gender Color Coding */
-    --color-der: #3b82f6;        /* Masculine Sky Blue */
-    --color-die: #ec4899;        /* Feminine Vibrant Pink */
-    --color-das: #10b981;        /* Neuter Emerald */
+    --color-der: #38bdf8;        /* Masculine Sky Blue */
+    --color-die: #f472b6;        /* Feminine Pink */
+    --color-das: #8EB69B;        /* Neuter Mint */
     
     /* Text Hierarchy */
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
+    --text-primary: #DAF1DE;     /* Pale Mint Light Text */
+    --text-secondary: #8EB69B;   /* Mint Accent Secondary Text */
+    --text-muted: #628873;       /* Muted Sage Text */
     
     /* Typography */
     --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
@@ -414,7 +414,7 @@ i[data-lucide] {
 .sidebar-nav {
     width: 270px;
     min-width: 270px;
-    background: #4f46e5;
+    background: #235347;
     display: flex;
     flex-direction: column;
     padding: 30px 0 30px 20px;
@@ -2147,52 +2147,52 @@ html.light-theme {
     margin-top: 24px;
 }
 
-/* Light Mode Merged Dashboard Active Tab Overrides (Inverted Dark Dashboard Panel) */
+/* Light Mode Merged Dashboard Active Tab Overrides (Forest Mint Swatch System) */
 [data-theme="light"] .dashboard-sidebar {
-    background: #4f46e5 !important;
+    background: #235347 !important;
     box-shadow: none !important;
     border: none !important;
 }
 
 [data-theme="light"] .dashboard-sidebar .sidebar-brand h1 {
-    color: #ffffff !important;
+    color: #DAF1DE !important;
     background: none !important;
-    -webkit-text-fill-color: #ffffff !important;
+    -webkit-text-fill-color: #DAF1DE !important;
 }
 
 [data-theme="light"] .dashboard-sidebar .sidebar-brand .subtitle {
-    color: rgba(255, 255, 255, 0.6) !important;
+    color: #8EB69B !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn {
-    color: rgba(241, 245, 249, 0.75) !important;
+    color: #DAF1DE !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn i,
 [data-theme="light"] .sidebar-tab-btn svg {
-    color: rgba(241, 245, 249, 0.85) !important;
+    color: #8EB69B !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn:hover:not(.active) {
-    color: #ffffff !important;
+    color: #DAF1DE !important;
     background: rgba(255, 255, 255, 0.1) !important;
 }
 
 [data-theme="light"] .main-side,
 [data-theme="light"] .main-content-area {
-    background: #f1f5f9;
+    background: #DAF1DE !important;
     box-shadow: none !important;
     border: none !important;
 }
 
-/* EXCEPT Selected Active Item: Merges into Light Main Side (#f1f5f9) */
+/* EXCEPT Selected Active Item: Merges into Light Main Side (#DAF1DE) */
 [data-theme="light"] .sidebar-tab-btn.active {
-    background: #f1f5f9 !important;
-    color: #4f46e5 !important;
+    background: #DAF1DE !important;
+    color: #163832 !important;
     box-shadow: none !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn.active i,
 [data-theme="light"] .sidebar-tab-btn.active svg {
-    color: #4f46e5 !important;
+    color: #163832 !important;
 }
