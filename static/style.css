@@ -428,6 +428,9 @@ i[data-lucide] {
     top: 0;
     height: 100vh;
     overflow: visible;
+    box-shadow: none !important;
+    border: none !important;
+    outline: none !important;
 }
 
 .sidebar-brand,
@@ -2164,6 +2167,8 @@ html.light-theme {
 /* Light Mode Merged Dashboard Active Tab Overrides */
 [data-theme="light"] .dashboard-sidebar {
     background: #e2e8f0;
+    box-shadow: none !important;
+    border: none !important;
 }
 
 [data-theme="light"] .main-side,
