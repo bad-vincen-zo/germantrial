@@ -490,10 +490,10 @@ i[data-lucide] {
     transform: translateX(3px);
 }
 
-/* Active Merged Tab: #f3f5fa Background matching Main Workspace */
+/* Active Merged Tab: Background matching Main Workspace exactly */
 .sidebar-tab-btn.active {
-    background: #f3f5fa !important;
-    color: #4f46e5 !important;
+    background: var(--bg-main) !important;
+    color: var(--accent-primary) !important;
     font-weight: 800;
     border-radius: 25px 0 0 25px;
     margin-right: 0;
@@ -507,7 +507,7 @@ i[data-lucide] {
 
 .sidebar-tab-btn.active i,
 .sidebar-tab-btn.active svg {
-    color: #4f46e5 !important;
+    color: var(--accent-primary) !important;
     transform: scale(1.1);
 }
 
