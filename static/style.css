@@ -3,27 +3,27 @@
    ========================================================================== */
 
 :root {
-    /* Color Palette - Ultra-Clean Minimalist System */
-    --bg-main: #090d16;        /* Deep Minimalist Slate */
-    --bg-card: #0f172a;        /* Clean Minimal Card Base */
-    --bg-input: #1e293b;       /* Soft Flat Input Base */
+    /* Color Palette - Full Neumorphic Design System */
+    --bg-main: #1c202b;        /* Dark Neumorphic Soft Base */
+    --bg-card: #1c202b;        /* Extruded Neumorphic Card Base */
+    --bg-input: #1c202b;       /* Recessed Neumorphic Input Base */
     
     /* Dashboard Sidebar Color */
-    --dashboard-bg: #4f46e5;    /* Minimal Indigo Dashboard */
+    --dashboard-bg: #4f46e5;    /* Vibrant Indigo-Purple Dashboard */
     
-    /* Minimalist Soft Elevation Physics (Dark Mode) */
-    --neu-shadow-extruded: 0 4px 12px rgba(0, 0, 0, 0.2);
-    --neu-shadow-extruded-hover: 0 8px 20px rgba(0, 0, 0, 0.28);
-    --neu-shadow-extruded-sm: 0 2px 6px rgba(0, 0, 0, 0.15);
-    --neu-shadow-inset: none;
-    --neu-shadow-inset-deep: none;
+    /* Neumorphic Soft UI Dual Shadow Physics (Dark Mode) */
+    --neu-shadow-extruded: 10px 10px 24px #12151d, -10px -10px 24px #262b39;
+    --neu-shadow-extruded-hover: 14px 14px 28px #10121a, -14px -14px 28px #282e3c;
+    --neu-shadow-extruded-sm: 5px 5px 12px #12151d, -5px -5px 12px #262b39;
+    --neu-shadow-inset: inset 4px 4px 9px #12151d, inset -4px -4px 9px #262b39;
+    --neu-shadow-inset-deep: inset 6px 6px 14px #10121a, inset -6px -6px 14px #282e3c;
     
-    /* Accent Colors - Crisp Minimal Palette */
-    --accent-primary: #818cf8;   /* Indigo Accent */
+    /* Accent Colors - High-Fashion Indigo & Purple Palette */
+    --accent-primary: #818cf8;   /* Soft Indigo Accent */
     --accent-primary-hover: #6366f1;
-    --accent-primary-gradient: #4f46e5;
-    --accent-secondary: #38bdf8; /* Sky Blue */
-    --accent-success: #38bdf8;   /* Sky Blue */
+    --accent-primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+    --accent-secondary: #38bdf8; /* Sky Blue Accent */
+    --accent-success: #38bdf8;   /* Sky Blue Accent */
     --accent-warning: #fbbf24;   /* Amber */
     --accent-danger: #f87171;    /* Rose Red */
     
@@ -38,19 +38,19 @@
     --text-muted: #64748b;       /* Light Muted Text */
     
     /* Typography */
-    --font-heading: 'Plus Jakarta Sans', 'Inter', sans-serif;
+    --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
     
-    /* Minimal Radius & Spacing */
-    --border-radius-xl: 16px;
-    --border-radius-lg: 14px;
-    --border-radius-md: 10px;
-    --border-radius-sm: 6px;
+    /* Neumorphic Radius & Spacing */
+    --border-radius-xl: 24px;
+    --border-radius-lg: 18px;
+    --border-radius-md: 12px;
+    --border-radius-sm: 8px;
     --border-radius-pill: 50px;
     
-    /* Smooth Transitions */
-    --transition-smooth: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-    --transition-fast: all 0.12s ease;
+    /* Smooth Physics Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
+    --transition-fast: all 0.18s ease;
 }
 
 /* Reset & Base Styles */
@@ -2030,15 +2030,15 @@ html.light-theme {
     color: #ffffff !important;
 }
 
-/* Comprehensive Light Theme Minimalist Overrides (Crisp Minimal White & Slate) */
+/* Comprehensive Light Theme Neumorphic Overrides (Soft Dual Shadow System) */
 [data-theme="light"] select,
 [data-theme="light"] input[type="text"],
 [data-theme="light"] input[type="password"],
 [data-theme="light"] input[type="email"] {
-    background: #ffffff;
-    color: #0f172a;
-    border: 1px solid #cbd5e1;
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+    background: #f0f3f8;
+    color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: inset 4px 4px 9px #c8d3e6, inset -4px -4px 9px #ffffff;
 }
 
 [data-theme="light"] select:focus,
@@ -2046,37 +2046,36 @@ html.light-theme {
 [data-theme="light"] input[type="password"]:focus,
 [data-theme="light"] input[type="email"]:focus {
     border-color: #6366f1;
-    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15);
+    box-shadow: inset 4px 4px 9px #c8d3e6, inset -4px -4px 9px #ffffff, 0 0 0 2px rgba(99, 102, 241, 0.2);
 }
 
 [data-theme="light"] .dropzone {
-    background: #f8fafc;
-    border: 2px dashed #cbd5e1;
-    box-shadow: none;
+    background: #f0f3f8;
+    border: 2px dashed #a5b4fc;
+    box-shadow: inset 4px 4px 9px #c8d3e6, inset -4px -4px 9px #ffffff;
 }
 
 [data-theme="light"] .dropzone:hover {
     border-color: #4f46e5;
-    background: #f1f5f9;
+    background: #e6edfa;
 }
 
 [data-theme="light"] .glass-card,
 [data-theme="light"] .modal-content,
 [data-theme="light"] .stat-card,
 [data-theme="light"] .chapter-card {
-    background: #ffffff;
-    border: 1px solid #e2e8f0;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+    background: #f0f3f8;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 10px 10px 24px #c8d3e6, -10px -10px 24px #ffffff;
 }
 
 [data-theme="light"] .select-counter-badge,
 [data-theme="light"] .deck-badge,
 [data-theme="light"] .chapter-tag,
 [data-theme="light"] .chapter-card-count {
-    background: #f1f5f9;
+    background: #f0f3f8;
     color: #4f46e5;
-    border: 1px solid #e2e8f0;
-    box-shadow: none;
+    box-shadow: inset 3px 3px 7px #c8d3e6, inset -3px -3px 7px #ffffff;
 }
 
 [data-theme="light"] .control-label {
