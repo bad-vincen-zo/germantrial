@@ -20,17 +20,17 @@
     
     /* Accent Colors - Forest Mint Swatch System */
     --accent-primary: #8EB69B;   /* Soft Mint Green Accent */
-    --accent-primary-hover: #7aa788;
+    --accent-primary-hover: #DAF1DE;
     --accent-primary-gradient: linear-gradient(135deg, #235347 0%, #163832 100%);
     --accent-secondary: #8EB69B; /* Soft Mint */
     --accent-success: #8EB69B;   /* Mint Emerald */
-    --accent-warning: #f59e0b;   /* Bright Amber */
-    --accent-danger: #f43f5e;    /* Coral Rose */
+    --accent-warning: #8EB69B;   /* Mint Accent */
+    --accent-danger: #8EB69B;    /* Mint Accent */
     
     /* Gender Color Coding */
-    --color-der: #38bdf8;        /* Masculine Sky Blue */
-    --color-die: #f472b6;        /* Feminine Pink */
-    --color-das: #8EB69B;        /* Neuter Mint */
+    --color-der: #8EB69B;        /* Mint Green */
+    --color-die: #DAF1DE;        /* Pale Mint */
+    --color-das: #235347;        /* Forest Green */
     
     /* Text Hierarchy */
     --text-primary: #DAF1DE;     /* Pale Mint Light Text */
@@ -317,7 +317,7 @@ i[data-lucide] {
     stroke-width: 2px;
 }
 
-/* Soft Ambient Background Lighting (No Harsh Grids) */
+/* Soft Ambient Background Lighting (Forest Mint Swatches) */
 .glass-bg {
     position: fixed;
     top: 0;
@@ -327,9 +327,9 @@ i[data-lucide] {
     z-index: -1;
     background-color: var(--bg-main);
     background-image:
-        radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.07) 0%, transparent 40%),
-        radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
-        radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.04) 0%, transparent 60%);
+        radial-gradient(circle at 15% 15%, rgba(142, 182, 155, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 85% 85%, rgba(35, 83, 71, 0.08) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(218, 241, 222, 0.04) 0%, transparent 60%);
     background-attachment: fixed;
 }
 
