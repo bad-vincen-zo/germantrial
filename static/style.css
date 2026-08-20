@@ -512,32 +512,9 @@ i[data-lucide] {
     transform: scale(1.1);
 }
 
-/* Top Concave Inverse Curve (Curving UP into Sidebar) */
-.sidebar-tab-btn.active::before {
-    content: '';
-    position: absolute;
-    top: -20px;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background: transparent;
-    border-bottom-right-radius: 20px;
-    box-shadow: 10px 10px 0 0 var(--bg-main);
-    pointer-events: none;
-}
-
-/* Bottom Concave Inverse Curve (Curving DOWN into Sidebar) */
+.sidebar-tab-btn.active::before,
 .sidebar-tab-btn.active::after {
-    content: '';
-    position: absolute;
-    bottom: -20px;
-    right: 0;
-    width: 20px;
-    height: 20px;
-    background: transparent;
-    border-top-right-radius: 20px;
-    box-shadow: 10px -10px 0 0 var(--bg-main);
-    pointer-events: none;
+    display: none !important;
 }
 
 .sidebar-footer {
@@ -2222,12 +2199,4 @@ html.light-theme {
 [data-theme="light"] .sidebar-tab-btn.active i,
 [data-theme="light"] .sidebar-tab-btn.active svg {
     color: #4f46e5 !important;
-}
-
-[data-theme="light"] .sidebar-tab-btn.active::before {
-    box-shadow: 10px 10px 0 0 #f1f5f9 !important;
-}
-
-[data-theme="light"] .sidebar-tab-btn.active::after {
-    box-shadow: 10px -10px 0 0 #f1f5f9 !important;
 }
