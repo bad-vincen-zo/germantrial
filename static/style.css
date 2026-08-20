@@ -526,21 +526,14 @@ i[data-lucide] {
         min-width: 100%;
         height: auto;
         position: relative;
-    }
-}
-    font-family: var(--font-sans);
-    color: var(--text-secondary);
-    font-size: 1.05rem;
-    font-weight: 500;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
 }
 
 /* Stats Cards Section */
 .stats-container {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    width: 100%;
 }
 
 .stat-card {
