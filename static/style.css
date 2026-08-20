@@ -490,6 +490,7 @@ i[data-lucide] {
     padding-left: 24px;
     z-index: 5;
     position: relative;
+    box-shadow: none !important;
 }
 
 .sidebar-tab-btn.active i,
@@ -2168,7 +2169,7 @@ html.light-theme {
 [data-theme="light"] .sidebar-tab-btn.active {
     background: #f1f5f9 !important;
     color: #4f46e5 !important;
-    box-shadow: -3px 0 8px rgba(0, 0, 0, 0.04);
+    box-shadow: none !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn.active::before {
