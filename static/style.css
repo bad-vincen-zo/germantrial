@@ -421,13 +421,18 @@ i[data-lucide] {
     background: var(--bg-card);
     display: flex;
     flex-direction: column;
-    padding: 30px 20px;
+    padding: 30px 0 30px 20px;
     gap: 32px;
     z-index: 10;
     position: sticky;
     top: 0;
     height: 100vh;
     overflow: visible;
+}
+
+.sidebar-brand,
+.sidebar-footer {
+    padding-right: 20px;
 }
 
 /* Vertical Sidebar Menu Buttons */
@@ -448,7 +453,7 @@ i[data-lucide] {
     font-size: 0.95rem;
     font-weight: 700;
     padding: 14px 20px;
-    border-radius: 20px 0 0 20px;
+    border-radius: 25px 0 0 25px;
     cursor: pointer;
     display: flex;
     align-items: center;
@@ -474,17 +479,17 @@ i[data-lucide] {
     transform: translateX(3px);
 }
 
-/* Continuous Merged Active Tab with Smooth Inverse Curves */
+/* Smooth Merged Active Tab matching user diagram geometry */
 .sidebar-tab-btn.active {
     background: var(--bg-main) !important;
     color: var(--accent-primary) !important;
     font-weight: 800;
-    border-radius: 20px 0 0 20px;
-    margin-right: -20px;
-    width: calc(100% + 20px);
+    border-radius: 25px 0 0 25px;
+    margin-right: 0;
+    width: 100%;
     padding-left: 24px;
     z-index: 5;
-    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.04);
+    position: relative;
 }
 
 .sidebar-tab-btn.active i,
@@ -493,7 +498,7 @@ i[data-lucide] {
     transform: scale(1.1);
 }
 
-/* Top Concave Inverse Curve */
+/* Top Concave Inverse Curve (Curving UP into Sidebar) */
 .sidebar-tab-btn.active::before {
     content: '';
     position: absolute;
@@ -501,13 +506,13 @@ i[data-lucide] {
     right: 0;
     width: 20px;
     height: 20px;
-    background: var(--bg-card);
+    background: transparent;
     border-bottom-right-radius: 20px;
-    box-shadow: none;
+    box-shadow: 10px 10px 0 0 var(--bg-main);
     pointer-events: none;
 }
 
-/* Bottom Concave Inverse Curve */
+/* Bottom Concave Inverse Curve (Curving DOWN into Sidebar) */
 .sidebar-tab-btn.active::after {
     content: '';
     position: absolute;
@@ -515,9 +520,9 @@ i[data-lucide] {
     right: 0;
     width: 20px;
     height: 20px;
-    background: var(--bg-card);
+    background: transparent;
     border-top-right-radius: 20px;
-    box-shadow: none;
+    box-shadow: 10px -10px 0 0 var(--bg-main);
     pointer-events: none;
 }
 
@@ -2166,7 +2171,10 @@ html.light-theme {
     box-shadow: -3px 0 8px rgba(0, 0, 0, 0.04);
 }
 
-[data-theme="light"] .sidebar-tab-btn.active::before,
+[data-theme="light"] .sidebar-tab-btn.active::before {
+    box-shadow: 10px 10px 0 0 #f1f5f9 !important;
+}
+
 [data-theme="light"] .sidebar-tab-btn.active::after {
-    background: #e2e8f0 !important;
+    box-shadow: 10px -10px 0 0 #f1f5f9 !important;
 }
