@@ -23,14 +23,14 @@
     --accent-primary-hover: #6366f1;
     --accent-primary-gradient: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
     --accent-secondary: #38bdf8; /* Sky Blue Accent */
-    --accent-success: #34d399;   /* Mint Teal */
+    --accent-success: #38bdf8;   /* Sky Blue Accent */
     --accent-warning: #fbbf24;   /* Amber */
     --accent-danger: #f87171;    /* Rose Red */
     
     /* Gender Color Coding */
     --color-der: #38bdf8;        /* Masculine Sky Blue */
     --color-die: #f472b6;        /* Feminine Pink */
-    --color-das: #34d399;        /* Neuter Teal */
+    --color-das: #a855f7;        /* Neuter Violet */
     
     /* Text Hierarchy */
     --text-primary: #f8fafc;     /* Clean Light Slate Text */
@@ -186,7 +186,7 @@ i[data-lucide] {
 }
 
 .stat-icon-wrapper.green {
-    color: var(--accent-success);
+    color: var(--accent-secondary);
 }
 
 .stat-icon-wrapper.purple {
