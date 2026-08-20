@@ -455,9 +455,49 @@ i[data-lucide] {
     border-top: 1px solid rgba(148, 163, 184, 0.15);
 }
 
-.sidebar-footer .theme-toggle-btn {
+/* Neumorphic Theme Switcher Button */
+.theme-toggle-btn {
     width: 100%;
+    background: var(--bg-main);
+    color: var(--text-primary);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 12px 20px;
+    border-radius: var(--border-radius-pill);
+    font-family: var(--font-heading);
+    font-size: 0.9rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
     justify-content: center;
+    gap: 12px;
+    letter-spacing: 0.02em;
+    box-shadow: var(--neu-shadow-extruded-sm);
+    transition: var(--transition-smooth);
+}
+
+.theme-toggle-btn:hover {
+    box-shadow: var(--neu-shadow-extruded);
+    transform: translateY(-2px);
+    color: var(--accent-primary);
+}
+
+.theme-toggle-btn:active {
+    box-shadow: var(--neu-shadow-inset);
+    transform: translateY(0);
+}
+
+#theme-icon-container {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-card);
+    box-shadow: var(--neu-shadow-inset);
+    color: var(--accent-primary);
+    flex-shrink: 0;
 }
 
 /* Main Content Workspace Area */
@@ -2020,4 +2060,27 @@ i[data-lucide] {
     justify-content: flex-end;
     gap: 12px;
     margin-top: 24px;
+}
+
+/* Light Mode Neumorphic Theme Switcher Overrides */
+[data-theme="light"] .theme-toggle-btn {
+    background: #e6ecf5;
+    color: #1e293b;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 6px 6px 14px #b8c4d6, -6px -6px 14px #ffffff;
+}
+
+[data-theme="light"] .theme-toggle-btn:hover {
+    box-shadow: 8px 8px 18px #b8c4d6, -8px -8px 18px #ffffff;
+    color: #4f46e5;
+}
+
+[data-theme="light"] .theme-toggle-btn:active {
+    box-shadow: inset 3px 3px 7px #b8c4d6, inset -3px -3px 7px #ffffff;
+}
+
+[data-theme="light"] #theme-icon-container {
+    background: #e6ecf5;
+    box-shadow: inset 3px 3px 7px #b8c4d6, inset -3px -3px 7px #ffffff;
+    color: #4f46e5;
 }
