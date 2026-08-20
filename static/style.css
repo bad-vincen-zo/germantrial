@@ -11,12 +11,12 @@
     /* Dashboard Sidebar Color */
     --dashboard-bg: #235347;    /* Forest Green Dashboard */
     
-    /* Neumorphic Shadow Physics (Dark Mode) */
-    --neu-shadow-extruded: 8px 8px 20px #020d0e, -8px -8px 20px #092c27;
-    --neu-shadow-extruded-hover: 12px 12px 26px #01090a, -12px -12px 26px #0b342f;
-    --neu-shadow-extruded-sm: 4px 4px 10px #020d0e, -4px -4px 10px #092c27;
-    --neu-shadow-inset: inset 4px 4px 9px #020d0e, inset -4px -4px 9px #092c27;
-    --neu-shadow-inset-deep: inset 6px 6px 14px #01090a, inset -6px -6px 14px #0b342f;
+    /* Neumorphic Soft UI Physics (Dark Mode) */
+    --neu-shadow-extruded: 10px 10px 22px #020d0e, -10px -10px 22px #0d3b34;
+    --neu-shadow-extruded-hover: 14px 14px 28px #01090a, -14px -14px 28px #0f453d;
+    --neu-shadow-extruded-sm: 5px 5px 12px #020d0e, -5px -5px 12px #0d3b34;
+    --neu-shadow-inset: inset 4px 4px 10px #020d0e, inset -4px -4px 10px #0d3b34;
+    --neu-shadow-inset-deep: inset 6px 6px 14px #01090a, inset -6px -6px 14px #0f453d;
     
     /* Accent Colors - Forest Mint Swatch System */
     --accent-primary: #8EB69B;   /* Soft Mint Green Accent */
@@ -2027,40 +2027,42 @@ html.light-theme {
     color: #ffffff !important;
 }
 
-/* Comprehensive Light Theme Overrides */
+/* Comprehensive Light Theme Neumorphic Overrides */
 [data-theme="light"] select,
 [data-theme="light"] input[type="text"],
 [data-theme="light"] input[type="password"],
 [data-theme="light"] input[type="email"] {
-    background: #e6ecf5;
-    color: #1e293b;
+    background: #DAF1DE;
+    color: #163832;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: inset 3px 3px 7px #b8c4d6, inset -3px -3px 7px #ffffff;
+    box-shadow: inset 4px 4px 9px #b5d8bc, inset -4px -4px 9px #ffffff;
 }
 
 [data-theme="light"] .dropzone {
-    background: #e6ecf5;
-    border: 2px dashed #a5b4fc;
-    box-shadow: inset 4px 4px 9px #b8c4d6, inset -4px -4px 9px #ffffff;
+    background: #DAF1DE;
+    border: 2px dashed #8EB69B;
+    box-shadow: inset 4px 4px 9px #b5d8bc, inset -4px -4px 9px #ffffff;
 }
 
 [data-theme="light"] .dropzone:hover {
-    border-color: #4f46e5;
-    background: #edf2fa;
+    border-color: #235347;
+    background: #ccebd1;
 }
 
 [data-theme="light"] .glass-card,
-[data-theme="light"] .modal-content {
-    background: rgba(230, 236, 245, 0.92);
+[data-theme="light"] .modal-content,
+[data-theme="light"] .stat-card,
+[data-theme="light"] .chapter-card {
+    background: #DAF1DE;
     border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 10px 10px 24px #b8c4d6, -10px -10px 24px #ffffff;
+    box-shadow: 10px 10px 24px #b5d8bc, -10px -10px 24px #ffffff;
 }
 
 [data-theme="light"] .select-counter-badge,
 [data-theme="light"] .deck-badge {
-    background: #e6ecf5;
-    color: #4f46e5;
-    box-shadow: inset 3px 3px 7px #b8c4d6, inset -3px -3px 7px #ffffff;
+    background: #DAF1DE;
+    color: #163832;
+    box-shadow: inset 3px 3px 7px #b5d8bc, inset -3px -3px 7px #ffffff;
 }
 
 [data-theme="light"] .control-label {
