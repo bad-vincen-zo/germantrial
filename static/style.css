@@ -7,43 +7,51 @@
     --bg-main: #1c202b;
     --bg-card: #1c202b;
     --bg-input: #1c202b;
-    
+
     /* Neumorphic Shadow Physics (Dark Mode) */
     --neu-shadow-extruded: 8px 8px 18px #13161e, -8px -8px 18px #252a38;
     --neu-shadow-extruded-hover: 12px 12px 24px #11131b, -12px -12px 24px #272d3b;
     --neu-shadow-extruded-sm: 4px 4px 10px #13161e, -4px -4px 10px #252a38;
     --neu-shadow-inset: inset 4px 4px 9px #13161e, inset -4px -4px 9px #252a38;
     --neu-shadow-inset-deep: inset 6px 6px 12px #11131b, inset -6px -6px 12px #272d3b;
-    
+
     /* Accent Colors - Soft Modern Palette */
-    --accent-primary: #6366f1;   /* Soft Indigo */
+    --accent-primary: #6366f1;
+    /* Soft Indigo */
     --accent-primary-hover: #4f46e5;
-    --accent-secondary: #06b6d4; /* Soft Cyan */
-    --accent-success: #10b981;   /* Soft Emerald */
-    --accent-warning: #f59e0b;   /* Soft Amber */
-    --accent-danger: #f43f5e;    /* Soft Rose */
-    
+    --accent-secondary: #06b6d4;
+    /* Soft Cyan */
+    --accent-success: #10b981;
+    /* Soft Emerald */
+    --accent-warning: #f59e0b;
+    /* Soft Amber */
+    --accent-danger: #f43f5e;
+    /* Soft Rose */
+
     /* Gender Color Coding (Soft Neumorphic Tints) */
-    --color-der: #3b82f6;        /* Masculine Blue */
-    --color-die: #ec4899;        /* Feminine Pink */
-    --color-das: #10b981;        /* Neuter Green */
-    
+    --color-der: #3b82f6;
+    /* Masculine Blue */
+    --color-die: #ec4899;
+    /* Feminine Pink */
+    --color-das: #10b981;
+    /* Neuter Green */
+
     /* Text Hierarchy */
     --text-primary: #f1f5f9;
     --text-secondary: #94a3b8;
     --text-muted: #64748b;
-    
+
     /* Typography */
     --font-heading: 'Plus Jakarta Sans', 'Outfit', sans-serif;
     --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    
+
     /* Radius & Spacing */
     --border-radius-xl: 24px;
     --border-radius-lg: 18px;
     --border-radius-md: 12px;
     --border-radius-sm: 8px;
     --border-radius-pill: 50px;
-    
+
     /* Smooth Physics Transitions */
     --transition-smooth: all 0.3s cubic-bezier(0.2, 0.8, 0.2, 1);
     --transition-fast: all 0.18s ease;
@@ -74,7 +82,7 @@ body {
    NEUMORPHIC ICON SYSTEM & TACTILE ICON PLATES
    ========================================================================== */
 
-svg.lucide, 
+svg.lucide,
 [data-lucide],
 i[data-lucide] {
     stroke-width: 2.2px;
@@ -322,7 +330,7 @@ i[data-lucide] {
     bottom: 0;
     z-index: -1;
     background-color: var(--bg-main);
-    background-image: 
+    background-image:
         radial-gradient(circle at 15% 15%, rgba(99, 102, 241, 0.07) 0%, transparent 40%),
         radial-gradient(circle at 85% 85%, rgba(16, 185, 129, 0.05) 0%, transparent 40%),
         radial-gradient(circle at 50% 50%, rgba(244, 63, 94, 0.04) 0%, transparent 60%);
@@ -334,14 +342,17 @@ i[data-lucide] {
     width: 8px;
     height: 8px;
 }
+
 ::-webkit-scrollbar-track {
     background: var(--bg-main);
 }
+
 ::-webkit-scrollbar-thumb {
     background: #282d3b;
     border-radius: 4px;
     box-shadow: var(--neu-shadow-inset);
 }
+
 ::-webkit-scrollbar-thumb:hover {
     background: var(--accent-primary);
 }
@@ -402,32 +413,52 @@ i[data-lucide] {
     letter-spacing: 0.06em;
 }
 
+/* Dashboard (Left Side Navigation) */
+.dashboard-sidebar,
+.sidebar-nav {
+    width: 270px;
+    min-width: 270px;
+    background: var(--bg-card);
+    box-shadow: 4px 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    gap: 32px;
+    z-index: 10;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow: visible;
+}
+
 /* Vertical Sidebar Menu Buttons */
 .sidebar-menu {
     display: flex;
     flex-direction: column;
     gap: 14px;
     flex: 1;
+    position: relative;
 }
 
 .sidebar-tab-btn {
-    background: var(--bg-main);
+    background: transparent;
     border: none;
     outline: none;
     color: var(--text-secondary);
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 700;
-    padding: 14px 18px;
-    border-radius: var(--border-radius-lg);
+    padding: 14px 20px;
+    border-radius: 25px 0 0 25px;
     cursor: pointer;
     display: flex;
     align-items: center;
     gap: 12px;
     letter-spacing: 0.02em;
-    box-shadow: var(--neu-shadow-extruded-sm);
-    transition: var(--transition-smooth);
+    transition: var(--transition-fast);
     width: 100%;
+    position: relative;
+    z-index: 2;
 }
 
 .sidebar-tab-btn i,
@@ -435,19 +466,60 @@ i[data-lucide] {
     width: 20px;
     height: 20px;
     color: var(--accent-primary);
+    transition: var(--transition-fast);
 }
 
-.sidebar-tab-btn:hover {
+.sidebar-tab-btn:hover:not(.active) {
     color: var(--text-primary);
-    box-shadow: var(--neu-shadow-extruded);
+    background: rgba(255, 255, 255, 0.05);
     transform: translateX(3px);
 }
 
+/* Active Merged Tab styling with Inverse Rounded Concave Curves */
 .sidebar-tab-btn.active {
-    background: var(--bg-card);
+    background: var(--bg-main);
     color: var(--accent-primary);
-    box-shadow: var(--neu-shadow-inset);
-    border: 1px solid rgba(99, 102, 241, 0.2);
+    font-weight: 800;
+    border-radius: 25px 0 0 25px;
+    margin-right: -20px;
+    width: calc(100% + 20px);
+    padding-left: 24px;
+    z-index: 5;
+    box-shadow: -4px 0 10px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-tab-btn.active i,
+.sidebar-tab-btn.active svg {
+    color: var(--accent-primary);
+    transform: scale(1.1);
+}
+
+/* Top Concave Inverse Curve */
+.sidebar-tab-btn.active::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-bottom-right-radius: 20px;
+    box-shadow: 8px 8px 0 8px var(--bg-main);
+    pointer-events: none;
+}
+
+/* Bottom Concave Inverse Curve */
+.sidebar-tab-btn.active::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: transparent;
+    border-top-right-radius: 20px;
+    box-shadow: 8px -8px 0 8px var(--bg-main);
+    pointer-events: none;
 }
 
 .sidebar-footer {
@@ -561,6 +633,7 @@ i[data-lucide] {
     .app-layout {
         flex-direction: column;
     }
+
     .sidebar-nav {
         width: 100%;
         min-width: 100%;
@@ -722,8 +795,15 @@ i[data-lucide] {
 }
 
 @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
+    from {
+        opacity: 0;
+        transform: translateY(6px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* Vocabulary Grid Layout */
@@ -1303,11 +1383,11 @@ i[data-lucide] {
     transition: var(--transition-fast);
 }
 
-.switch-container input:checked + .switch-slider {
+.switch-container input:checked+.switch-slider {
     background: var(--bg-main);
 }
 
-.switch-container input:checked + .switch-slider::before {
+.switch-container input:checked+.switch-slider::before {
     transform: translateX(20px);
     background: var(--accent-primary);
 }
@@ -1335,6 +1415,7 @@ i[data-lucide] {
         transform: translateX(0) scale(1);
         opacity: 1;
     }
+
     100% {
         transform: translateX(-120%) scale(0.88);
         opacity: 0;
@@ -1346,6 +1427,7 @@ i[data-lucide] {
         transform: translateX(120%) scale(0.88);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0) scale(1);
         opacity: 1;
@@ -1395,7 +1477,8 @@ i[data-lucide] {
     border-color: rgba(244, 114, 182, 0.28);
 }
 
-.card-badge, .card-badge-back {
+.card-badge,
+.card-badge-back {
     position: absolute;
     top: 22px;
     left: 26px;
@@ -1435,7 +1518,8 @@ i[data-lucide] {
     word-break: break-word;
 }
 
-.card-hint, .card-hint-back {
+.card-hint,
+.card-hint-back {
     margin-top: 20px;
     font-size: 0.92rem;
     color: #ffffff !important;
@@ -1842,16 +1926,20 @@ i[data-lucide] {
     .app-container {
         padding: 20px 12px;
     }
+
     .logo-area h1 {
         font-size: 2.2rem;
     }
+
     .tab-btn {
         padding: 10px 16px;
         font-size: 0.86rem;
     }
+
     .flashcard-wrapper {
         height: 290px;
     }
+
     .card-word {
         font-size: 2.1rem;
     }
@@ -1861,18 +1949,20 @@ i[data-lucide] {
    LIGHT NEUMORPHIC THEME OVERRIDES ([data-theme="light"])
    ========================================================================== */
 
-[data-theme="light"], body.light-theme, html.light-theme {
+[data-theme="light"],
+body.light-theme,
+html.light-theme {
     --bg-main: #e6ecf5;
     --bg-card: #e6ecf5;
     --bg-input: #e6ecf5;
-    
+
     /* Neumorphic Shadow Physics (Light Mode) */
     --neu-shadow-extruded: 8px 8px 18px #b8c4d6, -8px -8px 18px #ffffff;
     --neu-shadow-extruded-hover: 12px 12px 24px #afbccf, -12px -12px 24px #ffffff;
     --neu-shadow-extruded-sm: 4px 4px 10px #b8c4d6, -4px -4px 10px #ffffff;
     --neu-shadow-inset: inset 4px 4px 9px #b8c4d6, inset -4px -4px 9px #ffffff;
     --neu-shadow-inset-deep: inset 6px 6px 12px #afbccf, inset -6px -6px 12px #ffffff;
-    
+
     /* Accents for Light Mode */
     --accent-primary: #4f46e5;
     --accent-primary-hover: #4338ca;
@@ -1880,7 +1970,7 @@ i[data-lucide] {
     --accent-success: #059669;
     --accent-warning: #d97706;
     --accent-danger: #e11d48;
-    
+
     /* Text colors for Light Background */
     --text-primary: #1e293b;
     --text-secondary: #475569;
@@ -1889,7 +1979,7 @@ i[data-lucide] {
 
 [data-theme="light"] .glass-bg {
     background-color: var(--bg-main);
-    background-image: 
+    background-image:
         radial-gradient(circle at 15% 15%, rgba(79, 70, 229, 0.08) 0%, transparent 45%),
         radial-gradient(circle at 85% 85%, rgba(5, 150, 105, 0.06) 0%, transparent 45%);
 }
@@ -2060,27 +2150,4 @@ i[data-lucide] {
     justify-content: flex-end;
     gap: 12px;
     margin-top: 24px;
-}
-
-/* Light Mode Neumorphic Theme Switcher Overrides */
-[data-theme="light"] .theme-toggle-btn {
-    background: #e6ecf5;
-    color: #1e293b;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    box-shadow: 6px 6px 14px #b8c4d6, -6px -6px 14px #ffffff;
-}
-
-[data-theme="light"] .theme-toggle-btn:hover {
-    box-shadow: 8px 8px 18px #b8c4d6, -8px -8px 18px #ffffff;
-    color: #4f46e5;
-}
-
-[data-theme="light"] .theme-toggle-btn:active {
-    box-shadow: inset 3px 3px 7px #b8c4d6, inset -3px -3px 7px #ffffff;
-}
-
-[data-theme="light"] #theme-icon-container {
-    background: #e6ecf5;
-    box-shadow: inset 3px 3px 7px #b8c4d6, inset -3px -3px 7px #ffffff;
-    color: #4f46e5;
 }
