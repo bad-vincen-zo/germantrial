@@ -413,12 +413,12 @@ i[data-lucide] {
     letter-spacing: 0.06em;
 }
 
-/* Dashboard (Left Side Navigation) */
+/* Dashboard (Left Side Navigation - Inverted Panel Color) */
 .dashboard-sidebar,
 .sidebar-nav {
     width: 270px;
     min-width: 270px;
-    background: var(--bg-card);
+    background: #0f172a;
     display: flex;
     flex-direction: column;
     padding: 30px 0 30px 20px;
@@ -431,6 +431,16 @@ i[data-lucide] {
     box-shadow: none !important;
     border: none !important;
     outline: none !important;
+}
+
+.sidebar-brand h1 {
+    color: #ffffff;
+    background: none;
+    -webkit-text-fill-color: initial;
+}
+
+.sidebar-brand .subtitle {
+    color: rgba(255, 255, 255, 0.6);
 }
 
 .sidebar-brand,
@@ -451,7 +461,7 @@ i[data-lucide] {
     background: transparent;
     border: none;
     outline: none;
-    color: var(--text-secondary);
+    color: rgba(241, 245, 249, 0.7);
     font-family: var(--font-heading);
     font-size: 0.95rem;
     font-weight: 700;
@@ -472,13 +482,13 @@ i[data-lucide] {
 .sidebar-tab-btn svg {
     width: 20px;
     height: 20px;
-    color: var(--accent-primary);
+    color: rgba(241, 245, 249, 0.85);
     transition: var(--transition-fast);
 }
 
 .sidebar-tab-btn:hover:not(.active) {
-    color: var(--text-primary);
-    background: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
     transform: translateX(3px);
 }
 
@@ -2164,11 +2174,35 @@ html.light-theme {
     margin-top: 24px;
 }
 
-/* Light Mode Merged Dashboard Active Tab Overrides */
+/* Light Mode Merged Dashboard Active Tab Overrides (Inverted Dark Dashboard Panel) */
 [data-theme="light"] .dashboard-sidebar {
-    background: #e2e8f0;
+    background: #1e293b;
     box-shadow: none !important;
     border: none !important;
+}
+
+[data-theme="light"] .dashboard-sidebar .sidebar-brand h1 {
+    color: #ffffff !important;
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+}
+
+[data-theme="light"] .dashboard-sidebar .sidebar-brand .subtitle {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+[data-theme="light"] .sidebar-tab-btn {
+    color: rgba(241, 245, 249, 0.75) !important;
+}
+
+[data-theme="light"] .sidebar-tab-btn i,
+[data-theme="light"] .sidebar-tab-btn svg {
+    color: rgba(241, 245, 249, 0.85) !important;
+}
+
+[data-theme="light"] .sidebar-tab-btn:hover:not(.active) {
+    color: #ffffff !important;
+    background: rgba(255, 255, 255, 0.1) !important;
 }
 
 [data-theme="light"] .main-side,
@@ -2178,10 +2212,16 @@ html.light-theme {
     border: none !important;
 }
 
+/* EXCEPT Selected Active Item: Merges into Light Main Side (#f1f5f9) */
 [data-theme="light"] .sidebar-tab-btn.active {
     background: #f1f5f9 !important;
     color: #4f46e5 !important;
     box-shadow: none !important;
+}
+
+[data-theme="light"] .sidebar-tab-btn.active i,
+[data-theme="light"] .sidebar-tab-btn.active svg {
+    color: #4f46e5 !important;
 }
 
 [data-theme="light"] .sidebar-tab-btn.active::before {
