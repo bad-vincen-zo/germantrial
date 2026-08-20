@@ -79,7 +79,7 @@ function applyTheme(theme) {
     
     if (theme === "light") {
         if (iconContainer) iconContainer.innerHTML = `<i data-lucide="moon"></i>`;
-        if (textEl) textEl.textContent = "Neon Dark Mode";
+        if (textEl) textEl.textContent = "Dark Mode";
     } else {
         if (iconContainer) iconContainer.innerHTML = `<i data-lucide="sun"></i>`;
         if (textEl) textEl.textContent = "Light Mode";
