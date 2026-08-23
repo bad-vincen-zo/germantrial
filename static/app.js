@@ -15,6 +15,13 @@ let practiceDeckIndex = 0;
 let practiceDeckNum = 1;
 let practiceAnswers = [];
 
+// Icon Refresh Helper
+function refreshIcons() {
+    if (typeof window !== "undefined" && window.lucide && typeof window.lucide.createIcons === "function") {
+        window.lucide.createIcons();
+    }
+}
+
 // Initialize Page
 document.addEventListener("DOMContentLoaded", () => {
     initTheme();
@@ -28,6 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     fetchChapters();
+    fetchTopics();
     fetchWords();
     // Sync direct assessment checkbox state on load
     const toggleInput = document.getElementById("direct-assess-toggle");
@@ -35,9 +43,7 @@ document.addEventListener("DOMContentLoaded", () => {
         directAssessmentMode = toggleInput.checked;
     }
     // Initialize icons
-    if (window.lucide) {
-        lucide.createIcons();
-    }
+    refreshIcons();
 });
 
 // ── Theme Switcher ────────────────────────────────────────────────────────────
@@ -85,16 +91,16 @@ function applyTheme(theme) {
         if (textEl) textEl.textContent = "Light Mode";
     }
     
-    if (window.lucide) {
-        lucide.createIcons();
-    }
+    refreshIcons();
 }
 
 window.toggleTheme = toggleTheme;
 
-// State for Chapters
+// State for Chapters & Subheadings
 let appChapters = [];
+let appTopics = [];
 let selectedFilterChapter = "All";
+let selectedFilterSubheading = "All";
 
 async function fetchChapters() {
     try {
@@ -107,19 +113,125 @@ async function fetchChapters() {
     }
 }
 
+async function fetchTopics() {
+    try {
+        const res = await fetch("/api/topics");
+        if (!res.ok) return;
+        appTopics = await res.json();
+        renderTopicDropdowns();
+    } catch (e) {
+        console.error("Error fetching topics:", e);
+    }
+}
+
+function renderTopicDropdowns() {
+    const importTopicSelect = document.getElementById("import-topic-select");
+    const addTopicSelect = document.getElementById("add-topic-select");
+    const populate = (sel) => {
+        if (!sel) return;
+        sel.innerHTML = '<option value="">None / No Topic</option>';
+        if (Array.isArray(appTopics)) {
+            appTopics.forEach(t => {
+                const opt = document.createElement("option");
+                opt.value = t.name;
+                opt.textContent = t.name;
+                sel.appendChild(opt);
+            });
+        }
+    };
+    populate(importTopicSelect);
+    populate(addTopicSelect);
+}
+
+function renderTopicsTab() {
+    const container = document.getElementById("topics-grid-container");
+    if (!container) return;
+    if (!appTopics || appTopics.length === 0) {
+        container.innerHTML = `<p class="upload-desc">No topics created yet.</p>`;
+        return;
+    }
+    container.innerHTML = "";
+    appTopics.forEach(top => {
+        const card = document.createElement("div");
+        card.className = "chapter-card animate-fade-in";
+        card.innerHTML = `
+            <div class="chapter-card-header">
+                <div class="chapter-card-title"><i data-lucide="tag" style="margin-right:6px;"></i> ${escapeHTML(top.name)}</div>
+                <span class="chapter-card-count">${top.word_count || 0} words</span>
+            </div>
+            <p style="font-size:0.88rem; color:var(--text-secondary); margin-top:8px;">${escapeHTML(top.description || "No description provided.")}</p>
+        `;
+        container.appendChild(card);
+    });
+    refreshIcons();
+}
+
+function getSubheadingsForChapter(chapterName) {
+    if (!chapterName) return [];
+    const found = appChapters.find(c => c.name.toLowerCase() === chapterName.trim().toLowerCase());
+    return found ? (found.subheadings || []) : [];
+}
+
+function populateSubheadingsSelect(selectEl, chapterName, selectedVal = "") {
+    if (!selectEl) return;
+    const subheadings = getSubheadingsForChapter(chapterName);
+    selectEl.innerHTML = '<option value="">None / No Subheading</option>';
+    subheadings.forEach(s => {
+        const opt = document.createElement("option");
+        opt.value = s.name;
+        opt.innerText = s.name;
+        if (s.name === selectedVal) opt.selected = true;
+        selectEl.appendChild(opt);
+    });
+    if (selectedVal && !subheadings.some(s => s.name === selectedVal)) {
+        const customOpt = document.createElement("option");
+        customOpt.value = selectedVal;
+        customOpt.innerText = selectedVal;
+        customOpt.selected = true;
+        selectEl.appendChild(customOpt);
+    }
+}
+
+function handleAddChapterChange(chapterName) {
+    const subSelect = document.getElementById("add-subheading-select");
+    populateSubheadingsSelect(subSelect, chapterName);
+}
+
+function handleImportChapterChange(chapterName) {
+    const subSelect = document.getElementById("import-subheading-select");
+    populateSubheadingsSelect(subSelect, chapterName);
+}
+
+function handleEditChapterChange(chapterName) {
+    const subSelect = document.getElementById("edit-subheading-select");
+    populateSubheadingsSelect(subSelect, chapterName);
+}
+
 function renderChapterDropdowns() {
     const addSelect = document.getElementById("add-chapter-select");
+    const importSelect = document.getElementById("import-chapter-select");
     const filterSelect = document.getElementById("filter-chapter-select");
+    const editSelect = document.getElementById("edit-chapter-select");
 
-    if (addSelect) {
-        addSelect.innerHTML = "";
+    const populateChapters = (sel) => {
+        if (!sel) return;
+        const currentVal = sel.value || "General";
+        sel.innerHTML = "";
         appChapters.forEach(ch => {
             const opt = document.createElement("option");
             opt.value = ch.name;
             opt.innerText = ch.name;
-            addSelect.appendChild(opt);
+            sel.appendChild(opt);
         });
-    }
+        if (currentVal) sel.value = currentVal;
+    };
+
+    populateChapters(addSelect);
+    populateChapters(importSelect);
+    populateChapters(editSelect);
+
+    if (addSelect) handleAddChapterChange(addSelect.value);
+    if (importSelect) handleImportChapterChange(importSelect.value);
 
     if (filterSelect) {
         filterSelect.innerHTML = '<option value="All">All Chapters</option>';
@@ -132,11 +244,49 @@ function renderChapterDropdowns() {
             }
             filterSelect.appendChild(opt);
         });
+        updateFilterSubheadingSelect(selectedFilterChapter);
     }
+}
+
+function updateFilterSubheadingSelect(chapterName) {
+    const subFilterSelect = document.getElementById("filter-subheading-select");
+    if (!subFilterSelect) return;
+
+    if (!chapterName || chapterName === "All") {
+        subFilterSelect.style.display = "none";
+        selectedFilterSubheading = "All";
+        return;
+    }
+
+    const subheadings = getSubheadingsForChapter(chapterName);
+    if (subheadings.length === 0) {
+        subFilterSelect.style.display = "none";
+        selectedFilterSubheading = "All";
+        return;
+    }
+
+    subFilterSelect.style.display = "inline-block";
+    subFilterSelect.innerHTML = '<option value="All">All Subheadings</option>';
+    subheadings.forEach(s => {
+        const opt = document.createElement("option");
+        opt.value = s.name;
+        opt.innerText = `${s.name} (${s.word_count || 0})`;
+        if (s.name.toLowerCase() === selectedFilterSubheading.toLowerCase()) {
+            opt.selected = true;
+        }
+        subFilterSelect.appendChild(opt);
+    });
 }
 
 function handleChapterFilterChange(selectElement) {
     selectedFilterChapter = selectElement.value;
+    selectedFilterSubheading = "All";
+    updateFilterSubheadingSelect(selectedFilterChapter);
+    handleSearch();
+}
+
+function handleSubheadingFilterChange(selectElement) {
+    selectedFilterSubheading = selectElement.value;
     handleSearch();
 }
 
@@ -194,11 +344,11 @@ function renderVocabTable() {
     filteredWords.forEach(word => {
         const tr = document.createElement("tr");
         tr.className = "animate-fade-in";
-        const chapterName = word.chapter_name || "General";
+        const subBadge = word.subheading ? `<span class="badge subheading-badge" style="font-size:0.72rem; padding:2px 8px; border-radius:12px; background:rgba(56, 189, 248, 0.18); color:#7dd3fc; margin-left:6px; font-weight:600; display:inline-flex; align-items:center; gap:3px;"><i data-lucide="list-tree" style="width:10px; height:10px;"></i>${escapeHTML(word.subheading)}</span>` : "";
+
         tr.innerHTML = `
-            <td>${formatGermanWordHTML(word.german)}</td>
+            <td>${formatGermanWordHTML(word.german)} ${subBadge}</td>
             <td>${escapeHTML(word.english)}</td>
-            <td><span class="deck-badge" style="font-size: 0.78rem; padding: 4px 10px;">${escapeHTML(chapterName)}</span></td>
             <td>
                 <button class="action-icon-btn play-btn" onclick="speakGerman('${escapeJS(word.german)}')" title="Listen to pronunciation">
                     <i data-lucide="volume-2"></i>
@@ -206,7 +356,7 @@ function renderVocabTable() {
             </td>
             <td class="actions-col">
                 <div class="actions-cell-wrapper">
-                    <button class="action-icon-btn edit-btn" onclick="openEditModal('${escapeJS(word.german)}', '${escapeJS(word.english)}')" title="Edit Word">
+                    <button class="action-icon-btn edit-btn" onclick="openEditModal('${escapeJS(word.german)}', '${escapeJS(word.english)}', '${escapeJS(word.chapter_name || 'General')}', '${escapeJS(word.subheading || '')}')" title="Edit Word">
                         <i data-lucide="edit-3"></i>
                     </button>
                     <button class="action-icon-btn delete-btn" onclick="deleteWord('${escapeJS(word.german)}')" title="Delete Word">
@@ -218,9 +368,7 @@ function renderVocabTable() {
         tbody.appendChild(tr);
     });
 
-    if (window.lucide) {
-        lucide.createIcons();
-    }
+    refreshIcons();
 }
 
 // Update stats cards
@@ -242,10 +390,12 @@ async function handleAddWord(event) {
     const germanInput = document.getElementById("german-input");
     const englishInput = document.getElementById("english-input");
     const addChapterSelect = document.getElementById("add-chapter-select");
+    const addSubheadingSelect = document.getElementById("add-subheading-select");
     
     const german = germanInput.value.trim();
     const english = englishInput.value.trim();
     const chapterName = addChapterSelect ? addChapterSelect.value : "General";
+    const subheading = addSubheadingSelect ? addSubheadingSelect.value : "";
 
     if (!german || !english) return;
 
@@ -253,7 +403,7 @@ async function handleAddWord(event) {
         const response = await fetch("/api/words", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ german, english, chapter_name: chapterName })
+            body: JSON.stringify({ german, english, chapter_name: chapterName, subheading })
         });
 
         const data = await response.json();
@@ -266,7 +416,8 @@ async function handleAddWord(event) {
         englishInput.value = "";
         germanInput.focus();
 
-        showToast(`Successfully added "${german}" to chapter '${chapterName}'!`, "success");
+        const subMsg = subheading ? ` [${subheading}]` : "";
+        showToast(`Successfully added "${german}" to chapter '${chapterName}'${subMsg}!`, "success");
         await fetchChapters();
         await fetchWords();
         
@@ -276,11 +427,19 @@ async function handleAddWord(event) {
 }
 
 // Edit Modal Functions
-function openEditModal(german, english) {
+function openEditModal(german, english, chapter = "General", subheading = "") {
     document.getElementById("edit-old-german").value = german;
     document.getElementById("edit-german-input").value = german;
     document.getElementById("edit-english-input").value = english;
     
+    const chapterSel = document.getElementById("edit-chapter-select");
+    const subSel = document.getElementById("edit-subheading-select");
+    
+    if (chapterSel) {
+        chapterSel.value = chapter;
+        populateSubheadingsSelect(subSel, chapter, subheading);
+    }
+
     document.getElementById("edit-modal").classList.add("open");
 }
 
@@ -293,6 +452,10 @@ async function handleEditWordSubmit(event) {
     const old_german = document.getElementById("edit-old-german").value;
     const new_german = document.getElementById("edit-german-input").value.trim();
     const new_english = document.getElementById("edit-english-input").value.trim();
+    const chapterSel = document.getElementById("edit-chapter-select");
+    const subSel = document.getElementById("edit-subheading-select");
+    const chapter_name = chapterSel ? chapterSel.value : "General";
+    const subheading = subSel ? subSel.value : "";
 
     if (!new_german || !new_english) return;
 
@@ -300,7 +463,7 @@ async function handleEditWordSubmit(event) {
         const response = await fetch("/api/words", {
             method: "PUT",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ old_german, new_german, new_english })
+            body: JSON.stringify({ old_german, new_german, new_english, chapter_name, subheading })
         });
 
         const data = await response.json();
@@ -311,6 +474,7 @@ async function handleEditWordSubmit(event) {
 
         closeEditModal();
         showToast(`Successfully updated word!`, "success");
+        await fetchChapters();
         await fetchWords();
         
     } catch (error) {
@@ -334,6 +498,7 @@ async function deleteWord(german) {
         }
 
         showToast(`Deleted vocabulary word.`, "success");
+        await fetchChapters();
         await fetchWords();
         
     } catch (error) {
@@ -349,10 +514,14 @@ function handleSearch() {
     filteredWords = allWords.filter(word => {
         const matchesQuery = !query || 
             word.german.toLowerCase().includes(query) || 
-            word.english.toLowerCase().includes(query);
+            word.english.toLowerCase().includes(query) ||
+            (word.subheading && word.subheading.toLowerCase().includes(query)) ||
+            (word.chapter_name && word.chapter_name.toLowerCase().includes(query));
         const wordChapter = (word.chapter_name || "General").toLowerCase();
         const matchesChapter = selectedFilterChapter === "All" || wordChapter === selectedFilterChapter.toLowerCase();
-        return matchesQuery && matchesChapter;
+        const wordSubheading = (word.subheading || "").toLowerCase();
+        const matchesSubheading = selectedFilterSubheading === "All" || (selectedFilterSubheading === "" ? !wordSubheading : wordSubheading === selectedFilterSubheading.toLowerCase());
+        return matchesQuery && matchesChapter && matchesSubheading;
     });
 
     renderVocabTable();
@@ -387,6 +556,35 @@ function switchTab(tabId) {
     }
 }
 
+// ── Chapters & Topics Sub-tab Switcher ──────────────────────────────────────
+let currentChapterSubTab = "chapters"; // 'chapters' or 'topics'
+
+function switchChapterSubTab(subTab) {
+    currentChapterSubTab = subTab;
+    const chaptersBtn = document.getElementById("chapter-subtab-chapters");
+    const topicsBtn = document.getElementById("chapter-subtab-topics");
+    const chaptersView = document.getElementById("chapters-subview-chapters");
+    const topicsView = document.getElementById("chapters-subview-topics");
+
+    if (!chaptersBtn || !topicsBtn || !chaptersView || !topicsView) return;
+
+    if (subTab === "chapters") {
+        chaptersBtn.classList.add("active");
+        topicsBtn.classList.remove("active");
+        chaptersView.style.display = "block";
+        topicsView.style.display = "none";
+        renderChaptersTab();
+    } else {
+        topicsBtn.classList.add("active");
+        chaptersBtn.classList.remove("active");
+        topicsView.style.display = "block";
+        chaptersView.style.display = "none";
+        renderTopicsTab();
+    }
+
+    refreshIcons();
+}
+
 // Chapters Tab Renderer
 function renderChaptersTab() {
     const container = document.getElementById("chapters-grid-container");
@@ -401,30 +599,553 @@ function renderChaptersTab() {
     appChapters.forEach(ch => {
         const card = document.createElement("div");
         card.className = "chapter-card animate-fade-in";
+        const isGeneral = ch.name.toLowerCase() === "general";
+        const subheadings = ch.subheadings || [];
+        
         card.innerHTML = `
             <div class="chapter-card-header">
                 <div class="chapter-card-title"><i data-lucide="folder" style="margin-right:6px;"></i> ${escapeHTML(ch.name)}</div>
                 <span class="chapter-card-count">${ch.word_count || 0} words</span>
             </div>
             <p style="font-size:0.88rem; color:var(--text-secondary); margin-top:8px;">${escapeHTML(ch.description || "No description provided.")}</p>
-            <div style="margin-top:16px; display:flex; gap:8px;">
+
+            <!-- Subheadings Section -->
+            <div class="chapter-subheadings-section" style="margin-top: 14px; padding-top: 12px; border-top: 1px solid var(--border-color); flex: 1;">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+                    <span style="font-size:0.82rem; font-weight:700; color:var(--text-secondary); display:flex; align-items:center; gap:5px;">
+                        <i data-lucide="list-tree" style="width:14px; height:14px; color:#38bdf8;"></i> Subheadings (${subheadings.length})
+                    </span>
+                    <button type="button" class="btn-xs" style="background:transparent; border:1px dashed rgba(99,102,241,0.4); color:var(--accent-primary); padding:3px 8px; border-radius:12px; font-size:0.75rem; font-weight:600; cursor:pointer;" onclick="openManageSubheadingsModal('${escapeJS(ch.name)}')">
+                        <i data-lucide="plus" style="width:10px; height:10px;"></i> Manage / Add
+                    </button>
+                </div>
+                <div class="subheadings-chips-container" style="display:flex; flex-wrap:wrap; gap:6px;">
+                    ${subheadings.length > 0 ? subheadings.map(s => `
+                        <span class="subheading-chip" onclick="filterByChapterAndSubheading('${escapeJS(ch.name)}', '${escapeJS(s.name)}')" title="Filter words in ${escapeHTML(s.name)}" style="display:inline-flex; align-items:center; gap:4px; font-size:0.75rem; font-weight:600; padding:3px 8px; border-radius:12px; background:rgba(56,189,248,0.12); color:#38bdf8; border:1px solid rgba(56,189,248,0.25); cursor:pointer; transition:all 0.15s ease;">
+                            <span>${escapeHTML(s.name)}</span>
+                            <span style="opacity:0.75; font-size:0.7rem;">(${s.word_count || 0})</span>
+                        </span>
+                    `).join('') : `
+                        <span style="font-size:0.78rem; color:var(--text-muted); font-style:italic;">No subheadings yet. Click "Manage / Add" to create one!</span>
+                    `}
+                </div>
+            </div>
+
+            <div class="chapter-actions-row" style="margin-top:16px; display:flex; gap:8px; align-items:center;">
                 <button type="button" class="secondary-btn btn-sm" style="flex:1;" onclick="filterByChapter('${escapeJS(ch.name)}')">
                     <i data-lucide="filter"></i> View Words
                 </button>
+                <button type="button" class="action-icon-btn add-btn" onclick="openAddWordsToChapterModal('${escapeJS(ch.name)}')" title="Add Words to Chapter">
+                    <i data-lucide="plus-circle"></i>
+                </button>
+                <button type="button" class="action-icon-btn edit-btn" onclick="openEditChapterModal('${escapeJS(ch.name)}', '${escapeJS(ch.description || '')}')" title="Edit Chapter">
+                    <i data-lucide="edit-3"></i>
+                </button>
+                ${!isGeneral ? `
+                <button type="button" class="action-icon-btn delete-btn" onclick="deleteChapter('${escapeJS(ch.name)}')" title="Delete Chapter">
+                    <i data-lucide="trash-2"></i>
+                </button>
+                ` : `
+                <button type="button" class="action-icon-btn delete-btn" style="opacity:0.35; cursor:not-allowed;" disabled title="Default 'General' chapter cannot be deleted">
+                    <i data-lucide="trash-2"></i>
+                </button>
+                `}
             </div>
         `;
         container.appendChild(card);
     });
 
-    if (window.lucide) lucide.createIcons();
+    refreshIcons();
 }
 
 function filterByChapter(chapterName) {
     selectedFilterChapter = chapterName;
+    selectedFilterSubheading = "All";
     const filterSelect = document.getElementById("filter-chapter-select");
     if (filterSelect) filterSelect.value = chapterName;
+    updateFilterSubheadingSelect(chapterName);
     switchTab("manage");
     handleSearch();
+}
+
+function filterByChapterAndSubheading(chapterName, subheadingName) {
+    selectedFilterChapter = chapterName;
+    selectedFilterSubheading = subheadingName;
+    const filterSelect = document.getElementById("filter-chapter-select");
+    if (filterSelect) filterSelect.value = chapterName;
+    updateFilterSubheadingSelect(chapterName);
+    const subFilterSelect = document.getElementById("filter-subheading-select");
+    if (subFilterSelect) subFilterSelect.value = subheadingName;
+    switchTab("manage");
+    handleSearch();
+}
+
+// ── Manage Subheadings Modal Logic ──────────────────────────────────────────
+let currentManageSubheadingsChapter = "";
+
+function openManageSubheadingsModal(chapterName) {
+    currentManageSubheadingsChapter = chapterName;
+    const modal = document.getElementById("manage-subheadings-modal");
+    const titleEl = document.getElementById("manage-subheadings-title");
+    const hiddenInput = document.getElementById("manage-subheadings-chapter-hidden");
+    const nameInput = document.getElementById("subheading-name-input");
+    const descInput = document.getElementById("subheading-desc-input");
+
+    if (titleEl) titleEl.innerHTML = `<i data-lucide="list-tree"></i> Subheadings for "${escapeHTML(chapterName)}"`;
+    if (hiddenInput) hiddenInput.value = chapterName;
+    if (nameInput) nameInput.value = "";
+    if (descInput) descInput.value = "";
+
+    renderManageSubheadingsList(chapterName);
+
+    if (modal) {
+        modal.classList.add("open");
+        modal.classList.add("active");
+        refreshIcons();
+    }
+}
+
+function closeManageSubheadingsModal() {
+    const modal = document.getElementById("manage-subheadings-modal");
+    if (modal) {
+        modal.classList.remove("open");
+        modal.classList.remove("active");
+    }
+}
+
+function renderManageSubheadingsList(chapterName) {
+    const container = document.getElementById("chapter-subheadings-list");
+    if (!container) return;
+    container.innerHTML = "";
+
+    const subheadings = getSubheadingsForChapter(chapterName);
+    if (subheadings.length === 0) {
+        container.innerHTML = `<div style="text-align:center; padding:12px; color:var(--text-muted); font-size:0.85rem; font-style:italic;">No subheadings in this chapter yet.</div>`;
+        return;
+    }
+
+    subheadings.forEach(sub => {
+        const itemRow = document.createElement("div");
+        itemRow.style.cssText = "display:flex; align-items:center; justify-content:space-between; padding:5px 8px; border-radius:var(--border-radius-sm); background:rgba(255,255,255,0.03); border:1px solid var(--border-color);";
+        itemRow.innerHTML = `
+            <div style="flex:1; min-width:0; margin-right:6px;">
+                <div style="font-weight:700; font-size:0.82rem; color:var(--text-primary); display:flex; align-items:center; gap:5px;">
+                    <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHTML(sub.name)}</span>
+                    <span style="font-size:0.7rem; color:#38bdf8; background:rgba(56,189,248,0.12); padding:1px 5px; border-radius:8px; white-space:nowrap;">${sub.word_count || 0} words</span>
+                </div>
+                ${sub.description ? `<div style="font-size:0.72rem; color:var(--text-muted); margin-top:1px; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;">${escapeHTML(sub.description)}</div>` : ''}
+            </div>
+            <div style="display:flex; gap:4px; align-items:center; flex-shrink:0;">
+                <button type="button" class="btn-xs" style="background:rgba(56,189,248,0.16); border:1px solid rgba(56,189,248,0.3); color:#38bdf8; padding:2px 6px; border-radius:8px; font-size:0.7rem; font-weight:600; cursor:pointer; display:inline-flex; align-items:center; gap:2px;" onclick="closeManageSubheadingsModal(); openAddWordsToChapterModal('${escapeJS(chapterName)}', '${escapeJS(sub.name)}')" title="Add / Assign words to this subheading">
+                    <i data-lucide="plus-circle" style="width:11px; height:11px;"></i> Add Words
+                </button>
+                <button type="button" class="action-icon-btn edit-btn" style="width:24px; height:24px;" onclick="openEditSubheadingModal('${escapeJS(chapterName)}', '${escapeJS(sub.name)}', '${escapeJS(sub.description || '')}')" title="Edit Subheading">
+                    <i data-lucide="edit-3" style="width:12px; height:12px;"></i>
+                </button>
+                <button type="button" class="action-icon-btn delete-btn" style="width:24px; height:24px;" onclick="deleteSubheading('${escapeJS(chapterName)}', '${escapeJS(sub.name)}')" title="Delete Subheading">
+                    <i data-lucide="trash-2" style="width:12px; height:12px;"></i>
+                </button>
+            </div>
+        `;
+        container.appendChild(itemRow);
+    });
+
+    refreshIcons();
+}
+
+async function handleAddSubheadingSubmit(event) {
+    if (event) event.preventDefault();
+    const nameInput = document.getElementById("subheading-name-input");
+    const descInput = document.getElementById("subheading-desc-input");
+    const chapterName = currentManageSubheadingsChapter;
+
+    if (!nameInput || !chapterName) return;
+    const name = nameInput.value.trim();
+    const description = descInput ? descInput.value.trim() : "";
+
+    if (!name) {
+        showToast("Subheading name cannot be empty.", "error");
+        return;
+    }
+
+    try {
+        const response = await fetch("/api/subheadings", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chapter_name: chapterName, name, description })
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || "Failed to create subheading");
+
+        nameInput.value = "";
+        if (descInput) descInput.value = "";
+        showToast(`Created subheading '${name}' in '${chapterName}'!`, "success");
+
+        await fetchChapters();
+        renderManageSubheadingsList(chapterName);
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
+    }
+}
+
+// ── Edit Subheading Modal Functions ──────────────────────────────────────────
+function openEditSubheadingModal(chapterName, oldName, description) {
+    const modal = document.getElementById("edit-subheading-modal");
+    const chapterInput = document.getElementById("edit-subheading-chapter-hidden");
+    const oldNameInput = document.getElementById("edit-subheading-old-name");
+    const nameInput = document.getElementById("edit-subheading-name-input");
+    const descInput = document.getElementById("edit-subheading-desc-input");
+
+    if (!modal || !chapterInput || !oldNameInput || !nameInput || !descInput) return;
+
+    chapterInput.value = chapterName;
+    oldNameInput.value = oldName;
+    nameInput.value = oldName;
+    descInput.value = description || "";
+
+    modal.classList.add("open");
+    modal.classList.add("active");
+    setTimeout(() => { nameInput.focus(); }, 60);
+}
+
+function closeEditSubheadingModal() {
+    const modal = document.getElementById("edit-subheading-modal");
+    if (modal) {
+        modal.classList.remove("open");
+        modal.classList.remove("active");
+    }
+}
+
+async function handleEditSubheadingSubmit(event) {
+    if (event) event.preventDefault();
+    const chapterInput = document.getElementById("edit-subheading-chapter-hidden");
+    const oldNameInput = document.getElementById("edit-subheading-old-name");
+    const nameInput = document.getElementById("edit-subheading-name-input");
+    const descInput = document.getElementById("edit-subheading-desc-input");
+
+    if (!chapterInput || !oldNameInput || !nameInput || !descInput) return;
+
+    const chapter_name = chapterInput.value.trim();
+    const old_name = oldNameInput.value.trim();
+    const new_name = nameInput.value.trim();
+    const description = descInput.value.trim();
+
+    if (!new_name) {
+        showToast("Subheading name cannot be empty.", "error");
+        return;
+    }
+
+    try {
+        const response = await fetch("/api/subheadings", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ chapter_name, old_name, new_name, description })
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || "Failed to update subheading");
+
+        closeEditSubheadingModal();
+        showToast(data.message || `Subheading updated to '${new_name}'!`, "success");
+
+        if (selectedFilterSubheading === old_name) {
+            selectedFilterSubheading = new_name;
+        }
+
+        await fetchChapters();
+        await fetchWords();
+        renderManageSubheadingsList(chapter_name);
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
+    }
+}
+
+async function deleteSubheading(chapterName, name) {
+    if (!confirm(`Are you sure you want to delete subheading "${name}" from chapter "${chapterName}"?`)) return;
+
+    try {
+        const response = await fetch(`/api/subheadings?chapter_name=${encodeURIComponent(chapterName)}&name=${encodeURIComponent(name)}`, {
+            method: "DELETE"
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || "Failed to delete subheading");
+
+        showToast(data.message || `Deleted subheading '${name}'.`, "success");
+
+        if (selectedFilterSubheading === name) {
+            selectedFilterSubheading = "All";
+        }
+
+        await fetchChapters();
+        await fetchWords();
+        renderManageSubheadingsList(chapterName);
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
+    }
+}
+
+// ── Add Content / Words to Chapter Modal Logic ─────────────────────────────
+let currentTargetChapterName = "";
+let currentChapterContentMode = "new"; // 'new' or 'existing'
+let existingChapterWordsSelected = new Set();
+
+function openAddWordsToChapterModal(chapterName, defaultSubheading = "") {
+    currentTargetChapterName = chapterName;
+    const modal = document.getElementById("add-words-to-chapter-modal");
+    const titleEl = document.getElementById("chapter-modal-title");
+    const hiddenInput = document.getElementById("target-chapter-name-hidden");
+
+    if (titleEl) titleEl.innerHTML = `<i data-lucide="folder-plus"></i> Add Words to "${escapeHTML(chapterName)}"`;
+    if (hiddenInput) hiddenInput.value = chapterName;
+
+    // Populate subheading dropdown for new word in chapter
+    const subSelect = document.getElementById("chapter-new-subheading-select");
+    if (subSelect) {
+        populateSubheadingsSelect(subSelect, chapterName, defaultSubheading);
+    }
+
+    // Populate subheading dropdown for existing words assignment
+    const existSubSelect = document.getElementById("chapter-existing-subheading-select");
+    if (existSubSelect) {
+        populateSubheadingsSelect(existSubSelect, chapterName, defaultSubheading);
+    }
+
+    // Populate topic dropdown for new word in chapter
+    const topicSelect = document.getElementById("chapter-new-topic-select");
+    if (topicSelect) {
+        topicSelect.innerHTML = `<option value="">None / No Topic</option>`;
+        if (Array.isArray(appTopics)) {
+            appTopics.forEach(t => {
+                const opt = document.createElement("option");
+                opt.value = t.name;
+                opt.textContent = t.name;
+                topicSelect.appendChild(opt);
+            });
+        }
+    }
+
+    // Reset inputs
+    const newGerman = document.getElementById("chapter-new-german");
+    const newEnglish = document.getElementById("chapter-new-english");
+    const pasteText = document.getElementById("chapter-paste-text");
+    if (newGerman) newGerman.value = "";
+    if (newEnglish) newEnglish.value = "";
+    if (pasteText) pasteText.value = "";
+
+    existingChapterWordsSelected.clear();
+    switchChapterContentMode("new");
+
+    if (modal) {
+        modal.classList.add("open");
+        modal.classList.add("active");
+        refreshIcons();
+    }
+}
+
+function closeAddWordsToChapterModal() {
+    const modal = document.getElementById("add-words-to-chapter-modal");
+    if (modal) {
+        modal.classList.remove("open");
+        modal.classList.remove("active");
+    }
+}
+
+function switchChapterContentMode(mode) {
+    currentChapterContentMode = mode;
+    const btnNew = document.getElementById("chapter-tab-btn-new");
+    const btnExisting = document.getElementById("chapter-tab-btn-existing");
+    const viewNew = document.getElementById("chapter-content-mode-new");
+    const viewExisting = document.getElementById("chapter-content-mode-existing");
+
+    if (mode === "new") {
+        if (btnNew) btnNew.classList.add("active");
+        if (btnExisting) btnExisting.classList.remove("active");
+        if (viewNew) viewNew.style.display = "block";
+        if (viewExisting) viewExisting.style.display = "none";
+    } else {
+        if (btnExisting) btnExisting.classList.add("active");
+        if (btnNew) btnNew.classList.remove("active");
+        if (viewExisting) viewExisting.style.display = "block";
+        if (viewNew) viewNew.style.display = "none";
+        renderChapterExistingWordsList();
+    }
+}
+
+function renderChapterExistingWordsList() {
+    const listContainer = document.getElementById("chapter-existing-words-list");
+    const searchInput = document.getElementById("chapter-existing-search");
+    const query = searchInput ? searchInput.value.toLowerCase().trim() : "";
+
+    if (!listContainer) return;
+    listContainer.innerHTML = "";
+
+    const availableWords = allWords.filter(w => {
+        if (!query) return true;
+        return w.german.toLowerCase().includes(query) || w.english.toLowerCase().includes(query);
+    });
+
+    if (availableWords.length === 0) {
+        listContainer.innerHTML = `<div style="text-align:center; padding:16px; color:var(--text-muted); font-size:0.85rem;">No words found matching "${escapeHTML(query)}".</div>`;
+        return;
+    }
+
+    availableWords.forEach(w => {
+        const itemRow = document.createElement("label");
+        itemRow.style.cssText = "display:flex; align-items:center; gap:10px; padding:6px 10px; border-radius:6px; cursor:pointer; background:rgba(255,255,255,0.03);";
+        
+        const isAlreadyInChapter = (w.chapter_name || "").toLowerCase() === currentTargetChapterName.toLowerCase();
+        const isChecked = isAlreadyInChapter || existingChapterWordsSelected.has(w.german);
+
+        itemRow.innerHTML = `
+            <input type="checkbox" value="${escapeHTML(w.german)}" ${isChecked ? 'checked' : ''} style="cursor:pointer;" onchange="handleChapterWordCheckboxChange(this)">
+            <span style="font-weight:600; flex:1;">${escapeHTML(w.german)} <span style="font-weight:400; color:var(--text-muted);">— ${escapeHTML(w.english)}</span></span>
+            ${w.subheading ? `<span style="font-size:0.75rem; color:#38bdf8; background:rgba(56,189,248,0.15); padding:1px 6px; border-radius:10px;">${escapeHTML(w.subheading)}</span>` : ''}
+            ${w.chapter_name ? `<span style="font-size:0.75rem; color:#60a5fa; background:rgba(59,130,246,0.15); padding:1px 6px; border-radius:10px;">${escapeHTML(w.chapter_name)}</span>` : ''}
+            ${w.topic_name ? `<span style="font-size:0.75rem; color:#a78bfa; background:rgba(124,58,237,0.15); padding:1px 6px; border-radius:10px;">${escapeHTML(w.topic_name)}</span>` : ''}
+        `;
+        listContainer.appendChild(itemRow);
+    });
+}
+
+function filterChapterExistingWords() {
+    renderChapterExistingWordsList();
+}
+
+function handleChapterWordCheckboxChange(cb) {
+    if (cb.checked) {
+        existingChapterWordsSelected.add(cb.value);
+    } else {
+        existingChapterWordsSelected.delete(cb.value);
+    }
+}
+
+function toggleSelectAllChapterWords() {
+    const listContainer = document.getElementById("chapter-existing-words-list");
+    if (!listContainer) return;
+    const checkboxes = listContainer.querySelectorAll("input[type='checkbox']");
+    const anyUnchecked = Array.from(checkboxes).some(cb => !cb.checked);
+
+    checkboxes.forEach(cb => {
+        cb.checked = anyUnchecked;
+        if (anyUnchecked) {
+            existingChapterWordsSelected.add(cb.value);
+        } else {
+            existingChapterWordsSelected.delete(cb.value);
+        }
+    });
+}
+
+async function handleChapterAddWordsSubmit(event) {
+    event.preventDefault();
+    const newGerman = document.getElementById("chapter-new-german");
+    const newEnglish = document.getElementById("chapter-new-english");
+    const subSelect = document.getElementById("chapter-new-subheading-select");
+    const topicSelect = document.getElementById("chapter-new-topic-select");
+    const pasteText = document.getElementById("chapter-paste-text");
+    const submitBtn = document.getElementById("chapter-add-words-btn");
+
+    const german = newGerman ? newGerman.value.trim() : "";
+    const english = newEnglish ? newEnglish.value.trim() : "";
+    const subheading = subSelect ? subSelect.value.trim() : "";
+    const topic = topicSelect ? topicSelect.value.trim() : "";
+    const pasted = pasteText ? pasteText.value.trim() : "";
+
+    if (!german && !pasted) {
+        showToast("Please enter a single word or paste vocabulary lines.", "error");
+        return;
+    }
+
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerHTML = `<i data-lucide="loader-2"></i> Saving...`;
+    }
+
+    try {
+        let addedCount = 0;
+        if (pasted) {
+            const res = await fetch("/api/words/import-text", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ text: pasted, chapter_name: currentTargetChapterName, subheading, topic_name: topic })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.detail || "Failed to import words");
+            addedCount += (data.added || 0);
+        }
+
+        if (german && english) {
+            const res = await fetch("/api/words", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ german, english, chapter_name: currentTargetChapterName, subheading, topic_name: topic })
+            });
+            const data = await res.json();
+            if (!res.ok) throw new Error(data.detail || "Failed to add word");
+            addedCount += 1;
+        }
+
+        closeAddWordsToChapterModal();
+        showToast(`Saved to chapter '${currentTargetChapterName}'!`, "success");
+
+        await fetchChapters();
+        await fetchTopics();
+        await fetchWords();
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
+    } finally {
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerHTML = `<i data-lucide="plus-circle"></i> Save to Chapter`;
+            refreshIcons();
+        }
+    }
+}
+
+async function submitAssignExistingToChapter() {
+    if (existingChapterWordsSelected.size === 0) {
+        showToast("Please select at least one word from the list.", "error");
+        return;
+    }
+
+    const existSubSelect = document.getElementById("chapter-existing-subheading-select");
+    const chosenSubheading = existSubSelect ? existSubSelect.value.trim() : "";
+    const words = Array.from(existingChapterWordsSelected);
+
+    try {
+        let response;
+        if (chosenSubheading) {
+            response = await fetch("/api/subheadings/assign-words", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chapter_name: currentTargetChapterName, subheading: chosenSubheading, words })
+            });
+        } else {
+            response = await fetch("/api/chapters/assign-words", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ chapter_name: currentTargetChapterName, words })
+            });
+        }
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || "Failed to assign words");
+
+        closeAddWordsToChapterModal();
+        showToast(data.message || `Assigned words to '${currentTargetChapterName}'!`, "success");
+
+        await fetchChapters();
+        await fetchTopics();
+        await fetchWords();
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
+    }
 }
 
 // Add Chapter Modal Functions
@@ -470,6 +1191,110 @@ async function handleAddChapterSubmit(event) {
         showToast(err.message, "error");
     }
 }
+
+// Edit Chapter Modal Functions
+function openEditChapterModal(name, description) {
+    const modal = document.getElementById("edit-chapter-modal");
+    const oldNameInput = document.getElementById("edit-chapter-old-name");
+    const nameInput = document.getElementById("edit-chapter-name-input");
+    const descInput = document.getElementById("edit-chapter-desc-input");
+
+    if (!modal || !oldNameInput || !nameInput || !descInput) return;
+
+    oldNameInput.value = name;
+    nameInput.value = name;
+    descInput.value = description || "";
+
+    modal.classList.add("open");
+}
+
+function closeEditChapterModal() {
+    const modal = document.getElementById("edit-chapter-modal");
+    if (modal) modal.classList.remove("open");
+}
+
+async function handleEditChapterSubmit(event) {
+    event.preventDefault();
+    const oldNameInput = document.getElementById("edit-chapter-old-name");
+    const nameInput = document.getElementById("edit-chapter-name-input");
+    const descInput = document.getElementById("edit-chapter-desc-input");
+
+    if (!oldNameInput || !nameInput || !descInput) return;
+
+    const old_name = oldNameInput.value.trim();
+    const new_name = nameInput.value.trim();
+    const description = descInput.value.trim();
+
+    if (!new_name) {
+        showToast("Chapter name cannot be empty.", "error");
+        return;
+    }
+
+    try {
+        const response = await fetch("/api/chapters", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ old_name, new_name, description })
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || "Failed to update chapter");
+
+        closeEditChapterModal();
+        showToast(data.message || `Chapter '${new_name}' updated successfully!`, "success");
+
+        if (selectedFilterChapter === old_name) {
+            selectedFilterChapter = new_name;
+        }
+
+        await fetchChapters();
+        await fetchWords();
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
+    }
+}
+
+// Delete Chapter Handler
+async function deleteChapter(name) {
+    if (!name) return;
+    if (name.toLowerCase() === "general") {
+        showToast("The default 'General' chapter cannot be deleted.", "error");
+        return;
+    }
+
+    const confirmed = confirm(`Are you sure you want to delete chapter '${name}'?\n\nAny vocabulary words assigned to '${name}' will be safely moved to 'General'.`);
+    if (!confirmed) return;
+
+    try {
+        const response = await fetch(`/api/chapters?name=${encodeURIComponent(name)}`, {
+            method: "DELETE"
+        });
+
+        const data = await response.json();
+        if (!response.ok) throw new Error(data.detail || "Failed to delete chapter");
+
+        showToast(data.message || `Chapter '${name}' deleted successfully.`, "success");
+
+        if (selectedFilterChapter === name) {
+            selectedFilterChapter = "All";
+        }
+
+        await fetchChapters();
+        await fetchWords();
+        renderChaptersTab();
+    } catch (err) {
+        showToast(err.message, "error");
+    }
+}
+
+// Close modals when clicking on dark backdrop
+window.addEventListener("click", (e) => {
+    if (e.target && e.target.classList && e.target.classList.contains("modal")) {
+        e.target.classList.remove("open");
+        e.target.classList.remove("active");
+    }
+});
 
 // Dedicated Practice Stats Dashboard Renderer
 function renderStatsDashboard() {
@@ -596,7 +1421,7 @@ function renderStatsDashboard() {
         tbody.appendChild(tr);
     });
 
-    if (window.lucide) lucide.createIcons();
+    refreshIcons();
 }
 
 function handleStatsSearch() {
@@ -626,7 +1451,7 @@ function switchCardMode(mode) {
         trialContainer.style.display = "none";
         resetPracticeSession();
     }
-    if (window.lucide) lucide.createIcons();
+    refreshIcons();
 }
 
 // ── Practice Cards Mode Logic (Decks of 10, No Flip) ────────────────────────
@@ -828,7 +1653,7 @@ function showDeckSummary() {
     cardView.style.display = "none";
     summaryView.style.display = "block";
 
-    if (window.lucide) lucide.createIcons();
+    refreshIcons();
 
     // Scroll smoothly to summary top
     summaryView.scrollIntoView({ behavior: 'smooth', block: 'start' });
@@ -1182,12 +2007,25 @@ async function handleFileUpload(event) {
     event.preventDefault();
     const fileInput = document.getElementById("txt-file-input");
     const submitBtn = document.getElementById("upload-submit-btn");
+    const importChapterSelect = document.getElementById("import-chapter-select");
+    const importSubheadingSelect = document.getElementById("import-subheading-select");
+    const importTopicSelect = document.getElementById("import-topic-select");
 
     if (!fileInput.files || !fileInput.files[0]) return;
 
     const file = fileInput.files[0];
+    const targetChapter = importChapterSelect ? (importChapterSelect.value || "General") : ((selectedFilterChapter && selectedFilterChapter !== "All") ? selectedFilterChapter : "General");
+    const targetSubheading = importSubheadingSelect ? importSubheadingSelect.value : "";
+    const targetTopic = importTopicSelect ? importTopicSelect.value : "";
     const formData = new FormData();
     formData.append("file", file);
+    formData.append("chapter_name", targetChapter);
+    if (targetSubheading) {
+        formData.append("subheading", targetSubheading);
+    }
+    if (targetTopic) {
+        formData.append("topic_name", targetTopic);
+    }
 
     submitBtn.disabled = true;
     submitBtn.innerHTML = `<i data-lucide="loader-2"></i> Uploading...`;
@@ -1210,13 +2048,15 @@ async function handleFileUpload(event) {
         fileInput.value = "";
         document.getElementById("dropzone-filename").innerText = "Choose or drag .txt file";
         
+        await fetchChapters();
+        await fetchTopics();
         await fetchWords();
     } catch (error) {
         showToast(error.message, "error");
     } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = `<i data-lucide="upload-cloud"></i> Upload &amp; Import`;
-        if (window.lucide) lucide.createIcons();
+        refreshIcons();
     }
 }
 
@@ -1247,6 +2087,9 @@ async function handleTextImport(event) {
     event.preventDefault();
     const rawTextInput = document.getElementById("raw-text-input");
     const submitBtn = document.getElementById("text-import-submit-btn");
+    const importChapterSelect = document.getElementById("import-chapter-select");
+    const importSubheadingSelect = document.getElementById("import-subheading-select");
+    const importTopicSelect = document.getElementById("import-topic-select");
 
     if (!rawTextInput || !submitBtn) return;
 
@@ -1256,15 +2099,19 @@ async function handleTextImport(event) {
         return;
     }
 
+    const targetChapter = importChapterSelect ? (importChapterSelect.value || "General") : ((selectedFilterChapter && selectedFilterChapter !== "All") ? selectedFilterChapter : "General");
+    const targetSubheading = importSubheadingSelect ? importSubheadingSelect.value : "";
+    const targetTopic = importTopicSelect ? importTopicSelect.value : "";
+
     submitBtn.disabled = true;
     submitBtn.innerHTML = `<i data-lucide="loader-2"></i> Importing...`;
-    if (window.lucide) lucide.createIcons();
+    refreshIcons();
 
     try {
         const response = await fetch("/api/words/import-text", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ text })
+            body: JSON.stringify({ text, chapter_name: targetChapter, subheading: targetSubheading, topic_name: targetTopic })
         });
 
         const data = await response.json();
@@ -1278,13 +2125,15 @@ async function handleTextImport(event) {
         // Reset text area
         rawTextInput.value = "";
         
+        await fetchChapters();
+        await fetchTopics();
         await fetchWords();
     } catch (error) {
         showToast(error.message, "error");
     } finally {
         submitBtn.disabled = false;
         submitBtn.innerHTML = `<i data-lucide="check-circle-2"></i> Parse &amp; Import Text`;
-        if (window.lucide) lucide.createIcons();
+        refreshIcons();
     }
 }
 

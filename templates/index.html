@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Custom styling -->
-    <link rel="stylesheet" href="/static/style.css?v=18">
+    <link rel="stylesheet" href="/static/style.css?v=30">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -112,9 +112,14 @@
                                 </div>
                                 <div class="input-group">
                                     <label for="add-chapter-select">Chapter</label>
-                                    <select id="add-chapter-select"
-                                        style="width: 100%; padding: 10px 14px; font-weight: 700;">
+                                    <select id="add-chapter-select" onchange="handleAddChapterChange(this.value)">
                                         <option value="General">General</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label for="add-subheading-select">Subheading (Optional)</label>
+                                    <select id="add-subheading-select">
+                                        <option value="">None / No Subheading</option>
                                     </select>
                                 </div>
                                 <button type="submit" class="primary-btn">
@@ -136,6 +141,22 @@
                                         onclick="switchImportSubTab('text')">
                                         <i data-lucide="clipboard-type"></i> Paste Text
                                     </button>
+                                </div>
+                            </div>
+
+                            <!-- Target Chapter & Subheading selector for Import -->
+                            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 12px;">
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label for="import-chapter-select">Chapter</label>
+                                    <select id="import-chapter-select" onchange="handleImportChapterChange(this.value)">
+                                        <option value="General">General</option>
+                                    </select>
+                                </div>
+                                <div class="input-group" style="margin-bottom: 0;">
+                                    <label for="import-subheading-select">Subheading</label>
+                                    <select id="import-subheading-select">
+                                        <option value="">None / No Subheading</option>
+                                    </select>
                                 </div>
                             </div>
 
@@ -167,16 +188,14 @@
 
                             <!-- Sub-section 2: Paste Text -->
                             <div class="import-section" id="import-section-text" style="display: none;">
-                                <p class="upload-desc">Paste multi-line text formatted as <code>German / English</code>.
-                                </p>
-                                <form id="paste-text-form" onsubmit="handleTextImport(event)">
+                                <p class="upload-desc">Paste lines formatted as <code>German / English</code>.</p>
+                                <form id="paste-import-form" onsubmit="handleTextImport(event)">
                                     <div class="input-group">
-                                        <textarea id="raw-text-input" rows="4" required
-                                            placeholder="guten Morgen / good morning&#10;die Flasche / bottle"
-                                            style="width:100%; font-family:inherit; resize:vertical; padding:10px; border-radius:var(--border-radius-sm); border:1px solid var(--border-color); font-size:0.85rem; outline:none; margin-bottom:8px;"></textarea>
+                                        <textarea id="raw-text-input" rows="6"
+                                            placeholder="Guten Tag / Hello&#10;Wie geht es dir? / How are you?&#10;Danke / Thank you"
+                                            style="width: 100%; font-family: inherit; resize: vertical; padding: 12px; border-radius: var(--border-radius-md); border: 1px solid var(--border-color); font-size: 0.9rem; outline: none; margin-bottom: 12px;"></textarea>
                                     </div>
-                                    <button type="submit" class="secondary-btn upload-btn" id="text-import-submit-btn"
-                                        style="width:100%;">
+                                    <button type="submit" class="primary-btn" id="text-import-submit-btn">
                                         <i data-lucide="check-circle-2"></i> Parse &amp; Import Text
                                     </button>
                                 </form>
@@ -189,11 +208,16 @@
                         <div class="list-header" style="flex-wrap: wrap; gap: 12px;">
                             <h2>My Vocabulary</h2>
                             <div
-                                style="display: flex; gap: 10px; flex: 1; min-width: 280px; align-items: center; justify-content: flex-end;">
+                                style="display: flex; gap: 10px; flex: 1; min-width: 280px; align-items: center; justify-content: flex-end; flex-wrap: wrap;">
                                 <select id="filter-chapter-select"
-                                    style="padding: 8px 12px; font-weight: 700; color: var(--accent-primary);"
+                                    style="max-width: 170px; padding: 10px 36px 10px 14px; font-size: 0.88rem; font-weight: 700; color: var(--accent-primary);"
                                     onchange="handleChapterFilterChange(this)">
                                     <option value="All">All Chapters</option>
+                                </select>
+                                <select id="filter-subheading-select"
+                                    style="max-width: 170px; padding: 10px 36px 10px 14px; font-size: 0.88rem; font-weight: 700; color: #38bdf8; display: none;"
+                                    onchange="handleSubheadingFilterChange(this)">
+                                    <option value="All">All Subheadings</option>
                                 </select>
                                 <div class="search-box" style="flex: 1; max-width: 240px;">
                                     <i data-lucide="search"></i>
@@ -209,7 +233,6 @@
                                     <tr>
                                         <th>German</th>
                                         <th>English</th>
-                                        <th>Chapter</th>
                                         <th>Pronounce</th>
                                         <th class="actions-col">Actions</th>
                                     </tr>
@@ -524,7 +547,7 @@
                 </div>
             </main>
 
-            <!-- Tab Content: Chapters Overview -->
+            <!-- Tab Content: Vocabulary Chapters Overview -->
             <main class="tab-content hidden" id="content-chapters">
                 <div class="chapters-dashboard-container">
                     <div class="glass-card chapters-panel">
@@ -571,6 +594,33 @@
         </div>
     </div>
 
+    <!-- Edit Chapter Modal Dialog -->
+    <div class="modal" id="edit-chapter-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2>Edit Chapter</h2>
+                <button class="close-btn" onclick="closeEditChapterModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <form id="edit-chapter-form" onsubmit="handleEditChapterSubmit(event)">
+                <input type="hidden" id="edit-chapter-old-name">
+                <div class="input-group">
+                    <label for="edit-chapter-name-input">Chapter Name</label>
+                    <input type="text" id="edit-chapter-name-input" required placeholder="e.g., Chapter 1: Basics">
+                </div>
+                <div class="input-group">
+                    <label for="edit-chapter-desc-input">Description (Optional)</label>
+                    <input type="text" id="edit-chapter-desc-input" placeholder="e.g., Greetings and introductions">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="secondary-btn" onclick="closeEditChapterModal()">Cancel</button>
+                    <button type="submit" class="primary-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Edit Modal Dialog -->
     <div class="modal" id="edit-modal">
         <div class="modal-content glass-card">
@@ -590,6 +640,16 @@
                     <label for="edit-english-input">English Meaning</label>
                     <input type="text" id="edit-english-input" required>
                 </div>
+                <div class="input-group">
+                    <label for="edit-chapter-select">Chapter</label>
+                    <select id="edit-chapter-select" onchange="handleEditChapterChange(this.value)"></select>
+                </div>
+                <div class="input-group">
+                    <label for="edit-subheading-select">Subheading (Optional)</label>
+                    <select id="edit-subheading-select">
+                        <option value="">None / No Subheading</option>
+                    </select>
+                </div>
                 <div class="modal-footer">
                     <button type="button" class="secondary-btn" onclick="closeEditModal()">Cancel</button>
                     <button type="submit" class="primary-btn">Save Changes</button>
@@ -598,8 +658,171 @@
         </div>
     </div>
 
+    <!-- Add Words to Chapter Modal Dialog -->
+    <div class="modal" id="add-words-to-chapter-modal">
+        <div class="modal-content glass-card" style="max-width: 460px; padding: 18px 20px; max-height: 92vh; overflow-y: auto;">
+            <div class="modal-header" style="margin-bottom: 10px;">
+                <h2 id="chapter-modal-title" style="font-size: 1.05rem;"><i data-lucide="folder-plus"></i> Add Content to Chapter</h2>
+                <button class="close-btn" onclick="closeAddWordsToChapterModal()" style="width: 28px; height: 28px;">
+                    <i data-lucide="x" style="width: 15px; height: 15px;"></i>
+                </button>
+            </div>
+            
+            <input type="hidden" id="target-chapter-name-hidden">
+            
+            <!-- Mode Pills inside modal -->
+            <div class="mode-pills" style="margin-bottom: 12px; gap: 6px;">
+                <button type="button" class="mode-tab-btn active" id="chapter-tab-btn-new" onclick="switchChapterContentMode('new')" style="padding: 6px 12px; font-size: 0.78rem;">
+                    <i data-lucide="plus-circle" style="width: 13px; height: 13px;"></i> Add / Paste Words
+                </button>
+                <button type="button" class="mode-tab-btn" id="chapter-tab-btn-existing" onclick="switchChapterContentMode('existing')" style="padding: 6px 12px; font-size: 0.78rem;">
+                    <i data-lucide="check-square" style="width: 13px; height: 13px;"></i> Pick from Vocabulary
+                </button>
+            </div>
+
+            <!-- Tab 1: New / Paste words to chapter -->
+            <div id="chapter-content-mode-new">
+                <form id="chapter-add-words-form" onsubmit="handleChapterAddWordsSubmit(event)">
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label for="chapter-new-german" style="font-size: 0.72rem; margin-bottom: 2px;">German Word</label>
+                            <input type="text" id="chapter-new-german" placeholder="e.g., der Tisch" style="padding: 6px 10px; font-size: 0.84rem;">
+                        </div>
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label for="chapter-new-english" style="font-size: 0.72rem; margin-bottom: 2px;">English Meaning</label>
+                            <input type="text" id="chapter-new-english" placeholder="e.g., the table" style="padding: 6px 10px; font-size: 0.84rem;">
+                        </div>
+                    </div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-bottom: 6px;">
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label for="chapter-new-subheading-select" style="font-size: 0.72rem; margin-bottom: 2px;">Subheading</label>
+                            <select id="chapter-new-subheading-select" style="padding: 6px 8px; font-size: 0.82rem;">
+                                <option value="">None / No Subheading</option>
+                            </select>
+                        </div>
+                        <div class="input-group" style="margin-bottom: 0;">
+                            <label for="chapter-new-topic-select" style="font-size: 0.72rem; margin-bottom: 2px;">Topic</label>
+                            <select id="chapter-new-topic-select" style="padding: 6px 8px; font-size: 0.82rem;">
+                                <option value="">None / No Topic</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div style="text-align: center; margin: 8px 0 6px 0; color: var(--text-muted); font-size: 0.72rem; font-weight: 600;">— OR PASTE MULTIPLE LINES —</div>
+                    <div class="input-group" style="margin-bottom: 6px;">
+                        <label for="chapter-paste-text" style="font-size: 0.72rem; margin-bottom: 2px;">Paste Vocabulary Lines (German / English)</label>
+                        <textarea id="chapter-paste-text" rows="2" placeholder="der Tisch / the table&#10;lernen / to learn" style="width:100%; font-family:inherit; resize:vertical; padding:6px 8px; border-radius:var(--border-radius-sm); border:1px solid var(--border-color); font-size:0.82rem; outline:none; margin-bottom:4px;"></textarea>
+                    </div>
+                    <div class="modal-footer" style="margin-top: 10px; margin-bottom: 0;">
+                        <button type="button" class="secondary-btn btn-sm" onclick="closeAddWordsToChapterModal()" style="padding: 6px 14px; font-size: 0.82rem;">Cancel</button>
+                        <button type="submit" class="primary-btn btn-sm" id="chapter-add-words-btn" style="padding: 6px 16px; font-size: 0.82rem;">
+                            <i data-lucide="plus-circle" style="width: 13px; height: 13px;"></i> Save to Chapter
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Tab 2: Pick from existing vocabulary -->
+            <div id="chapter-content-mode-existing" style="display: none;">
+                <div class="input-group" style="margin-bottom: 8px;">
+                    <label for="chapter-existing-subheading-select" style="font-size: 0.72rem; margin-bottom: 2px;">Assign to Subheading (Optional)</label>
+                    <select id="chapter-existing-subheading-select" style="padding: 6px 8px; font-size: 0.82rem;">
+                        <option value="">None / No Subheading</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 8px; display: flex; gap: 6px; align-items: center;">
+                    <div class="search-box" style="flex: 1;">
+                        <i data-lucide="search" style="width: 14px; height: 14px;"></i>
+                        <input type="text" id="chapter-existing-search" placeholder="Search words to select..." oninput="filterChapterExistingWords()" style="width:100%; padding:6px 10px 6px 30px; font-size:0.82rem; border-radius:var(--border-radius-sm); border:1px solid var(--border-color); background:transparent; color:inherit;">
+                    </div>
+                    <button type="button" class="secondary-btn btn-sm" onclick="toggleSelectAllChapterWords()" style="padding: 6px 10px; font-size: 0.75rem;">Toggle All</button>
+                </div>
+                <div id="chapter-existing-words-list" style="max-height: 180px; overflow-y: auto; border: 1px solid var(--border-color); border-radius: var(--border-radius-sm); padding: 6px; display: flex; flex-direction: column; gap: 4px; background: rgba(0,0,0,0.15);">
+                    <!-- Populated dynamically -->
+                </div>
+                <div class="modal-footer" style="margin-top: 10px; margin-bottom: 0;">
+                    <button type="button" class="secondary-btn btn-sm" onclick="closeAddWordsToChapterModal()" style="padding: 6px 14px; font-size: 0.82rem;">Cancel</button>
+                    <button type="button" class="primary-btn btn-sm" onclick="submitAssignExistingToChapter()" style="padding: 6px 16px; font-size: 0.82rem;">
+                        <i data-lucide="check" style="width: 13px; height: 13px;"></i> Assign Selected
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Manage Subheadings Modal Dialog -->
+    <div class="modal" id="manage-subheadings-modal">
+        <div class="modal-content glass-card" style="max-width: 440px; padding: 20px 22px;">
+            <div class="modal-header" style="margin-bottom: 12px;">
+                <h2 id="manage-subheadings-title" style="font-size: 1.08rem;"><i data-lucide="list-tree"></i> Subheadings</h2>
+                <button class="close-btn" onclick="closeManageSubheadingsModal()" style="width: 28px; height: 28px;">
+                    <i data-lucide="x" style="width: 15px; height: 15px;"></i>
+                </button>
+            </div>
+            
+            <input type="hidden" id="manage-subheadings-chapter-hidden">
+
+            <!-- Add Subheading Form -->
+            <form id="add-subheading-form" onsubmit="handleAddSubheadingSubmit(event)" style="margin-bottom: 12px; padding: 12px 14px; border-radius: var(--border-radius-md); background: rgba(0,0,0,0.12); border: 1px solid var(--border-color);">
+                <div style="font-weight: 700; font-size: 0.84rem; margin-bottom: 8px; display:flex; align-items:center; gap:6px; color:var(--text-primary);">
+                    <i data-lucide="plus-circle" style="width:13px; height:13px; color:var(--accent-primary);"></i> Create New Subheading
+                </div>
+                <div class="input-group" style="margin-bottom: 8px;">
+                    <label for="subheading-name-input" style="font-size: 0.72rem; margin-bottom: 3px;">Subheading Name</label>
+                    <input type="text" id="subheading-name-input" required placeholder="e.g., 1.1 Begrüßungen &amp; Dialoge" style="padding: 7px 10px; font-size: 0.84rem;">
+                </div>
+                <div class="input-group" style="margin-bottom: 8px;">
+                    <label for="subheading-desc-input" style="font-size: 0.72rem; margin-bottom: 3px;">Description (Optional)</label>
+                    <input type="text" id="subheading-desc-input" placeholder="e.g., Common greetings, farewells" style="padding: 7px 10px; font-size: 0.84rem;">
+                </div>
+                <button type="submit" class="primary-btn btn-sm" style="width: 100%; margin-top: 4px; padding: 7px 12px; font-size: 0.82rem;">
+                    <i data-lucide="plus-circle" style="width:13px; height:13px;"></i> Add Subheading
+                </button>
+            </form>
+
+            <!-- Subheadings List -->
+            <div style="font-weight: 700; font-size: 0.8rem; margin-bottom: 6px; color: var(--text-secondary);">
+                Existing Subheadings in this Chapter:
+            </div>
+            <div id="chapter-subheadings-list" style="max-height: 170px; overflow-y: auto; display: flex; flex-direction: column; gap: 6px; padding-right: 2px;">
+                <!-- Populated dynamically -->
+            </div>
+
+            <div class="modal-footer" style="margin-top: 12px; margin-bottom: 0;">
+                <button type="button" class="secondary-btn btn-sm" onclick="closeManageSubheadingsModal()" style="padding: 6px 16px; font-size: 0.82rem;">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Edit Subheading Modal Dialog -->
+    <div class="modal" id="edit-subheading-modal">
+        <div class="modal-content glass-card">
+            <div class="modal-header">
+                <h2>Edit Subheading</h2>
+                <button class="close-btn" onclick="closeEditSubheadingModal()">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <form id="edit-subheading-form" onsubmit="handleEditSubheadingSubmit(event)">
+                <input type="hidden" id="edit-subheading-chapter-hidden">
+                <input type="hidden" id="edit-subheading-old-name">
+                <div class="input-group">
+                    <label for="edit-subheading-name-input">Subheading Name</label>
+                    <input type="text" id="edit-subheading-name-input" required placeholder="e.g., 1.1 Begrüßungen">
+                </div>
+                <div class="input-group">
+                    <label for="edit-subheading-desc-input">Description (Optional)</label>
+                    <input type="text" id="edit-subheading-desc-input" placeholder="e.g., Greetings and introductions">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="secondary-btn" onclick="closeEditSubheadingModal()">Cancel</button>
+                    <button type="submit" class="primary-btn">Save Changes</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
     <!-- Script Injection -->
-    <script src="/static/app.js?v=18"></script>
+    <script src="/static/app.js?v=32"></script>
 </body>
 
 </html>
