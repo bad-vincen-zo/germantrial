@@ -272,6 +272,63 @@ def init_db():
     except Exception:
         pass
 
+    # ── Auto-seed from initial_vocab.json if present ─────────────────────────
+    seed_file = "initial_vocab.json"
+    if os.path.exists(seed_file):
+        try:
+            import json
+            with open(seed_file, "r", encoding="utf-8") as f:
+                seed_data = json.load(f)
+
+            if USE_POSTGRES:
+                cur = conn.cursor()
+                for ch in seed_data.get("chapters", []):
+                    cur.execute("""
+                        INSERT INTO chapters (name, description)
+                        VALUES (%s, %s)
+                        ON CONFLICT (name) DO NOTHING
+                    """, (ch["name"], ch.get("description", "")))
+                
+                for sub in seed_data.get("subheadings", []):
+                    cur.execute("""
+                        INSERT INTO chapter_subheadings (chapter_name, name, description)
+                        VALUES (%s, %s, %s)
+                        ON CONFLICT (chapter_name, name) DO NOTHING
+                    """, (sub["chapter_name"], sub["name"], sub.get("description", "")))
+                
+                for top in seed_data.get("topics", []):
+                    cur.execute("""
+                        INSERT INTO topics (name, description)
+                        VALUES (%s, %s)
+                        ON CONFLICT (name) DO NOTHING
+                    """, (top["name"], top.get("description", "")))
+
+                for w in seed_data.get("words", []):
+                    cur.execute("""
+                        INSERT INTO vocabulary (german, english, chapter_name, subheading, topic_name, times_asked, times_correct, times_wrong)
+                        VALUES (%s, %s, %s, %s, %s, %s, %s, %s)
+                        ON CONFLICT (LOWER(german)) DO NOTHING
+                    """, (w["german"], w["english"], w.get("chapter_name", "General"), w.get("subheading", ""), w.get("topic_name", ""), w.get("times_asked", 0), w.get("times_correct", 0), w.get("times_wrong", 0)))
+                
+                conn.commit()
+                cur.close()
+                print(f"[DB] Auto-seeded initial vocabulary items into PostgreSQL.")
+            else:
+                for ch in seed_data.get("chapters", []):
+                    conn.execute("INSERT OR IGNORE INTO chapters (name, description) VALUES (?, ?)", (ch["name"], ch.get("description", "")))
+                for sub in seed_data.get("subheadings", []):
+                    conn.execute("INSERT OR IGNORE INTO chapter_subheadings (chapter_name, name, description) VALUES (?, ?, ?)", (sub["chapter_name"], sub["name"], sub.get("description", "")))
+                for top in seed_data.get("topics", []):
+                    conn.execute("INSERT OR IGNORE INTO topics (name, description) VALUES (?, ?)", (top["name"], top.get("description", "")))
+                for w in seed_data.get("words", []):
+                    conn.execute("""
+                        INSERT OR IGNORE INTO vocabulary (german, english, chapter_name, subheading, topic_name, times_asked, times_correct, times_wrong)
+                        VALUES (?, ?, ?, ?, ?, ?, ?, ?)
+                    """, (w["german"], w["english"], w.get("chapter_name", "General"), w.get("subheading", ""), w.get("topic_name", ""), w.get("times_asked", 0), w.get("times_correct", 0), w.get("times_wrong", 0)))
+                conn.commit()
+        except Exception as e:
+            print(f"[DB] Auto-seed note: {e}")
+
     conn.close()
 
 

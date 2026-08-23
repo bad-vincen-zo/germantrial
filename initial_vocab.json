@@ -1,0 +1,7117 @@
+{
+  "chapters": [
+    {
+      "name": "General",
+      "description": "Default vocabulary collection"
+    },
+    {
+      "name": "Kapitel 1",
+      "description": ""
+    },
+    {
+      "name": "Kapitel 2",
+      "description": ""
+    },
+    {
+      "name": "Kapitel 3",
+      "description": ""
+    }
+  ],
+  "subheadings": [
+    {
+      "chapter_name": "Kapitel 1",
+      "name": "Guten Tag!",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 1",
+      "name": "Halo! Tschüs",
+      "description": ""
+    },
+    {
+      "chapter_name": "Guten Tag!",
+      "name": "1.1 Begrüßungen",
+      "description": "Greetings"
+    },
+    {
+      "chapter_name": "Kapitel 1",
+      "name": "Guten Tag! Auf weidersehen",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 1",
+      "name": "Woher kommen Sie",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 1",
+      "name": "Zahlen und Buchstaben",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 1",
+      "name": "Länder und Sprachen",
+      "description": ""
+    },
+    {
+      "chapter_name": "General",
+      "name": "der Tag/ die Tage",
+      "description": "Days of a week"
+    },
+    {
+      "chapter_name": "General",
+      "name": "der Monat/ die Monate",
+      "description": "Months"
+    },
+    {
+      "chapter_name": "General",
+      "name": "die Jahrezeitan",
+      "description": "Season"
+    },
+    {
+      "chapter_name": "General",
+      "name": "die Farben",
+      "description": "Colours"
+    },
+    {
+      "chapter_name": "Kapitel 1",
+      "name": "kurz und klar",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 2",
+      "name": "Freunde, Kollegen und ich",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 2",
+      "name": "Meine Hobbys, meine Freunde",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 2",
+      "name": "Gehen wir ins Kino?",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 2",
+      "name": "Mein Beruf",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 2",
+      "name": "Artikel lernen",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 2",
+      "name": "Neu im Club",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 2",
+      "name": "kurz und klar",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 3",
+      "name": "In Hamburg",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 3",
+      "name": "Die Taxifahrt",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 3",
+      "name": "Kein Glück?!",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 3",
+      "name": "Links, rechts, geradeaus",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 3",
+      "name": "Events in Hamburg",
+      "description": ""
+    },
+    {
+      "chapter_name": "Kapitel 3",
+      "name": "kurz und klar",
+      "description": ""
+    }
+  ],
+  "topics": [
+    {
+      "name": "der Tag/ die Tage",
+      "description": "Days of a week"
+    },
+    {
+      "name": "der Monat/ die Monate",
+      "description": "Months"
+    },
+    {
+      "name": "die Jahrezeitan",
+      "description": "Season"
+    },
+    {
+      "name": "die Farben",
+      "description": "Colours"
+    }
+  ],
+  "words": [
+    {
+      "german": "das Auto",
+      "english": "car",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Artikel",
+      "english": "article",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Arzt",
+      "english": "doctor",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Arztin",
+      "english": "Doctor(F)",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Computer",
+      "english": "computer",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Katze",
+      "english": "Cat",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Hund",
+      "english": "Dog",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Glas",
+      "english": "glass",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Geld",
+      "english": "money",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Kellner",
+      "english": "waiter",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Kellnerin",
+      "english": "Waitress",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "maskulin",
+      "english": "masculine",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Medikament",
+      "english": "medicine",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "mehrere",
+      "english": "several",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Rechnung",
+      "english": "bill / invoice",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Spritye",
+      "english": "Injection",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Stift",
+      "english": "pen",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "tablette",
+      "english": "pill",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Taxifahrer",
+      "english": "taxi driver",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Taxifahrerin",
+      "english": "taxi driver",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "markieren",
+      "english": "to highlight / mark",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Kapitel",
+      "english": "chapter",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Seite",
+      "english": "page",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "suchen",
+      "english": "to search",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "abend",
+      "english": "Evening",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "alt",
+      "english": "old",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "fahren",
+      "english": "to drive",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Beruf",
+      "english": "occupation",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "freihaben",
+      "english": "to have time off / have a holiday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "groß",
+      "english": "large",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Krankenhaus",
+      "english": "hospital",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Krankenpfleger",
+      "english": "male nurse",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Krankenpflegerin",
+      "english": "female nurse",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "meistens",
+      "english": "mostly",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Nachmittag",
+      "english": "afternoon",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Nachts",
+      "english": "at night",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Patient",
+      "english": "patient",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Patientin",
+      "english": "patient",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Platz",
+      "english": "room / space",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "pro",
+      "english": "per",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Seminar",
+      "english": "seminar",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Stunde",
+      "english": "hour",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Universität",
+      "english": "university",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "warten",
+      "english": "to wait",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Woche",
+      "english": "week",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Zimmer",
+      "english": "room",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Information",
+      "english": "information",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "präsentieren",
+      "english": "to present",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "alle",
+      "english": "all",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Architekt",
+      "english": "architect",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Architektin",
+      "english": "architect",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "tauschen",
+      "english": "to swap / switch",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Friseur",
+      "english": "hairdresser",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Friseurin",
+      "english": "hairdresser",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Stuhl",
+      "english": "chair",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Lampe",
+      "english": "lamp",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Tisch",
+      "english": "table",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Deutsch",
+      "english": "German",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "gut",
+      "english": "good",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zuordnen",
+      "english": "to assign",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zusammergehören",
+      "english": "to fit together",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Handtuch",
+      "english": "towel",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Autobahn",
+      "english": "highway",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Koffer",
+      "english": "suitcase",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Kranke",
+      "english": "Sick Person",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Würstchen",
+      "english": "sausage",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Sprechen",
+      "english": "to speak",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sprachen",
+      "english": "Languages",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "was",
+      "english": "what?",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ein, eine",
+      "english": "a",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "kennen,",
+      "english": "to know",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Kursplakat",
+      "english": "course poster",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "machen",
+      "english": "to make",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sammeln",
+      "english": "to collect",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "und",
+      "english": "and",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "auch",
+      "english": "also",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "bis bald",
+      "english": "see you soon",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ciao",
+      "english": "bye",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "danke",
+      "english": "thank you",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die",
+      "english": "the",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Entschuldigung",
+      "english": "here: to be sorry",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "gehen",
+      "english": "to work / be possible",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "hallo",
+      "english": "hello",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "heißen",
+      "english": "to be named",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "hören",
+      "english": "to hear",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ich",
+      "english": "I",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "lesen",
+      "english": "to read",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Person",
+      "english": "person",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "sehr",
+      "english": "very",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "sein,",
+      "english": "to be",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "tschüs",
+      "english": "bye",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "wer",
+      "english": "who?",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Situation",
+      "english": "situation",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "spielen",
+      "english": "to play",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "bekannt",
+      "english": "well-known",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Name",
+      "english": "name",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "oder",
+      "english": "or",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "auf Wiedersehen",
+      "english": "goodbye",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das",
+      "english": "this",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "es",
+      "english": "it",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Frau",
+      "english": "Miss",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ein",
+      "english": "a",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "kennen",
+      "english": "to know",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "sein",
+      "english": "his",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "gute Nacht",
+      "english": "good night",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "guten Morgen",
+      "english": "good morning",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Herr",
+      "english": "Mr",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Ihnen",
+      "english": "you",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "mein",
+      "english": "my",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 3,
+      "times_correct": 3,
+      "times_wrong": 0
+    },
+    {
+      "german": "formell",
+      "english": "formal",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "informell",
+      "english": "informal",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Nachname",
+      "english": "last name",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Personalpronomen",
+      "english": "personal pronoun",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Verb",
+      "english": "verb",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Vorname",
+      "english": "first name",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Antwort",
+      "english": "answer",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "aus",
+      "english": "here: from",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Deutschland",
+      "english": "Germany",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "in",
+      "english": "in",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "kommen",
+      "english": "to come from",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Reiseführer",
+      "english": "travel guide",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Reiseführerin",
+      "english": "travel guide",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "sprechen",
+      "english": "to speak",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Telefon",
+      "english": "telephone",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "welche",
+      "english": "which",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "wo",
+      "english": "where",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "woher",
+      "english": "from where",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "wohnen",
+      "english": "to live",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Aussagesatz",
+      "english": "declarative sentence",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "den",
+      "english": "the",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Interview",
+      "english": "interview",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "variieren",
+      "english": "to vary",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die W-Frage",
+      "english": "w-question",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "er",
+      "english": "he",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ergänzen",
+      "english": "to complete",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sie",
+      "english": "they",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "notieren",
+      "english": "to note",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "wie",
+      "english": "here: like",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zwei",
+      "english": "two",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Partner",
+      "english": "partner",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Partnerin",
+      "english": "partner",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "raten",
+      "english": "to guess",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "vor|stellen",
+      "english": "to introduce",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "acht",
+      "english": "eight",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "achtzehn",
+      "english": "eighteen",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Buchstabe",
+      "english": "letter",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "dann",
+      "english": "then",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "drei",
+      "english": "three",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "dreizehn",
+      "english": "thirteen",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "eins",
+      "english": "one",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "elf",
+      "english": "eleven",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "fünf",
+      "english": "five",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "fünfzehn",
+      "english": "fifteen",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "laut",
+      "english": "loud",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "mit|sprechen",
+      "english": "to speak along",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "neun",
+      "english": "nine",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "neunzehn",
+      "english": "nineteen",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "null",
+      "english": "zero",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sechs",
+      "english": "six",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "sechzehn",
+      "english": "sixteen",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sieben",
+      "english": "seven",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "siebzehn",
+      "english": "seventeen",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "vier",
+      "english": "four",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "vierzehn",
+      "english": "fourteen",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Zahl",
+      "english": "number",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zehn",
+      "english": "ten",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "zwanzig",
+      "english": "twenty",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "zwölf",
+      "english": "twelve",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Handynummer",
+      "english": "mobile phone number",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "dein",
+      "english": "your",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "fragen",
+      "english": "to ask",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "nach",
+      "english": "to",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Telefonnummer",
+      "english": "telephone number",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Alphabet",
+      "english": "alphabet",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "mit|lesen",
+      "english": "to read along",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zuerst",
+      "english": "at first",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die E-Mail-Adresse",
+      "english": "email address",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Gespräch",
+      "english": "conversation",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "man",
+      "english": "one",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "minus",
+      "english": "minus",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Punkt",
+      "english": "period",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sagen",
+      "english": "to say",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "schreiben",
+      "english": "to write",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Unterstrich",
+      "english": "underscore",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "bitte",
+      "english": "please",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "buchstabieren",
+      "english": "to spell",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Dialog",
+      "english": "dialogue",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "ein bisschen",
+      "english": "a little",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "langsam",
+      "english": "slow",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "nicht",
+      "english": "not",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "noch einmal",
+      "english": "once more",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "verstehen",
+      "english": "to understand",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Algerien",
+      "english": "Algeria",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Arabisch",
+      "english": "Arabic",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Brasilien",
+      "english": "Brazil",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Französisch",
+      "english": "French",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Japan",
+      "english": "Japan",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Land",
+      "english": "country",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "lernen",
+      "english": "to learn",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Österreich",
+      "english": "Austria",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Portugiesisch",
+      "english": "Portuguese",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Schweiz",
+      "english": "Switzerland",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Tabelle",
+      "english": "table",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die USA",
+      "english": "USA",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "Frankreich",
+      "english": "France",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Griechenland",
+      "english": "Greece",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Italien",
+      "english": "Italy",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Mexiko",
+      "english": "Mexico",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Portugal",
+      "english": "Portugal",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Thailand",
+      "english": "Thailand",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Polen",
+      "english": "Poland",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Polnisch",
+      "english": "Polish",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Rätoromanisch",
+      "english": "Raetho-Romance",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Russland",
+      "english": "Russia",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Spanien",
+      "english": "Spain",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Türkei",
+      "english": "Turkey",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Ukraine",
+      "english": "Ukraine",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zu",
+      "english": "to",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "zweit",
+      "english": "here: pair",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "kurz",
+      "english": "short",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Stadt",
+      "english": "city",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Text",
+      "english": "text",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Länder und Sprachen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Befinden",
+      "english": "condition",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "darauf",
+      "english": "upon",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Grammatik",
+      "english": "grammar",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "grüßen",
+      "english": "to greet",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "reagieren",
+      "english": "to react",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Redemittel",
+      "english": "useful phrases",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 0,
+      "times_wrong": 1
+    },
+    {
+      "german": "das Subjekt",
+      "english": "subject",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "über",
+      "english": "about",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "verabschieden",
+      "english": "to say goodbye",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das W-Wort",
+      "english": "w-word",
+      "chapter_name": "Kapitel 1",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "gern",
+      "english": "gladly",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Leute",
+      "english": "people",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "fotografieren",
+      "english": "to photograph",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Freund",
+      "english": "friend",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Freundin",
+      "english": "female friend",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "joggen",
+      "english": "to jog",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Kollege",
+      "english": "colleague",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Kollegin",
+      "english": "colleague",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Musik",
+      "english": "music",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "singen",
+      "english": "to sing",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "tanzen",
+      "english": "to dance",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "an|kreuzen",
+      "english": "to mark",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Kino",
+      "english": "movie theater / cinema",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "kochen",
+      "english": "to cook",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "reisen",
+      "english": "to travel",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "schwimmen",
+      "english": "to swim",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "antworten",
+      "english": "to answer",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "arbeiten",
+      "english": "to work",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "ja",
+      "english": "yes",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "nein",
+      "english": "no",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "so",
+      "english": "like this",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Buch",
+      "english": "book",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Fußball",
+      "english": "football / soccer",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "lieben",
+      "english": "to love",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Sensation",
+      "english": "sensation",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "super",
+      "english": "super",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "toll",
+      "english": "great",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "wir",
+      "english": "we",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "am",
+      "english": "at / on",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Endung",
+      "english": "ending",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Foto",
+      "english": "photo",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ihr",
+      "english": "its / her / their",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Kommentar",
+      "english": "comment / commentary",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "lustig",
+      "english": "funny",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Moment",
+      "english": "moment",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "morgen",
+      "english": "tomorrow",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Spaghetti",
+      "english": "spaghetti",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "von",
+      "english": "by",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "wirklich",
+      "english": "really",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Wochenende",
+      "english": "weekend",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "dritt",
+      "english": "here: threes",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Form",
+      "english": "form",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Infinitiv",
+      "english": "infinitive",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "nennen",
+      "english": "to name",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Hobby",
+      "english": "hobby",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "mit",
+      "english": "with",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Meine Hobbys, meine Freunde",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Dienstag",
+      "english": "Tuesday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Donnerstag",
+      "english": "Thursday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Freitag",
+      "english": "Friday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Mittwoch",
+      "english": "Wednesday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Montag",
+      "english": "Monday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Samstag",
+      "english": "Saturday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Sonntag",
+      "english": "Sunday",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "wann",
+      "english": "when",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Wochentag",
+      "english": "day of the week",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Frage",
+      "english": "question",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "leider",
+      "english": "unfortunately",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "nach|sprechen",
+      "english": "to repeat",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Satzmelodie",
+      "english": "intonation",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "achten",
+      "english": "to pay attention to sth",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "auf",
+      "english": "on",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "für",
+      "english": "for",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "oft",
+      "english": "often",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Café",
+      "english": "café",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "durch",
+      "english": "through",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Ja-",
+      "english": "Nein-Frage",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "jede",
+      "english": "every",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 0,
+      "times_wrong": 1
+    },
+    {
+      "german": "der Kursraum",
+      "english": "classroom / course room",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Museum",
+      "english": "museum",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Restaurant",
+      "english": "restaurant",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Schwimmbad",
+      "english": "swimming pool",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Stadion",
+      "english": "stadium",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Tag",
+      "english": "day",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Termin",
+      "english": "appointment",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Theater",
+      "english": "theatre",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Verabredung",
+      "english": "appointment / date",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Ärztin",
+      "english": "doctor",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "bestimmt",
+      "english": "here: definite",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "feminin",
+      "english": "feminine",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "geben",
+      "english": "here: there is / there are",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Kellnerin",
+      "english": "waitress",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Möglichkeit",
+      "english": "possibility",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "neutrum",
+      "english": "neuter",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Plural",
+      "english": "plural",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Schlüssel",
+      "english": "key",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Spritze",
+      "english": "syringe",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Straße",
+      "english": "street",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Student",
+      "english": "student",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Studentin",
+      "english": "student",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Tablette",
+      "english": "pill",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Nomen",
+      "english": "noun",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Kurs",
+      "english": "course",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 3,
+      "times_correct": 3,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Lernwortschatz",
+      "english": "learning vocabulary",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Übungsbuch",
+      "english": "exercise book",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "vergleichen",
+      "english": "to compare",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "weitere",
+      "english": "further / additional",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Abend",
+      "english": "evening",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "aber",
+      "english": "but",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "bei",
+      "english": "at",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Informatikerin",
+      "english": "computer scientist / IT specialist",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Ingenieur",
+      "english": "engineer",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Ingenieurin",
+      "english": "engineer",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Lehrer",
+      "english": "teacher",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Lehrerin",
+      "english": "teacher",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "noch",
+      "english": "yet",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Verkäufer",
+      "english": "salesperson",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Verkäuferin",
+      "english": "salesperson",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Elektriker",
+      "english": "electrician",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Elektrikerin",
+      "english": "electrician",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Erzieher",
+      "english": "kindergarten educator",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Erzieherin",
+      "english": "kindergarten educator",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Handwerker",
+      "english": "craftsman",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Handwerkerin",
+      "english": "craftswoman",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Journalist",
+      "english": "journalist",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Journalistin",
+      "english": "journalist",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Jurist",
+      "english": "lawyer / solicitor",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Juristin",
+      "english": "lawyer / solicitor",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Koch",
+      "english": "cook / chef",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Köchin",
+      "english": "cook / chef",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Mechaniker",
+      "english": "mechanic",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Mechanikerin",
+      "english": "mechanic",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Polizist",
+      "english": "police officer",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Polizistin",
+      "english": "police officer",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "berichten",
+      "english": "to report",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Notiz",
+      "english": "note",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "studieren",
+      "english": "to study",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "an|sehen",
+      "english": "to look at",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Beispiel",
+      "english": "example",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Farbe",
+      "english": "colour",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "stehen",
+      "english": "to stand",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Wörterbuch",
+      "english": "dictionary",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Artikelbild",
+      "english": "article picture",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "blau",
+      "english": "blue",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "grün",
+      "english": "green",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "merken",
+      "english": "to remember / note",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "rot",
+      "english": "red",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Taxi",
+      "english": "taxi",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Zeichnung",
+      "english": "drawing",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "eigene",
+      "english": "own",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Adresse",
+      "english": "address",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Angabe",
+      "english": "information",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Club",
+      "english": "club",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Familienname",
+      "english": "surname / family name",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Geburtsdatum",
+      "english": "date of birth",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Geburtsort",
+      "english": "birthplace",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "neu",
+      "english": "new",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "persönlich",
+      "english": "personal",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zusammen|passen",
+      "english": "to fit together",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Basketball",
+      "english": "basketball",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die E-Mail",
+      "english": "e-mail",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Firma",
+      "english": "company",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Formular",
+      "english": "form",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Hausnummer",
+      "english": "house number",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Karate",
+      "english": "karate",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "kein",
+      "english": "no / none",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "männlich",
+      "english": "male",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Postleitzahl",
+      "english": "postal code / zip code",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Schule",
+      "english": "school",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Sportclub",
+      "english": "sports club",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Tennis",
+      "english": "tennis",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "wählen",
+      "english": "to choose",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "weiblich",
+      "english": "female",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Wohnort",
+      "english": "place of residence",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Yoga",
+      "english": "yoga",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "Zumba",
+      "english": "zumba",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "achtzig",
+      "english": "eighty",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "dreißig",
+      "english": "thirty",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "eintausend",
+      "english": "one thousand",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "fünfzig",
+      "english": "fifty",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Milliarde",
+      "english": "billion",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Million",
+      "english": "million",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "neunzig",
+      "english": "ninety",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sechzig",
+      "english": "sixty",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "siebzig",
+      "english": "seventy",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "tausend",
+      "english": "thousand",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "verabreden",
+      "english": "to make an appointment / make plans",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "vierzig",
+      "english": "forty",
+      "chapter_name": "Kapitel 2",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Stadttour",
+      "english": "city tour",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Station",
+      "english": "station / stop",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Bahnhof",
+      "english": "train station",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Bauzeit",
+      "english": "construction period",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Besucher",
+      "english": "visitor",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Besucherin",
+      "english": "visitor",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "bis",
+      "english": "until",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "breit",
+      "english": "wide",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Apfel",
+      "english": "apple",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Flasche",
+      "english": "bottle",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Kaffee",
+      "english": "coffee",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Wasser",
+      "english": "water",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Mann",
+      "english": "man",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Frau",
+      "english": "woman",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Kind",
+      "english": "child",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Nacht",
+      "english": "night",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Brot",
+      "english": "bread",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Sonne",
+      "english": "sun",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Haus",
+      "english": "house",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Tasche",
+      "english": "bag",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Fenster",
+      "english": "window",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Bus",
+      "english": "bus",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Uhr",
+      "english": "clock",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Mutter",
+      "english": "mother",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Vater",
+      "english": "father",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Bier",
+      "english": "beer",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 1,
+      "times_correct": 1,
+      "times_wrong": 0
+    },
+    {
+      "german": "tschüss",
+      "english": "goodbye",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "entschuldigung",
+      "english": "excuse me / sorry",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "guten Tag",
+      "english": "Good day! Hello!",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "wie gehts",
+      "english": "how are you",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "essen",
+      "english": "to eat",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "trinken",
+      "english": "to drink",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 2,
+      "times_correct": 2,
+      "times_wrong": 0
+    },
+    {
+      "german": "kaufen",
+      "english": "to buy",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Guten Tag!",
+      "english": "Good day! / Hello!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Guten Morgen!",
+      "english": "Good morning!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Guten Abend!",
+      "english": "Good evening!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Gute Nacht!",
+      "english": "Good night!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Hallo!",
+      "english": "Hello! / Hi!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Tschüss!",
+      "english": "Bye! / Goodbye!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Auf Wiedersehen!",
+      "english": "Goodbye! (Formal)",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Bis bald!",
+      "english": "See you soon!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Wie heißen Sie?",
+      "english": "What is your name? (Formal)",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Wie heißt du?",
+      "english": "What is your name? (Informal)",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Ich heiße...",
+      "english": "My name is...",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Mein Name ist...",
+      "english": "My name is...",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Wer ist das?",
+      "english": "Who is that?",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Das ist...",
+      "english": "That is...",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Woher kommen Sie?",
+      "english": "Where are you from? (Formal)",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Woher kommst du?",
+      "english": "Where are you from? (Informal)",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Ich komme aus...",
+      "english": "I come from...",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Welche Sprachen sprechen Sie?",
+      "english": "Which languages do you speak?",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Ich spreche...",
+      "english": "I speak...",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Wie geht's?",
+      "english": "How are you?",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Danke, gut!",
+      "english": "Thanks, good!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Sehr gut!",
+      "english": "Very good!",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Es geht.",
+      "english": "So-so / I'm alright.",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Tee",
+      "english": "Tea",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Käse",
+      "english": "Cheese",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Wein",
+      "english": "Wine",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Butter",
+      "english": "Butter",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Wurst",
+      "english": "Sausage",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Milch",
+      "english": "Milk",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Sprache",
+      "english": "language",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Englisch",
+      "english": "English",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Montag",
+      "english": "Monday",
+      "chapter_name": "General",
+      "subheading": "der Tag/ die Tage",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Dienstag",
+      "english": "Tuesday",
+      "chapter_name": "General",
+      "subheading": "der Tag/ die Tage",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Mittwoch",
+      "english": "Wednesday",
+      "chapter_name": "General",
+      "subheading": "der Tag/ die Tage",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Donnerstag",
+      "english": "Thursday",
+      "chapter_name": "General",
+      "subheading": "der Tag/ die Tage",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Freitag",
+      "english": "Friday",
+      "chapter_name": "General",
+      "subheading": "der Tag/ die Tage",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Samstag",
+      "english": "Saturday",
+      "chapter_name": "General",
+      "subheading": "der Tag/ die Tage",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Sonntag",
+      "english": "Sunday",
+      "chapter_name": "General",
+      "subheading": "der Tag/ die Tage",
+      "topic_name": "der Tag/ die Tage",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "german1",
+      "english": "english1",
+      "chapter_name": "General",
+      "subheading": "",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Januar",
+      "english": "January",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Februar",
+      "english": "February",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "März",
+      "english": "March",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "April",
+      "english": "April",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Mai",
+      "english": "May",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Juni",
+      "english": "June",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Juli",
+      "english": "July",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "August",
+      "english": "August",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "September",
+      "english": "September",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Oktober",
+      "english": "October",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "November",
+      "english": "November",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Dezember",
+      "english": "December",
+      "chapter_name": "General",
+      "subheading": "der Monat/ die Monate",
+      "topic_name": "der Monat/ die Monate",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Summer",
+      "english": "der Sommer",
+      "chapter_name": "General",
+      "subheading": "die Jahrezeitan",
+      "topic_name": "die Jahrezeitan",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Winter",
+      "english": "der Winter",
+      "chapter_name": "General",
+      "subheading": "die Jahrezeitan",
+      "topic_name": "die Jahrezeitan",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Spring",
+      "english": "der Frühling",
+      "chapter_name": "General",
+      "subheading": "die Jahrezeitan",
+      "topic_name": "die Jahrezeitan",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Autumn",
+      "english": "der Herbst",
+      "chapter_name": "General",
+      "subheading": "die Jahrezeitan",
+      "topic_name": "die Jahrezeitan",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Rot",
+      "english": "Red",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Blau",
+      "english": "Blue",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Grün",
+      "english": "Green",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Orange",
+      "english": "Orange",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Lila",
+      "english": "Purple",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Weiß",
+      "english": "White",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Rosa",
+      "english": "Pink",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Gelb",
+      "english": "Yellow",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Braun",
+      "english": "Brown",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Grau",
+      "english": "Grey",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Violett",
+      "english": "Violet",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Creme",
+      "english": "Cream",
+      "chapter_name": "General",
+      "subheading": "die Farben",
+      "topic_name": "die Farben",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Bulgarisch",
+      "english": "Bulgarian",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Indonesisch",
+      "english": "Indonesian",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "international",
+      "english": "international",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Italienisch",
+      "english": "Italian",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Japanisch",
+      "english": "Japanese",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Russisch",
+      "english": "Russian",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Serbisch",
+      "english": "Serbian",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Türkisch",
+      "english": "Turkish",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Ungarisch",
+      "english": "Hungarian",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zusammengehören",
+      "english": "to fit together",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Butterbrot",
+      "english": "sandwich",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der",
+      "english": "die Kranke",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Kindergarten",
+      "english": "kindergarten",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Nudel",
+      "english": "noodle",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Würstel",
+      "english": "sausage",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Spanisch",
+      "english": "Spanish",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Wort",
+      "english": "word",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "andere",
+      "english": "other",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "dir",
+      "english": "you",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "du",
+      "english": "you",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ganz",
+      "english": "here: pretty",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Halo! Tschüs",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "guten Abend",
+      "english": "good evening",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Guten Tag! Auf weidersehen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "vorstellen",
+      "english": "to introduce",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Woher kommen Sie",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "mitsprechen",
+      "english": "to speak along",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "mitlesen",
+      "english": "to read along",
+      "chapter_name": "Kapitel 1",
+      "subheading": "Zahlen und Buchstaben",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ankreuzen",
+      "english": "to check / mark",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Freunde, Kollegen und ich",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "nachsprechen",
+      "english": "to repeat",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Gehen wir ins Kino?",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "passen",
+      "english": "to match",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "haben",
+      "english": "to have",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "hier",
+      "english": "here",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Jahr",
+      "english": "year",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Kilometer",
+      "english": "kilometre",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "viel",
+      "english": "a lot / many",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "von … bis",
+      "english": "from … till",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Woche",
+      "english": "week",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ab",
+      "english": "here: starting from / at",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "einhundert",
+      "english": "one hundred",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "hundert",
+      "english": "hundred",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "unterstreichen",
+      "english": "to underline",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Pluralform",
+      "english": "plural form",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Singular",
+      "english": "singular",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "immer",
+      "english": "always",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Pluralendung",
+      "english": "plural ending",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "gegenseitig",
+      "english": "mutual",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Lernkarte",
+      "english": "flashcard / learning card",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Informatiker",
+      "english": "computer scientist / IT specialist",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Mein Beruf",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ansehen",
+      "english": "to look at",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Artikel lernen",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zusammenpassen",
+      "english": "to fit together",
+      "chapter_name": "Kapitel 2",
+      "subheading": "Neu im Club",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "erste",
+      "english": "first",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Euro",
+      "english": "euro",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "hoch",
+      "english": "high",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Kirche",
+      "english": "church",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Konzert",
+      "english": "concert",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Konzerthaus",
+      "english": "concert hall",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Kosten",
+      "english": "costs",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Meter",
+      "english": "metre",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Mitte",
+      "english": "middle",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Rathaus",
+      "english": "town hall",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Star",
+      "english": "star",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Turm",
+      "english": "tower",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "bis zu",
+      "english": "up to",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "circa",
+      "english": "approximately",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "da",
+      "english": "there",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "dem",
+      "english": "the",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Fluss",
+      "english": "river",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Hafen",
+      "english": "harbour / port",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Meer",
+      "english": "sea",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Mensch",
+      "english": "person",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Schiff",
+      "english": "ship",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "sehen",
+      "english": "to see",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Symbol",
+      "english": "symbol",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Zug",
+      "english": "train",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Ausstellung",
+      "english": "exhibition",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Brücke",
+      "english": "bridge",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "lang",
+      "english": "long",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Ort",
+      "english": "place",
+      "chapter_name": "Kapitel 3",
+      "subheading": "In Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "grüezi",
+      "english": "Swiss greeting: hello",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "grüß Gott",
+      "english": "southern greeting: good day",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Hotel",
+      "english": "hotel",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "moin",
+      "english": "northern greeting: good morning / hello",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Taxifahrt",
+      "english": "taxi ride",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Weg",
+      "english": "way",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "interessant",
+      "english": "interesting",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Kunsthalle",
+      "english": "art gallery",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Lösung",
+      "english": "solution",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "okay",
+      "english": "okay",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Plan",
+      "english": "plan",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "rechts",
+      "english": "right",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "richtig",
+      "english": "right",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "schon",
+      "english": "already",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "schön",
+      "english": "beautiful",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der See",
+      "english": "lake",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zeichnen",
+      "english": "to draw",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "aufstehen",
+      "english": "to stand up",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "bilden",
+      "english": "to form",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Gruppe",
+      "english": "group",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "passend",
+      "english": "matching",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "unbestimmt",
+      "english": "indefinite",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Satz",
+      "english": "sentence",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "doppelt",
+      "english": "double",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Konsonant",
+      "english": "consonant",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Vokal",
+      "english": "vowel",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "vor",
+      "english": "before",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Arm",
+      "english": "arm",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "klopfen",
+      "english": "to knock",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "kreisen",
+      "english": "to circle",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Die Taxifahrt",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Bildgeschichte",
+      "english": "comic strip",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Fahrrad",
+      "english": "bicycle",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die U-Bahn",
+      "english": "underground",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zeigen",
+      "english": "to point",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "zu Fuß",
+      "english": "on foot",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Flugzeug",
+      "english": "airplane",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die S-Bahn",
+      "english": "suburban train",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Straßenbahn",
+      "english": "tram",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "also",
+      "english": "so",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Bild",
+      "english": "picture",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Fahrkarte",
+      "english": "ticket",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Glück",
+      "english": "luck",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "heute",
+      "english": "today",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "jetzt",
+      "english": "now",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "schnell",
+      "english": "quick",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Test",
+      "english": "test",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Konzertkarte",
+      "english": "concert ticket",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Negationsartikel",
+      "english": "negative article",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Kein Glück?!",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "links",
+      "english": "left",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Wegbeschreibung",
+      "english": "directions",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "geradeaus",
+      "english": "straight ahead",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Dank",
+      "english": "thanks",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "einfach",
+      "english": "simple",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "genau",
+      "english": "exactly",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Imperativ",
+      "english": "imperative",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Mal",
+      "english": "time",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Markt",
+      "english": "market",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Park",
+      "english": "park",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Start",
+      "english": "start",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "würfeln",
+      "english": "to roll dice",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Ziel",
+      "english": "finish line",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Links, rechts, geradeaus",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "an",
+      "english": "over",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Chor",
+      "english": "choir",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "deutschsprachig",
+      "english": "German-speaking",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "diese",
+      "english": "this",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "dirigieren",
+      "english": "to conduct",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Event",
+      "english": "event",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Festival",
+      "english": "festival",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Film",
+      "english": "film",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Filmfan",
+      "english": "film fan",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Gast",
+      "english": "guest",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Orchester",
+      "english": "orchestra",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Produktion",
+      "english": "production",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Publikum",
+      "english": "audience",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Regisseur",
+      "english": "director",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Regisseurin",
+      "english": "director",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Requiem",
+      "english": "requiem",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Schauspieler",
+      "english": "actor",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Schauspielerin",
+      "english": "actress",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Solist",
+      "english": "soloist",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Solistin",
+      "english": "soloist",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Theater-Festival",
+      "english": "theatre festival",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Ticket",
+      "english": "ticket",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Welt",
+      "english": "world",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "ähnlich",
+      "english": "similar",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "finden",
+      "english": "to find",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "Jahreszeiten in D",
+      "english": "A-CH",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der April",
+      "english": "April",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der August",
+      "english": "August",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Dezember",
+      "english": "December",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Februar",
+      "english": "February",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Frühling",
+      "english": "spring",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Herbst",
+      "english": "autumn / fall",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Januar",
+      "english": "January",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Juli",
+      "english": "July",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Juni",
+      "english": "June",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Mai",
+      "english": "May",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der März",
+      "english": "March",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Monat",
+      "english": "month",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der November",
+      "english": "November",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Oktober",
+      "english": "October",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der September",
+      "english": "September",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Sommer",
+      "english": "summer",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "der Winter",
+      "english": "winter",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Jahreszeit",
+      "english": "season",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Plakat",
+      "english": "poster",
+      "chapter_name": "Kapitel 3",
+      "subheading": "Events in Hamburg",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Adjektiv",
+      "english": "adjective",
+      "chapter_name": "Kapitel 3",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "das Ding",
+      "english": "thing",
+      "chapter_name": "Kapitel 3",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "die Position",
+      "english": "position",
+      "chapter_name": "Kapitel 3",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    },
+    {
+      "german": "stellen",
+      "english": "here: to ask",
+      "chapter_name": "Kapitel 3",
+      "subheading": "kurz und klar",
+      "topic_name": "",
+      "times_asked": 0,
+      "times_correct": 0,
+      "times_wrong": 0
+    }
+  ]
+}
