@@ -133,6 +133,13 @@ async def get_index():
     return FileResponse("templates/index.html")
 
 
+@app.get("/mobile")
+@app.get("/m")
+async def get_mobile_index():
+    return FileResponse("templates/mobile.html")
+
+
+
 @app.get("/api/chapters")
 def get_chapters():
     try:

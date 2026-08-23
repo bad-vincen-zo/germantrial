@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+    <title>Wortschatz — Mobile German Vocabulary</title>
+    <meta name="description" content="Mobile-optimized German Vocabulary Builder and Flashcards platform.">
+    <meta name="theme-color" content="#090d16">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🇩🇪</text></svg>">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Custom Mobile Styles -->
+    <link rel="stylesheet" href="/static/mobile.css?v=2">
+</head>
+
+<body>
+    <!-- Top Mobile Header -->
+    <header class="mobile-header">
+        <a href="/mobile" class="brand-wrapper">
+            <span class="brand-flag">🇩🇪</span>
+            <span class="brand-title">Wortschatz</span>
+        </a>
+        <div class="header-actions">
+            <!-- Link back to Desktop view -->
+            <a href="/" class="header-icon-btn" title="Desktop View">
+                <i data-lucide="monitor" style="width:17px; height:17px;"></i>
+            </a>
+            <!-- Theme Toggle -->
+            <button class="header-icon-btn" id="mobile-theme-btn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
+                <i data-lucide="sun" id="theme-icon" style="width:17px; height:17px;"></i>
+            </button>
+        </div>
+    </header>
+
+    <!-- Chapter Quick-Filter Horizontal Scroll Bar -->
+    <div class="chapter-filter-pill-bar" id="chapter-pills-container">
+        <!-- Populated dynamically -->
+    </div>
+
+    <!-- Main Viewport Content -->
+    <main class="mobile-viewport-content">
+
+        <!-- Tab 1: Flashcards -->
+        <section class="mobile-tab-view active" id="view-flashcards">
+            <div class="flashcards-container">
+                <div class="flashcard-progress-bar-wrapper">
+                    <div class="progress-info">
+                        <span>Card Progress</span>
+                        <span id="card-counter-text">0 / 0</span>
+                    </div>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="card-progress-fill"></div>
+                    </div>
+                </div>
+
+                <!-- 3D Flip Card -->
+                <div class="card-scene" id="flashcard-scene" onclick="flipCard()">
+                    <div class="flip-card-inner">
+                        <!-- Front Face (German) -->
+                        <div class="card-face card-face-front">
+                            <div class="card-badge-row">
+                                <span class="card-chapter-tag" id="card-chapter-tag">General</span>
+                                <button class="card-speaker-btn" onclick="speakCurrentCard(event)" title="Listen">
+                                    <i data-lucide="volume-2" style="width:18px; height:18px;"></i>
+                                </button>
+                            </div>
+                            <div class="card-center-text">
+                                <div class="card-main-word" id="card-front-word">Laden...</div>
+                                <div class="card-sub-info" id="card-front-sub"></div>
+                            </div>
+                            <div class="card-tap-hint">
+                                <i data-lucide="repeat" style="width:12px; height:12px;"></i> Tap to flip to English
+                            </div>
+                        </div>
+
+                        <!-- Back Face (English) -->
+                        <div class="card-face card-face-back">
+                            <div class="card-badge-row">
+                                <span class="card-chapter-tag">Meaning</span>
+                                <button class="card-speaker-btn" onclick="speakCurrentCard(event)" title="Listen">
+                                    <i data-lucide="volume-2" style="width:18px; height:18px;"></i>
+                                </button>
+                            </div>
+                            <div class="card-center-text">
+                                <div class="card-main-word" id="card-back-word">...</div>
+                                <div class="card-sub-info" id="card-back-sub"></div>
+                            </div>
+                            <div class="card-tap-hint">
+                                <i data-lucide="repeat" style="width:12px; height:12px;"></i> Tap to flip back
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Response Buttons -->
+                <div class="card-actions-row">
+                    <button class="action-btn-pill wrong" onclick="nextCard(false)">
+                        <i data-lucide="x" style="width:18px; height:18px;"></i> Review
+                    </button>
+                    <button class="action-btn-pill correct" onclick="nextCard(true)">
+                        <i data-lucide="check" style="width:18px; height:18px;"></i> Knew it!
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 2: Vocabulary List -->
+        <section class="mobile-tab-view" id="view-vocab">
+            <div class="vocab-search-box">
+                <i data-lucide="search"></i>
+                <input type="text" class="vocab-search-input" id="vocab-search-input" placeholder="Search German or English..." oninput="handleVocabSearch()">
+            </div>
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+                <span style="font-size:0.8rem; font-weight:700; color:var(--text-secondary);">Vocabulary Words</span>
+                <span style="font-size:0.75rem; font-weight:700; color:var(--accent-info);" id="vocab-count-badge">0 words</span>
+            </div>
+            <div class="mobile-word-list" id="mobile-word-list">
+                <!-- Populated dynamically -->
+            </div>
+        </section>
+
+        <!-- Tab 3: Quiz Practice -->
+        <section class="mobile-tab-view" id="view-quiz">
+            <div class="quiz-mobile-container">
+                <div class="quiz-score-header">
+                    <span><i data-lucide="award" style="width:16px; height:16px; vertical-align:middle; margin-right:4px; color:var(--accent-warning);"></i> Practice Quiz</span>
+                    <span id="quiz-score-display">Score: 0 / 0</span>
+                </div>
+                <div class="quiz-question-card">
+                    <span style="font-size:0.75rem; font-weight:700; color:var(--text-muted); text-transform:uppercase; letter-spacing:0.5px;">Select the correct translation:</span>
+                    <div class="quiz-german-prompt" id="quiz-german-prompt">...</div>
+                </div>
+                <div class="quiz-options-grid" id="quiz-options-grid">
+                    <!-- Populated dynamically -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Tab 4: Chapters -->
+        <section class="mobile-tab-view" id="view-chapters">
+            <div style="font-size:0.9rem; font-weight:800; margin-bottom:12px; color:var(--text-primary); display:flex; align-items:center; gap:6px;">
+                <i data-lucide="folder-kanban" style="width:18px; height:18px; color:var(--accent-primary);"></i> Chapters &amp; Collections
+            </div>
+            <div class="mobile-chapters-list" id="mobile-chapters-list">
+                <!-- Populated dynamically -->
+            </div>
+        </section>
+
+        <!-- Tab 5: Quick Add Word -->
+        <section class="mobile-tab-view" id="view-add">
+            <div style="font-size:0.9rem; font-weight:800; margin-bottom:12px; color:var(--text-primary); display:flex; align-items:center; gap:6px;">
+                <i data-lucide="plus-circle" style="width:18px; height:18px; color:var(--accent-success);"></i> Quick Add Word
+            </div>
+            <div class="mobile-add-card">
+                <form onsubmit="handleMobileAddSubmit(event)">
+                    <div class="mobile-form-group">
+                        <label for="mobile-add-german">German Word / Phrase</label>
+                        <input type="text" class="mobile-input" id="mobile-add-german" required placeholder="e.g., der Tisch, lernen">
+                    </div>
+                    <div class="mobile-form-group" style="margin-top:10px;">
+                        <label for="mobile-add-english">English Meaning</label>
+                        <input type="text" class="mobile-input" id="mobile-add-english" required placeholder="e.g., the table, to learn">
+                    </div>
+                    <div class="mobile-form-group" style="margin-top:10px;">
+                        <label for="mobile-add-chapter">Chapter</label>
+                        <select class="mobile-select" id="mobile-add-chapter"></select>
+                    </div>
+                    <div class="mobile-form-group" style="margin-top:10px;">
+                        <label for="mobile-add-subheading">Subheading (Optional)</label>
+                        <input type="text" class="mobile-input" id="mobile-add-subheading" placeholder="e.g., 1.1 Greetings">
+                    </div>
+                    <button type="submit" class="submit-primary-btn" id="mobile-add-submit-btn">
+                        <i data-lucide="plus-circle" style="width:16px; height:16px;"></i> Save Vocabulary Word
+                    </button>
+                </form>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Bottom Navigation Bar -->
+    <nav class="mobile-bottom-nav">
+        <button class="bottom-tab-btn active" id="tab-flashcards" onclick="switchTab('flashcards')">
+            <i data-lucide="play-circle"></i>
+            <span>Cards</span>
+        </button>
+        <button class="bottom-tab-btn" id="tab-vocab" onclick="switchTab('vocab')">
+            <i data-lucide="book-open"></i>
+            <span>Vocab</span>
+        </button>
+        <button class="bottom-tab-btn" id="tab-quiz" onclick="switchTab('quiz')">
+            <i data-lucide="help-circle"></i>
+            <span>Quiz</span>
+        </button>
+        <button class="bottom-tab-btn" id="tab-chapters" onclick="switchTab('chapters')">
+            <i data-lucide="folder"></i>
+            <span>Chapters</span>
+        </button>
+        <button class="bottom-tab-btn" id="tab-add" onclick="switchTab('add')">
+            <i data-lucide="plus-circle"></i>
+            <span>Add</span>
+        </button>
+    </nav>
+
+    <!-- Mobile Toast -->
+    <div class="mobile-toast" id="mobile-toast"></div>
+
+    <!-- Application Script -->
+    <script src="/static/mobile.js?v=5"></script>
+</body>
+
+</html>
