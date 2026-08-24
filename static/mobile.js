@@ -1,6 +1,6 @@
 /**
  * Wortschatz Mobile App Script
- * Optimized for Smartphones & Touch Browsers
+ * Figma Task Management & Vocabulary Studio
  */
 
 // Global State
@@ -19,11 +19,11 @@ let quizOptions = [];
 let quizScore = 0;
 let quizTotal = 0;
 
-// Swipe Gesture Tracking
-let touchStartX = 0;
-let touchStartY = 0;
+// Stats Tracking
+let sessionTotalCards = 0;
+let sessionMasteredCards = 0;
 
-// Safe icon refresher
+// Safe Icon Refresh
 function refreshIcons() {
     if (typeof window !== "undefined" && window.lucide && typeof window.lucide.createIcons === "function") {
         window.lucide.createIcons();
@@ -33,7 +33,7 @@ function refreshIcons() {
 // ── Initialize App ────────────────────────────────────────────────────────────
 document.addEventListener("DOMContentLoaded", () => {
     initTheme();
-    initTouchGestures();
+    renderCalendarStrip();
     loadAppData();
 });
 
@@ -60,9 +60,43 @@ function applyTheme(theme) {
     }
     const themeBtn = document.getElementById("mobile-theme-btn");
     if (themeBtn) {
-        themeBtn.innerHTML = `<i data-lucide="${theme === 'light' ? 'moon' : 'sun'}" style="width:17px; height:17px;"></i>`;
+        themeBtn.innerHTML = `<i data-lucide="${theme === 'light' ? 'moon' : 'sun'}" style="width:18px; height:18px;"></i>`;
     }
     refreshIcons();
+}
+
+// ── Calendar Strip Renderer (Figma Screen 3) ──────────────────────────────────
+function renderCalendarStrip() {
+    const container = document.getElementById("calendar-strip");
+    if (!container) return;
+
+    const days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const months = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"];
+    
+    const today = new Date();
+    container.innerHTML = "";
+
+    // Generate 5 days around today (-2 to +2)
+    for (let i = -2; i <= 2; i++) {
+        const d = new Date();
+        d.setDate(today.getDate() + i);
+
+        const isToday = i === 0;
+        const pill = document.createElement("div");
+        pill.className = `calendar-day-pill ${isToday ? "active" : ""}`;
+        pill.onclick = () => {
+            document.querySelectorAll(".calendar-day-pill").forEach(el => el.classList.remove("active"));
+            pill.classList.add("active");
+            buildDeck();
+        };
+
+        pill.innerHTML = `
+            <span class="cal-month">${months[d.getMonth()]}</span>
+            <span class="cal-num">${d.getDate()}</span>
+            <span class="cal-weekday">${days[d.getDay()]}</span>
+        `;
+        container.appendChild(pill);
+    }
 }
 
 // ── Data Fetching ─────────────────────────────────────────────────────────────
@@ -81,10 +115,10 @@ async function loadAppData() {
         if (chaptersRes.ok) {
             appChapters = await chaptersRes.json();
             renderChapterPills();
-            renderChaptersTab();
             populateAddChapterDropdown();
         }
 
+        renderHomeDashboard();
         buildDeck();
         renderVocabList();
         generateQuizQuestion();
@@ -95,482 +129,464 @@ async function loadAppData() {
     }
 }
 
+// ── Home Dashboard Renderer (Figma Screen 2) ──────────────────────────────────
+function renderHomeDashboard() {
+    // 1. Calculate Mastery / Goal Percentage
+    const total = allWords.length || 1;
+    const progressRate = sessionTotalCards > 0 
+        ? Math.min(100, Math.round((sessionMasteredCards / sessionTotalCards) * 100))
+        : (allWords.length > 0 ? 85 : 0);
+
+    const radialBar = document.getElementById("home-radial-bar");
+    const radialText = document.getElementById("home-radial-percent");
+    if (radialBar && radialText) {
+        radialText.innerText = `${progressRate}%`;
+        const circumference = 201; // 2 * PI * 32
+        const offset = circumference - (circumference * progressRate) / 100;
+        radialBar.style.strokeDashoffset = offset;
+    }
+
+    // 2. Populate In Progress Decks (Horizontal Scroll)
+    const inprogressScroll = document.getElementById("home-inprogress-scroll");
+    const inprogressCount = document.getElementById("home-inprogress-count");
+    if (inprogressScroll) {
+        const activeDecks = [
+            { title: "Daily Flashcard Drill", tag: "Daily Study", color: "pink", progress: 75, count: allWords.length },
+            { title: "Essential A1 Basics", tag: "A1 Basics", color: "cyan", progress: 60, count: Math.min(15, allWords.length) },
+            { title: "Vocabulary Retention", tag: "Review Deck", color: "amber", progress: 40, count: Math.min(25, allWords.length) }
+        ];
+
+        if (inprogressCount) inprogressCount.innerText = activeDecks.length;
+
+        inprogressScroll.innerHTML = "";
+        activeDecks.forEach(deck => {
+            const card = document.createElement("div");
+            card.className = "inprogress-card";
+            card.onclick = () => switchTab('cards');
+            card.innerHTML = `
+                <div class="inprogress-top">
+                    <span class="inprogress-cat-badge ${deck.color}">${deck.tag}</span>
+                    <i data-lucide="play-circle" style="width:18px; height:18px; color:var(--accent-purple);"></i>
+                </div>
+                <div class="inprogress-title">${escapeHTML(deck.title)}</div>
+                <div class="inprogress-bottom">
+                    <div class="inprogress-meta">
+                        <span>${deck.count} Words</span>
+                        <span>${deck.progress}%</span>
+                    </div>
+                    <div class="inprogress-bar-track">
+                        <div class="inprogress-bar-fill" style="width: ${deck.progress}%;"></div>
+                    </div>
+                </div>
+            `;
+            inprogressScroll.appendChild(card);
+        });
+    }
+
+    // 3. Populate Task Groups / Chapters List
+    const taskGroupsList = document.getElementById("home-task-groups-list");
+    const groupsCount = document.getElementById("home-groups-count");
+    if (taskGroupsList) {
+        const groups = appChapters.length > 0 ? appChapters : [
+            { name: "General Vocabulary", word_count: allWords.length || 10 },
+            { name: "A1 Basics", word_count: 14 },
+            { name: "Daily Conversation", word_count: 22 }
+        ];
+
+        if (groupsCount) groupsCount.innerText = groups.length;
+
+        taskGroupsList.innerHTML = "";
+        const iconClasses = ["purple", "coral", "emerald", "amber"];
+
+        groups.forEach((g, idx) => {
+            const colorClass = iconClasses[idx % iconClasses.length];
+            const pct = Math.min(95, 45 + (idx * 15) % 50);
+            const circumference = 94; // 2 * PI * 15
+            const offset = circumference - (circumference * pct) / 100;
+
+            const item = document.createElement("div");
+            item.className = "task-group-item";
+            item.onclick = () => {
+                activeChapterFilter = g.name;
+                buildDeck();
+                switchTab('cards');
+            };
+
+            item.innerHTML = `
+                <div class="group-left">
+                    <div class="group-icon-box ${colorClass}">
+                        <i data-lucide="folder-kanban" style="width:20px; height:20px;"></i>
+                    </div>
+                    <div class="group-info">
+                        <div class="group-title">${escapeHTML(g.name)}</div>
+                        <div class="group-count">${g.word_count || 0} Tasks &amp; Words</div>
+                    </div>
+                </div>
+                <div class="group-ring-wrap">
+                    <svg class="group-ring-svg" viewBox="0 0 38 38">
+                        <circle class="group-ring-bg" cx="19" cy="19" r="15"></circle>
+                        <circle class="group-ring-bar" cx="19" cy="19" r="15" stroke-dasharray="94" stroke-dashoffset="${offset}"></circle>
+                    </svg>
+                    <span class="group-ring-text">${pct}%</span>
+                </div>
+            `;
+            taskGroupsList.appendChild(item);
+        });
+    }
+
+    refreshIcons();
+}
+
 // ── Navigation Tabs ───────────────────────────────────────────────────────────
 function switchTab(tabId) {
-    // Hide all tabs
-    document.querySelectorAll(".mobile-tab-view").forEach(tab => tab.classList.remove("active"));
-    document.querySelectorAll(".bottom-tab-btn").forEach(btn => btn.classList.remove("active"));
+    const tabs = ["home", "cards", "vocab", "quiz", "add"];
+    
+    tabs.forEach(id => {
+        const view = document.getElementById(`view-${id}`);
+        const btn = document.getElementById(`tab-${id}`);
+        if (view) view.classList.remove("active");
+        if (btn) btn.classList.remove("active");
+    });
 
     const activeView = document.getElementById(`view-${tabId}`);
     const activeBtn = document.getElementById(`tab-${tabId}`);
-
     if (activeView) activeView.classList.add("active");
     if (activeBtn) activeBtn.classList.add("active");
 
-    if (tabId === "flashcards") {
-        updateCardUI();
+    if (tabId === "home") {
+        renderHomeDashboard();
+    } else if (tabId === "cards") {
+        buildDeck();
     } else if (tabId === "vocab") {
         renderVocabList();
     } else if (tabId === "quiz") {
-        if (!quizQuestion) generateQuizQuestion();
-    } else if (tabId === "chapters") {
-        renderChaptersTab();
+        generateQuizQuestion();
     }
 
+    window.scrollTo({ top: 0, behavior: "smooth" });
     refreshIcons();
 }
 
 // ── Chapter Pills Filter Bar ──────────────────────────────────────────────────
 function renderChapterPills() {
-    const pillContainer = document.getElementById("chapter-pills-container");
-    if (!pillContainer) return;
+    const container = document.getElementById("chapter-pills-container");
+    if (!container) return;
 
-    pillContainer.innerHTML = "";
+    container.innerHTML = "";
 
-    // "All" Pill
     const allPill = document.createElement("button");
     allPill.className = `filter-pill ${activeChapterFilter === "All" ? "active" : ""}`;
-    allPill.textContent = `All (${allWords.length})`;
-    allPill.onclick = () => selectChapterFilter("All");
-    pillContainer.appendChild(allPill);
+    allPill.innerText = "All Decks";
+    allPill.onclick = () => {
+        activeChapterFilter = "All";
+        renderChapterPills();
+        buildDeck();
+    };
+    container.appendChild(allPill);
 
-    // Chapter Pills
     appChapters.forEach(ch => {
         const pill = document.createElement("button");
         pill.className = `filter-pill ${activeChapterFilter === ch.name ? "active" : ""}`;
-        pill.textContent = `${ch.name} (${ch.word_count || 0})`;
-        pill.onclick = () => selectChapterFilter(ch.name);
-        pillContainer.appendChild(pill);
+        pill.innerText = ch.name;
+        pill.onclick = () => {
+            activeChapterFilter = ch.name;
+            renderChapterPills();
+            buildDeck();
+        };
+        container.appendChild(pill);
     });
 }
 
-function selectChapterFilter(chapterName) {
-    activeChapterFilter = chapterName;
-    renderChapterPills();
-
-    if (chapterName === "All") {
-        filteredWords = [...allWords];
-    } else {
-        filteredWords = allWords.filter(w => (w.chapter_name || "General").toLowerCase() === chapterName.toLowerCase());
+// ── Flashcards Engine ─────────────────────────────────────────────────────────
+function buildDeck() {
+    let source = allWords;
+    if (activeChapterFilter !== "All") {
+        source = allWords.filter(w => (w.chapter_name || "General").toLowerCase() === activeChapterFilter.toLowerCase());
     }
 
-    buildDeck();
-    renderVocabList();
-    generateQuizQuestion();
-    showToast(`Filtered by ${chapterName}`);
-}
-
-// ── Tab 1: Flashcards Engine ──────────────────────────────────────────────────
-function buildDeck() {
-    currentDeck = [...filteredWords];
-    // Shuffle deck
+    currentDeck = [...source];
+    // Shuffle
     for (let i = currentDeck.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [currentDeck[i], currentDeck[j]] = [currentDeck[j], currentDeck[i]];
     }
+
     currentCardIndex = 0;
     isCardFlipped = false;
-    updateCardUI();
+    renderCurrentCard();
 }
 
-function updateCardUI() {
-    const cardScene = document.getElementById("flashcard-scene");
-    const progressFill = document.getElementById("card-progress-fill");
-    const counterText = document.getElementById("card-counter-text");
-    const frontWord = document.getElementById("card-front-word");
-    const backWord = document.getElementById("card-back-word");
-    const frontSub = document.getElementById("card-front-sub");
-    const backSub = document.getElementById("card-back-sub");
-    const chapterTag = document.getElementById("card-chapter-tag");
+function renderCurrentCard() {
+    const scene = document.getElementById("flashcard-scene");
+    const inner = scene ? scene.querySelector(".flip-card-inner") : null;
+    if (inner) inner.classList.remove("is-flipped");
+    isCardFlipped = false;
 
+    const counter = document.getElementById("card-counter-text");
+    const fill = document.getElementById("card-progress-fill");
+    
     if (currentDeck.length === 0) {
-        if (frontWord) frontWord.textContent = "No Words";
-        if (backWord) backWord.textContent = "Add words or select another chapter";
-        if (frontSub) frontSub.textContent = "";
-        if (backSub) backSub.textContent = "";
-        if (counterText) counterText.textContent = "0 / 0";
-        if (progressFill) progressFill.style.width = "0%";
+        if (counter) counter.innerText = "0 / 0";
+        if (fill) fill.style.width = "0%";
+        document.getElementById("card-front-word").innerText = "No Cards";
+        document.getElementById("card-front-sub").innerText = "Add words to start studying";
+        document.getElementById("card-back-word").innerText = "Empty Deck";
+        document.getElementById("card-back-sub").innerText = "";
         return;
     }
 
-    const word = currentDeck[currentCardIndex];
-    if (cardScene) cardScene.classList.remove("flipped");
-    isCardFlipped = false;
+    const currentWord = currentDeck[currentCardIndex];
+    const total = currentDeck.length;
+    const progress = Math.round(((currentCardIndex + 1) / total) * 100);
 
-    if (frontWord) {
-        frontWord.innerHTML = formatGermanText(word.german);
-    }
-    if (backWord) {
-        backWord.textContent = word.english;
-    }
-    if (frontSub) {
-        frontSub.textContent = word.subheading ? `📌 ${word.subheading}` : "";
-    }
-    if (backSub) {
-        backSub.textContent = word.chapter_name ? `📁 ${word.chapter_name}` : "General";
-    }
-    if (chapterTag) {
-        chapterTag.textContent = word.chapter_name || "General";
-    }
+    if (counter) counter.innerText = `${currentCardIndex + 1} / ${total}`;
+    if (fill) fill.style.width = `${progress}%`;
 
-    const progressPct = Math.round(((currentCardIndex + 1) / currentDeck.length) * 100);
-    if (progressFill) progressFill.style.width = `${progressPct}%`;
-    if (counterText) counterText.textContent = `${currentCardIndex + 1} / ${currentDeck.length}`;
+    // Front (German)
+    const frontWord = document.getElementById("card-front-word");
+    const frontSub = document.getElementById("card-front-sub");
+    const chapterTag = document.getElementById("card-chapter-tag");
+
+    frontWord.innerHTML = formatGermanWordHTML(currentWord.german);
+    frontSub.innerText = currentWord.subheading ? `• ${currentWord.subheading}` : "";
+    if (chapterTag) chapterTag.innerText = currentWord.chapter_name || "General";
+
+    // Back (English)
+    const backWord = document.getElementById("card-back-word");
+    const backSub = document.getElementById("card-back-sub");
+    backWord.innerText = currentWord.english;
+    backSub.innerText = currentWord.german;
 
     refreshIcons();
 }
 
 function flipCard() {
-    const cardScene = document.getElementById("flashcard-scene");
-    if (!cardScene || currentDeck.length === 0) return;
-    isCardFlipped = !isCardFlipped;
-    cardScene.classList.toggle("flipped", isCardFlipped);
+    const scene = document.getElementById("flashcard-scene");
+    const inner = scene ? scene.querySelector(".flip-card-inner") : null;
+    if (inner) {
+        isCardFlipped = !isCardFlipped;
+        inner.classList.toggle("is-flipped", isCardFlipped);
+    }
 }
 
-function nextCard(wasCorrect) {
+function nextCard(mastered = true) {
     if (currentDeck.length === 0) return;
 
-    const currentWord = currentDeck[currentCardIndex];
-    if (currentWord) {
-        // Asynchronously report result to server
-        fetch("/api/practice/answer", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ german: currentWord.german, is_correct: wasCorrect })
-        }).catch(err => console.log("Practice sync note:", err));
-    }
+    sessionTotalCards++;
+    if (mastered) sessionMasteredCards++;
 
     currentCardIndex = (currentCardIndex + 1) % currentDeck.length;
-    updateCardUI();
-}
-
-// ── Touch / Swipe Gesture Handlers ────────────────────────────────────────────
-function initTouchGestures() {
-    const cardScene = document.getElementById("flashcard-scene");
-    if (!cardScene) return;
-
-    cardScene.addEventListener("touchstart", (e) => {
-        touchStartX = e.changedTouches[0].screenX;
-        touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
-
-    cardScene.addEventListener("touchend", (e) => {
-        const touchEndX = e.changedTouches[0].screenX;
-        const touchEndY = e.changedTouches[0].screenY;
-        handleSwipeGesture(touchStartX, touchStartY, touchEndX, touchEndY);
-    }, { passive: true });
-}
-
-function handleSwipeGesture(startX, startY, endX, endY) {
-    const diffX = endX - startX;
-    const diffY = endY - startY;
-
-    // Check if horizontal swipe
-    if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 40) {
-        if (diffX > 0) {
-            // Swiped Right -> Mark Correct
-            nextCard(true);
-        } else {
-            // Swiped Left -> Mark Wrong/Review
-            nextCard(false);
-        }
-    }
-}
-
-// ── German Audio Pronunciation ────────────────────────────────────────────────
-function speakGerman(text, e) {
-    if (e) e.stopPropagation();
-    if (!('speechSynthesis' in window)) {
-        showToast("Audio speech not supported in this browser");
-        return;
-    }
-
-    window.speechSynthesis.cancel();
-    const cleanWord = text.replace(/^(der|die|das)\s+/i, "").trim();
-    const utter = new SpeechSynthesisUtterance(text);
-    utter.lang = "de-DE";
-    utter.rate = 0.9;
-    window.speechSynthesis.speak(utter);
+    renderCurrentCard();
 }
 
 function speakCurrentCard(e) {
+    if (e) e.stopPropagation();
     if (currentDeck.length === 0) return;
     const word = currentDeck[currentCardIndex];
-    if (word) speakGerman(word.german, e);
-}
-
-// ── Article Coloring Helper ───────────────────────────────────────────────────
-function formatGermanText(german) {
-    if (!german) return "";
-    const lower = german.trim().toLowerCase();
-    if (lower.startsWith("der ")) {
-        return `<span class="gender-der">der</span> ${escapeHTML(german.slice(4))}`;
-    } else if (lower.startsWith("die ")) {
-        return `<span class="gender-die">die</span> ${escapeHTML(german.slice(4))}`;
-    } else if (lower.startsWith("das ")) {
-        return `<span class="gender-das">das</span> ${escapeHTML(german.slice(4))}`;
+    if (word && word.german) {
+        speakGerman(word.german);
     }
-    return escapeHTML(german);
 }
 
-function escapeHTML(str) {
-    if (!str) return "";
-    return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
-}
-
-// ── Tab 2: Vocab List & Search ────────────────────────────────────────────────
+// ── Vocabulary Directory ──────────────────────────────────────────────────────
 function renderVocabList() {
-    const listContainer = document.getElementById("mobile-word-list");
-    const searchInput = document.getElementById("vocab-search-input");
+    const list = document.getElementById("mobile-word-list");
     const countBadge = document.getElementById("vocab-count-badge");
+    if (!list) return;
 
-    if (!listContainer) return;
+    list.innerHTML = "";
+    if (countBadge) countBadge.innerText = `${filteredWords.length} words`;
 
-    const query = (searchInput && typeof searchInput.value === "string") ? searchInput.value.toLowerCase().trim() : "";
-    const wordsToDisplay = filteredWords.filter(w => {
-        if (!query) return true;
-        const g = (w.german || "").toLowerCase();
-        const e = (w.english || "").toLowerCase();
-        return g.includes(query) || e.includes(query);
-    });
-
-    if (countBadge) {
-        countBadge.textContent = `${wordsToDisplay.length} words`;
-    }
-
-    if (wordsToDisplay.length === 0) {
-        listContainer.innerHTML = `
-            <div style="text-align:center; padding:30px 10px; color:var(--text-muted);">
-                <i data-lucide="search-x" style="width:36px; height:36px; margin-bottom:8px; opacity:0.5;"></i>
-                <p>No words found matching "${escapeHTML(query)}"</p>
-            </div>
-        `;
-        refreshIcons();
+    if (filteredWords.length === 0) {
+        list.innerHTML = `<div style="text-align:center; padding:40px 20px; color:var(--text-muted);">No vocabulary words found.</div>`;
         return;
     }
 
-    listContainer.innerHTML = wordsToDisplay.slice(0, 150).map(w => `
-        <div class="mobile-word-card">
-            <div class="word-info-col">
-                <div class="word-german-row">
-                    ${formatGermanText(w.german)}
+    filteredWords.forEach(w => {
+        const item = document.createElement("div");
+        item.className = "mobile-word-item";
+        const tag = w.chapter_name ? `<span class="mobile-word-tag">${escapeHTML(w.chapter_name)}</span>` : "";
+
+        item.innerHTML = `
+            <div class="mobile-word-info">
+                <div class="mobile-word-german">
+                    ${formatGermanWordHTML(w.german)}
+                    ${tag}
                 </div>
-                <div class="word-english-row">
-                    ${escapeHTML(w.english)}
-                </div>
-                <div class="word-meta-badges">
-                    ${w.chapter_name ? `<span class="mini-badge">📁 ${escapeHTML(w.chapter_name)}</span>` : ''}
-                    ${w.subheading ? `<span class="mini-badge">📌 ${escapeHTML(w.subheading)}</span>` : ''}
-                </div>
+                <div class="mobile-word-english">${escapeHTML(w.english)}</div>
             </div>
-            <button class="header-icon-btn" onclick="speakGerman('${escapeJS(w.german)}', event)" title="Listen">
-                <i data-lucide="volume-2"></i>
+            <button type="button" class="card-speaker-btn" onclick="speakGerman('${escapeJS(w.german)}')" title="Listen">
+                <i data-lucide="volume-2" style="width:16px; height:16px;"></i>
             </button>
-        </div>
-    `).join("");
+        `;
+        list.appendChild(item);
+    });
 
     refreshIcons();
 }
 
 function handleVocabSearch() {
+    const query = document.getElementById("vocab-search-input").value.toLowerCase().trim();
+    if (!query) {
+        filteredWords = [...allWords];
+    } else {
+        filteredWords = allWords.filter(w => 
+            w.german.toLowerCase().includes(query) ||
+            w.english.toLowerCase().includes(query) ||
+            (w.chapter_name && w.chapter_name.toLowerCase().includes(query)) ||
+            (w.subheading && w.subheading.toLowerCase().includes(query))
+        );
+    }
     renderVocabList();
 }
 
-function escapeJS(str) {
-    if (!str) return "";
-    return str.replace(/\\/g, "\\\\").replace(/'/g, "\\'").replace(/"/g, '\\"');
-}
-
-// ── Tab 3: Quiz Engine ────────────────────────────────────────────────────────
+// ── Speed Quiz Mode ───────────────────────────────────────────────────────────
 function generateQuizQuestion() {
-    const questionEl = document.getElementById("quiz-german-prompt");
+    const prompt = document.getElementById("quiz-german-prompt");
     const optionsGrid = document.getElementById("quiz-options-grid");
-    const scoreEl = document.getElementById("quiz-score-display");
+    const scoreDisplay = document.getElementById("quiz-score-display");
+    if (!prompt || !optionsGrid) return;
 
-    if (filteredWords.length < 4) {
-        if (questionEl) questionEl.textContent = "Need at least 4 words";
-        if (optionsGrid) optionsGrid.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:20px;">Please add more vocabulary to practice quiz mode.</p>`;
+    if (scoreDisplay) scoreDisplay.innerText = `Score: ${quizScore} / ${quizTotal}`;
+
+    if (allWords.length < 2) {
+        prompt.innerText = "Need at least 2 words";
+        optionsGrid.innerHTML = `<div style="text-align:center; color:var(--text-muted); padding:20px;">Please add more vocabulary to practice quiz.</div>`;
         return;
     }
 
-    const randIdx = Math.floor(Math.random() * filteredWords.length);
-    quizQuestion = filteredWords[randIdx];
+    // Pick random question word
+    quizQuestion = allWords[Math.floor(Math.random() * allWords.length)];
+    prompt.innerHTML = formatGermanWordHTML(quizQuestion.german);
 
-    // Pick 3 random distractor words
-    const distractors = filteredWords.filter(w => w.german !== quizQuestion.german);
+    // Pick 3 distractors
+    const distractors = allWords.filter(w => w.german !== quizQuestion.german);
     const shuffledDistractors = distractors.sort(() => 0.5 - Math.random()).slice(0, 3);
+    
     quizOptions = [quizQuestion, ...shuffledDistractors].sort(() => 0.5 - Math.random());
 
-    if (questionEl) {
-        questionEl.innerHTML = formatGermanText(quizQuestion.german);
-    }
-
-    if (scoreEl) {
-        scoreEl.textContent = `Score: ${quizScore} / ${quizTotal}`;
-    }
-
-    if (optionsGrid) {
-        optionsGrid.innerHTML = quizOptions.map((opt, i) => `
-            <button class="quiz-option-btn" onclick="handleQuizAnswer(${i}, this)">
-                <span>${escapeHTML(opt.english)}</span>
-                <span class="quiz-icon-holder"><i data-lucide="circle" style="width:16px; height:16px; opacity:0.3;"></i></span>
-            </button>
-        `).join("");
-    }
-
-    refreshIcons();
-}
-
-function handleQuizAnswer(index, btnEl) {
-    const chosen = quizOptions[index];
-    const isCorrect = chosen.german === quizQuestion.german;
-    quizTotal++;
-
-    const iconHolder = btnEl.querySelector(".quiz-icon-holder");
-
-    if (isCorrect) {
-        quizScore++;
-        btnEl.classList.add("selected-correct");
-        if (iconHolder) {
-            iconHolder.innerHTML = `<i data-lucide="check-circle-2" style="width:16px; height:16px;"></i>`;
-        }
-    } else {
-        btnEl.classList.add("selected-wrong");
-        if (iconHolder) {
-            iconHolder.innerHTML = `<i data-lucide="x-circle" style="width:16px; height:16px;"></i>`;
-        }
-    }
-
-    const scoreEl = document.getElementById("quiz-score-display");
-    if (scoreEl) {
-        scoreEl.textContent = `Score: ${quizScore} / ${quizTotal}`;
-    }
-
-    refreshIcons();
-
-    // Disable all options during brief feedback delay
-    document.querySelectorAll(".quiz-option-btn").forEach(b => b.disabled = true);
-
-    setTimeout(() => {
-        generateQuizQuestion();
-    }, 1000);
-}
-
-// ── Tab 4: Chapters ───────────────────────────────────────────────────────────
-function renderChaptersTab() {
-    const container = document.getElementById("mobile-chapters-list");
-    if (!container) return;
-
-    if (appChapters.length === 0) {
-        container.innerHTML = `<p style="text-align:center; color:var(--text-muted); padding:30px;">No chapters found.</p>`;
-        return;
-    }
-
-    container.innerHTML = appChapters.map(ch => `
-        <div class="mobile-chapter-card">
-            <div class="chapter-card-top">
-                <div class="chapter-title"><i data-lucide="folder" style="width:16px; height:16px; vertical-align:middle; margin-right:4px;"></i> ${escapeHTML(ch.name)}</div>
-                <span class="chapter-badge">${ch.word_count || 0} words</span>
-            </div>
-            ${ch.description ? `<p style="font-size:0.82rem; color:var(--text-secondary);">${escapeHTML(ch.description)}</p>` : ''}
-            <button class="chapter-practice-btn" onclick="practiceChapterDirectly('${escapeJS(ch.name)}')">
-                <i data-lucide="play" style="width:14px; height:14px;"></i> Practice This Chapter
-            </button>
-        </div>
-    `).join("");
-
-    refreshIcons();
-}
-
-function practiceChapterDirectly(chapterName) {
-    selectChapterFilter(chapterName);
-    switchTab("flashcards");
-}
-
-// ── Tab 5: Quick Add Word ─────────────────────────────────────────────────────
-function populateAddChapterDropdown() {
-    const selectEl = document.getElementById("mobile-add-chapter");
-    if (!selectEl) return;
-
-    selectEl.innerHTML = "";
-    appChapters.forEach(ch => {
-        const opt = document.createElement("option");
-        opt.value = ch.name;
-        opt.textContent = ch.name;
-        selectEl.appendChild(opt);
+    optionsGrid.innerHTML = "";
+    quizOptions.forEach(opt => {
+        const btn = document.createElement("button");
+        btn.className = "quiz-option-btn";
+        btn.innerText = opt.english;
+        btn.onclick = () => handleQuizAnswer(btn, opt.english === quizQuestion.english);
+        optionsGrid.appendChild(btn);
     });
 }
 
-async function handleMobileAddSubmit(event) {
-    event.preventDefault();
-    const germanInput = document.getElementById("mobile-add-german");
-    const englishInput = document.getElementById("mobile-add-english");
-    const chapterSelect = document.getElementById("mobile-add-chapter");
-    const subheadingInput = document.getElementById("mobile-add-subheading");
-    const submitBtn = document.getElementById("mobile-add-submit-btn");
-
-    if (!germanInput || !englishInput) return;
-
-    const german = germanInput.value.trim();
-    const english = englishInput.value.trim();
-    const chapter_name = chapterSelect ? chapterSelect.value : "General";
-    const subheading = subheadingInput ? subheadingInput.value.trim() : "";
-
-    if (!german || !english) {
-        showToast("Please enter both German and English text.");
-        return;
+function handleQuizAnswer(btn, isCorrect) {
+    quizTotal++;
+    if (isCorrect) {
+        quizScore++;
+        btn.classList.add("correct");
+        showToast("Correct! 🎉");
+    } else {
+        btn.classList.add("wrong");
+        showToast("Not quite! Keep going 💪");
     }
 
-    if (submitBtn) {
-        submitBtn.disabled = true;
-        submitBtn.innerHTML = `<i data-lucide="loader-2"></i> Adding...`;
-        refreshIcons();
-    }
+    const scoreDisplay = document.getElementById("quiz-score-display");
+    if (scoreDisplay) scoreDisplay.innerText = `Score: ${quizScore} / ${quizTotal}`;
+
+    setTimeout(() => {
+        generateQuizQuestion();
+    }, 900);
+}
+
+// ── Quick Add Word ────────────────────────────────────────────────────────────
+function populateAddChapterDropdown() {
+    const sel = document.getElementById("mobile-add-chapter");
+    if (!sel) return;
+
+    sel.innerHTML = `<option value="General">General Vocabulary</option>`;
+    appChapters.forEach(c => {
+        if (c.name.toLowerCase() !== "general") {
+            const opt = document.createElement("option");
+            opt.value = c.name;
+            opt.innerText = c.name;
+            sel.appendChild(opt);
+        }
+    });
+}
+
+async function handleMobileAddSubmit(e) {
+    e.preventDefault();
+    const german = document.getElementById("mobile-add-german").value.trim();
+    const english = document.getElementById("mobile-add-english").value.trim();
+    const chapter = document.getElementById("mobile-add-chapter").value || "General";
+    const subheading = document.getElementById("mobile-add-subheading").value.trim();
+
+    if (!german || !english) return;
 
     try {
         const res = await fetch("/api/words", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ german, english, chapter_name, subheading })
+            body: JSON.stringify({ german, english, chapter_name: chapter, subheading })
         });
 
         const data = await res.json();
-        if (!res.ok) throw new Error(data.detail || "Failed to add word");
+        if (!res.ok) throw new Error(data.detail || "Failed to save word");
 
-        showToast(`Saved "${german}"!`);
-        germanInput.value = "";
-        englishInput.value = "";
-        if (subheadingInput) subheadingInput.value = "";
+        document.getElementById("mobile-add-german").value = "";
+        document.getElementById("mobile-add-english").value = "";
+        document.getElementById("mobile-add-subheading").value = "";
 
+        showToast(`Saved "${german}"! ✨`);
         await loadAppData();
         switchTab("vocab");
     } catch (err) {
-        showToast(err.message);
-    } finally {
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerHTML = `<i data-lucide="plus-circle"></i> Save Vocabulary Word`;
-            refreshIcons();
-        }
+        showToast(err.message || "Error adding word");
     }
 }
 
-// ── Toast Notifications ───────────────────────────────────────────────────────
-let toastTimer = null;
-function showToast(msg) {
-    let toast = document.getElementById("mobile-toast");
-    if (!toast) {
-        toast = document.createElement("div");
-        toast.id = "mobile-toast";
-        toast.className = "mobile-toast";
-        document.body.appendChild(toast);
+// ── German Pronunciation Audio (TTS) ──────────────────────────────────────────
+function speakGerman(text) {
+    if (!text || typeof window === "undefined" || !window.speechSynthesis) return;
+    try {
+        window.speechSynthesis.cancel();
+        let clean = text.replace(/^(der|die|das)\s+/i, "").trim();
+        const utterance = new SpeechSynthesisUtterance(clean || text);
+        utterance.lang = "de-DE";
+        utterance.rate = 0.9;
+        window.speechSynthesis.speak(utterance);
+    } catch (e) {
+        console.warn("Speech synthesis error:", e);
     }
+}
 
-    toast.textContent = msg;
+// ── Helpers ───────────────────────────────────────────────────────────────────
+function formatGermanWordHTML(german) {
+    if (!german) return "";
+    const lower = german.trim().toLowerCase();
+    let genderClass = "";
+    if (lower.startsWith("der ") || lower.includes(" der ")) genderClass = "gender-der";
+    else if (lower.startsWith("die ") || lower.includes(" die ")) genderClass = "gender-die";
+    else if (lower.startsWith("das ") || lower.includes(" das ")) genderClass = "gender-das";
+
+    return `<span class="${genderClass}">${escapeHTML(german)}</span>`;
+}
+
+function escapeHTML(str) {
+    if (!str) return "";
+    return String(str)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+}
+
+function escapeJS(str) {
+    if (!str) return "";
+    return String(str).replace(/\\/g, "\\\\").replace(/'/g, "\\'");
+}
+
+function showToast(msg) {
+    const toast = document.getElementById("mobile-toast");
+    if (!toast) return;
+    toast.innerText = msg;
     toast.classList.add("show");
-
-    if (toastTimer) clearTimeout(toastTimer);
-    toastTimer = setTimeout(() => {
-        toast.classList.remove("show");
-    }, 2400);
+    setTimeout(() => toast.classList.remove("show"), 2200);
 }

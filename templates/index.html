@@ -16,7 +16,7 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
         rel="stylesheet">
     <!-- Custom styling -->
-    <link rel="stylesheet" href="/static/style.css?v=30">
+    <link rel="stylesheet" href="/static/style.css?v=35">
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 </head>
@@ -65,34 +65,88 @@
 
         <!-- Main Content Area -->
         <div class="main-content-area">
-            <!-- Stats Dashboard Grid (3 Stat Cards across the top) -->
-            <section class="stats-container">
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper blue">
-                        <i data-lucide="book-open"></i>
+            <!-- Figma Top App Bar with User Profile & Calendar Strip -->
+            <header class="desktop-top-bar">
+                <div class="desktop-user-greeting">
+                    <div class="desktop-avatar-wrap">
+                        <span class="desktop-avatar-emoji">🇩🇪</span>
+                        <span class="desktop-online-dot"></span>
                     </div>
-                    <div class="stat-info">
-                        <span class="stat-label">Total Words</span>
-                        <span class="stat-value" id="total-words-count">0</span>
-                    </div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper green">
-                        <i data-lucide="zap"></i>
-                    </div>
-                    <div class="stat-info">
-                        <span class="stat-label">Study Session</span>
-                        <span class="stat-value" id="session-count">0</span>
+                    <div class="desktop-greeting-info">
+                        <span class="desktop-greeting-sub">Hallo! 👋</span>
+                        <h2 class="desktop-greeting-name">Deutsch Lernender</h2>
                     </div>
                 </div>
-                <div class="stat-card">
-                    <div class="stat-icon-wrapper purple">
-                        <i data-lucide="award"></i>
+
+                <!-- Interactive Week Calendar Strip (Figma Screen 3) -->
+                <div class="desktop-calendar-strip" id="desktop-calendar-strip">
+                    <!-- Populated dynamically -->
+                </div>
+            </header>
+
+            <!-- Figma Top Section: Daily Goal Hero Card + In-Progress Decks -->
+            <section class="figma-dashboard-top-grid">
+                <!-- Daily Goal Purple Hero Card (Figma Screen 2) -->
+                <div class="figma-daily-hero-card">
+                    <div class="figma-hero-left">
+                        <span class="figma-hero-tag">Tagesziel</span>
+                        <h3 class="figma-hero-title">Your today's study goal is almost done!</h3>
+                        <button type="button" class="figma-hero-cta" onclick="switchTab('practice')">
+                            <span>Start Workout</span>
+                            <i data-lucide="arrow-right" style="width:14px; height:14px;"></i>
+                        </button>
                     </div>
-                    <div class="stat-info">
-                        <span class="stat-label">Mastery Rate</span>
-                        <span class="stat-value" id="mastery-rate">0%</span>
+                    <div class="figma-hero-right">
+                        <div class="figma-radial-box">
+                            <svg class="figma-radial-svg" viewBox="0 0 80 80">
+                                <circle class="figma-radial-bg" cx="40" cy="40" r="32"></circle>
+                                <circle class="figma-radial-bar" id="desktop-radial-bar" cx="40" cy="40" r="32" stroke-dasharray="201" stroke-dashoffset="30"></circle>
+                            </svg>
+                            <div class="figma-radial-text" id="desktop-radial-percent">85%</div>
+                        </div>
                     </div>
+                </div>
+
+                <!-- Stats Summary Cards (Figma Card Style) -->
+                <div class="figma-stats-row">
+                    <div class="stat-card" onclick="switchTab('manage')" style="cursor:pointer;" title="View all words">
+                        <div class="stat-icon-wrapper blue">
+                            <i data-lucide="book-open"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Total Words</span>
+                            <span class="stat-value" id="total-words-count">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="switchTab('practice')" style="cursor:pointer;" title="Start flashcards">
+                        <div class="stat-icon-wrapper green">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Study Session</span>
+                            <span class="stat-value" id="session-count">0</span>
+                        </div>
+                    </div>
+                    <div class="stat-card" onclick="switchTab('stats')" style="cursor:pointer;" title="View analytics">
+                        <div class="stat-icon-wrapper purple">
+                            <i data-lucide="award"></i>
+                        </div>
+                        <div class="stat-info">
+                            <span class="stat-label">Mastery Rate</span>
+                            <span class="stat-value" id="mastery-rate">0%</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- In Progress Decks Row (Figma Horizontal Cards) -->
+            <section class="figma-inprogress-section">
+                <div class="figma-section-header">
+                    <h4>In Progress Decks <span class="figma-counter-badge" id="desktop-inprogress-count">3</span></h4>
+                    <button type="button" class="figma-link-btn" onclick="switchTab('practice')">Practice All</button>
+                </div>
+                <div class="figma-inprogress-grid" id="desktop-inprogress-grid">
+                    <!-- Populated dynamically -->
                 </div>
             </section>
 
@@ -826,7 +880,7 @@
     </div>
 
     <!-- Script Injection -->
-    <script src="/static/app.js?v=32"></script>
+    <script src="/static/app.js?v=35"></script>
 </body>
 
 </html>
